@@ -27,6 +27,7 @@
         vbox = lib.nixosSystem {
           inherit system;
           modules = [
+            home-manager.nixosModules.home-manager
             ./hosts/vbox
           ];
         };

@@ -68,10 +68,6 @@
     isNormalUser = true;
     initialPassword = "password";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    #   packages = with pkgs; [
-    #     firefox
-    #     thunderbird
-    #   ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -80,6 +76,10 @@
     vim
     wget
   ];
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.shayanr = import ../../home/vbox.nix;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
