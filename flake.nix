@@ -9,30 +9,19 @@
     impermanence.url = github:nix-community/impermanence;
   };
 
-  outputs = { self, nixpkgs, home-manager, impermanence, ... }:
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      lib = nixpkgs.lib;
     in
-    {
-      # homeConfigurations = {
-      #   "shayanr@vbox" = home-manager.lib.homeManagerConfiguration {
-      #     inherit pkgs;
-      #     modules = [
-      #       ./home/vbox.nix
-      #     ];
-      #   };
-      # };
-
-      nixosConfigurations = {
-        vbox = lib.nixosSystem {
+    rec {
+      nixosConfigurations = rec {
+        vbox = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit inputs; };
           modules = [
-            home-manager.nixosModules.home-manager
-            impermanence.nixosModules.impermanence
-            # impermanence.nixosModules.home-manager.impermanence
-            ./hosts/vbox
+            ./hosts/vbox # System module
+            ./home/vbox # Home module
           ];
         };
       };
