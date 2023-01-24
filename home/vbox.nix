@@ -32,6 +32,11 @@
   };
 
   # wayland.windowManager.hyprland.enable = true;
+  # home.persistence."/persist/home/shayanr" = {
+  #   directories = [
+  #     ".dotfiles"
+  #   ];
+  # };
 
   home.packages = with pkgs; [
     btop

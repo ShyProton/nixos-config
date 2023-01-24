@@ -59,6 +59,7 @@
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -93,6 +94,24 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  environment.persistence."/persist" = {
+    hideMounts = true;
+    directories = [
+      "/etc/NetworkManager/system-connections"
+
+      "/var/lib/systemd/coredump"
+    ];
+
+    files = [
+      "/etc/machine-id"
+    ];
+  };
+
+  security.sudo.extraConfig = ''
+    Defaults lecture = never
+    Defaults insults
+  '';
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
