@@ -56,7 +56,13 @@
       neovim
     ];
 
-    # TODO: Figure out how to wipe home in the first place.
-    home.persistence = { };
+    home.persistence = {
+      "/persist/home/shayanr" = {
+        directories = [
+          ".dotfiles"
+        ];
+        allowOther = true;
+      };
+    };
   };
 }

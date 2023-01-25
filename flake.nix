@@ -6,6 +6,7 @@
     home-manager.url = github:nix-community/home-manager;
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    hyprland.url = github:hyprwm/Hyprland;
     impermanence.url = github:nix-community/impermanence;
   };
 
