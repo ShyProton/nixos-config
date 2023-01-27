@@ -3,24 +3,49 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
 
+let hostname = config.networking.hostName;
+in
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/NIXOS_ROOT";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/${hostname}";
+    fsType = "btrfs";
+    options = [ "subvol=root" "compress=zstd" "noatime" ];
+  };
 
-  swapDevices = [
-    {
-      device = "/.swapfile";
-    }
-  ];
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/${hostname}";
+    fsType = "btrfs";
+    options = [ "subvol=boot" "noatime" ];
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-label/${hostname}";
+    fsType = "btrfs";
+    options = [ "subvol=nix" "compress=zstd" "noatime" ];
+  };
+
+  fileSystems."/persist" = {
+    device = "/dev/disk/by-label/${hostname}";
+    fsType = "btrfs";
+    neededForBoot = true;
+    options = [ "subvol=persist" "compress=zstd" "noatime" ];
+  };
+
+  fileSystems."/var/log" = {
+    device = "/dev/disk/by-label/${hostname}";
+    fsType = "btrfs";
+    neededForBoot = true;
+    options = [ "subvol=log" "compress=zstd" "noatime" ];
+  };
+
+  swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

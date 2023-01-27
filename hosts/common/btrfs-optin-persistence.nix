@@ -13,8 +13,8 @@ in
     btrfs subvolume list -o /mnt/root |
       cut -f9 -d' ' |
       while read subvolume; do
-        echo "Deleting /${subvolume} subvolume..."
-        btrfs subvolume delete "/mnt/${subvolume}"
+        echo "Deleting /$subvolume subvolume..."
+        btrfs subvolume delete "/mnt/$subvolume"
       done &&
 
     echo "Deleting /root subvolume..." &&
