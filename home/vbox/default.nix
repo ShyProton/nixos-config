@@ -60,6 +60,7 @@
       "/persist/home/shayanr" = {
         directories = [
           ".dotfiles"
+          ".mozilla/firefox"
         ];
         allowOther = true;
       };

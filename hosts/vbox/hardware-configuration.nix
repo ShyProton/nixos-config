@@ -19,6 +19,7 @@ in
     options = [ "subvol=root" "compress=zstd" "noatime" ];
   };
 
+  # WARNING: I have no idea if a boot subvolume is even possible like this
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/${hostname}";
     fsType = "btrfs";
@@ -36,13 +37,6 @@ in
     fsType = "btrfs";
     neededForBoot = true;
     options = [ "subvol=persist" "compress=zstd" "noatime" ];
-  };
-
-  fileSystems."/var/log" = {
-    device = "/dev/disk/by-label/${hostname}";
-    fsType = "btrfs";
-    neededForBoot = true;
-    options = [ "subvol=log" "compress=zstd" "noatime" ];
   };
 
   swapDevices = [ ];

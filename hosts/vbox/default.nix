@@ -99,7 +99,8 @@
     directories = [
       "/etc/NetworkManager/system-connections"
 
-      "/var/lib/systemd/coredump"
+      "/var/log"
+      "/var/lib/systemd"
     ];
 
     files = [
