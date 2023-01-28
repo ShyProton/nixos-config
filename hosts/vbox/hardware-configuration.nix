@@ -19,7 +19,6 @@ in
     options = [ "subvol=root" "compress=zstd" "noatime" ];
   };
 
-  # WARNING: I have no idea if a boot subvolume is even possible like this
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/${hostname}";
     fsType = "btrfs";
