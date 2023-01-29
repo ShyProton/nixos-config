@@ -16,13 +16,26 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     rec {
+      # TODO: If possible, abstract the creation of nixosSystem(s) by
+      # defining a list of machine names and making one for each.
+
+      # TODO: Offload common configuration options to the common directories.
       nixosConfigurations = rec {
         vbox = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/vbox # System module
-            ./home/vbox # Home module
+            ./home/shayanr/vbox # Home module
+          ];
+        };
+
+        alphonse = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/alphonse # System module
+            ./home/shayanr/alphonse # Home module
           ];
         };
       };
