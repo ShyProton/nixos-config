@@ -8,7 +8,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../common/btrfs-optin-persistence.nix
+    ../common/optional/btrfs-optin-persistence.nix
     inputs.impermanence.nixosModules.impermanence
   ];
 
