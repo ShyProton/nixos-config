@@ -26,9 +26,11 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  # NOTE: Common.
   # Set your time zone.
   time.timeZone = "Canada/Eastern";
 
+  # NOTE: Common.
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
   };
@@ -55,6 +57,7 @@
   #   "caps:escape" # map caps to escape.
   # };
 
+  # NOTE: Common.
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -66,6 +69,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # NOTE: Common.
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shayanr = {
     isNormalUser = true;
@@ -78,6 +82,7 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
+    git
   ];
 
 
@@ -89,12 +94,15 @@
   #   enableSSHSupport = true;
   # };
 
+  # NOTE: Common.
   programs.fuse.userAllowOther = true;
   # List services that you want to enable:
 
+  # NOTE: Common.
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # NOTE: Common.
   environment.persistence."/persist" = {
     hideMounts = true;
     directories = [
@@ -109,6 +117,7 @@
     ];
   };
 
+  # NOTE: Common.
   # TODO: Probably do this using overlays
   security.sudo = {
     package = pkgs.sudo.override { withInsults = true; };
