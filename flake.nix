@@ -26,7 +26,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/vbox # System module
-            ./home/shayanr/vbox # Home module
+            ./home/shayanr/common # Home module
           ];
         };
 
@@ -35,7 +35,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/alphonse # System module
-            ./home/shayanr/alphonse # Home module
+            ./home/shayanr/common # Home module
           ];
         };
       };
