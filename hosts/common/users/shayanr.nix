@@ -18,7 +18,10 @@
 
   home-manager.users.shayanr = {
     imports = [
+      # Impermanence for home-manager.
       inputs.impermanence.nixosModules.home-manager.impermanence
+
+      # Home configurations.
       ../../../home/shayanr/${config.networking.hostName}.nix
     ];
   };

@@ -1,10 +1,5 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 {
-  # FIXME: Importing this causes infinite recursion.
-  # imports = [
-  #   inputs.impermanence.nixosModules.home-manager.impermanence
-  # ];
-
   home = {
     username = "shayanr";
     homeDirectory = "/home/${config.home.username}";
@@ -20,13 +15,13 @@
       neovim
     ];
 
-    # persistence."/persist${config.home.homeDirectory}" = {
-    #   directories = [
-    #     ".dotfiles"
-    #     ".mozilla/firefox"
-    #   ];
-    #   allowOther = true;
-    # };
+    persistence."/persist${config.home.homeDirectory}" = {
+      directories = [
+        ".dotfiles"
+        ".mozilla/firefox"
+      ];
+      allowOther = true;
+    };
   };
 
   programs = {
