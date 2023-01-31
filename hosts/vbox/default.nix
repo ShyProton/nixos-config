@@ -8,7 +8,11 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    ../common/users/shayanr.nix
+
     ../common/optional/btrfs-optin-persistence.nix
+
     inputs.impermanence.nixosModules.impermanence
   ];
 
@@ -71,11 +75,6 @@
 
   # NOTE: Common.
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.shayanr = {
-    isNormalUser = true;
-    initialPassword = "password";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
