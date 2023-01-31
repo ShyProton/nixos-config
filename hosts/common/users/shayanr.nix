@@ -16,5 +16,10 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
-  home-manager.users.shayanr = import home/${config.networking.hostName}.nix;
+  home-manager.users.shayanr = {
+    imports = [
+      inputs.impermanence.nixosModules.home-manager.impermanence
+      ../../../home/shayanr/${config.networking.hostName}.nix
+    ];
+  };
 }

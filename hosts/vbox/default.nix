@@ -6,14 +6,13 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
+    inputs.impermanence.nixosModules.impermanence
+
     ./hardware-configuration.nix
 
     ../common/users/shayanr.nix
 
     ../common/optional/btrfs-optin-persistence.nix
-
-    inputs.impermanence.nixosModules.impermanence
   ];
 
   # Use the GRUB 2 boot loader.
