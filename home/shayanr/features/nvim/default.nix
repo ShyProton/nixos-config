@@ -6,6 +6,7 @@
     ./lsp.nix
 
     # Aesthetics
+    ./theme.nix
     ./ui.nix
   ];
 
