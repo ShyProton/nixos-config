@@ -1,12 +1,22 @@
 { config, pkgs, ... }:
 {
-  home.sessionVariables.EDITOR = "nvim";
+  imports = [
+    # Language support
+    ./syntaxes.nix
+    ./lsp.nix
+
+    # Aesthetics
+    ./ui.nix
+  ];
 
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
 
     plugins = with pkgs.vimPlugins; [
-      # TODO: Put plugins here
+      catppuccin-nvim
     ];
+
+    # extraConfig = { };
   };
 }
