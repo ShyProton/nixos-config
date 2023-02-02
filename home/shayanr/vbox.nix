@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    # TODO: Extract nvim to be implemented in all machines
+    ./features/nvim
+  ];
+
   home = {
     username = "shayanr";
     homeDirectory = "/home/${config.home.username}";
@@ -12,7 +17,6 @@
       firefox
       git-crypt
       gnupg
-      neovim
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {

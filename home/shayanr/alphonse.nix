@@ -1,18 +1,20 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./features/nvim
+  ];
+
   home = {
     username = "shayanr";
     homeDirectory = "/home/${config.home.username}";
     stateVersion = "22.11";
 
-    # TODO: Replace with dedicated feature modules for each package w/configs.
     packages = with pkgs; [
       btop
       ranger
       firefox
       git-crypt
       gnupg
-      neovim
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {
