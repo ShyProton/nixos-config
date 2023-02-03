@@ -8,12 +8,13 @@
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
     # TODO: Add configurations to each plugin
+    # NOTE: The plugins listed here are 'extra'
     {
       plugin = alpha-nvim;
       type = "lua";
       config = ''
-        local alpha = require("alpha")
-        local dashboard = require("alpha.themes.dashboard")
+        local alpha = require('alpha')
+        local dashboard = require('alpha.themes.dashboard')
         
         dashboard.section.header.val = {
           [[                               __                ]],
@@ -33,9 +34,9 @@
           dashboard.button('q', '  Quit Neovim', ':qa<CR>'),
         }
 
-        dashboard.section.footer.opts.hl = "Type"
-        dashboard.section.header.opts.hl = "Include"
-        dashboard.section.buttons.opts.hl = "Keyword"
+        dashboard.section.footer.opts.hl = 'Type'
+        dashboard.section.header.opts.hl = 'Include'
+        dashboard.section.buttons.opts.hl = 'Keyword'
 
         dashboard.opts.opts.noautocmd = true
         alpha.setup(dashboard.opts)
