@@ -7,7 +7,7 @@
 
     # Aesthetics
     ./theme.nix
-    ./ui.nix
+    ./ui
   ];
 
   programs.neovim = {

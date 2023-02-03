@@ -1,38 +1,6 @@
 { config, pkgs, ... }:
 {
   programs.neovim.plugins = with pkgs.vimPlugins; [
-    # TODO: Add configurations to each plugin
-    # TODO: If this file gets too big, create seperate plugin categories
-    {
-      plugin = nvim-tree-lua;
-      type = "lua";
-      config = "require('nvim-tree').setup{}";
-    }
-    {
-      plugin = nvim-web-devicons;
-      type = "lua";
-      config = "require('nvim-web-devicons').setup{}";
-    }
-    {
-      plugin = lualine-nvim;
-      type = "lua";
-      config = "require('lualine').setup{}";
-    }
-    {
-      plugin = indent-blankline-nvim;
-      type = "lua";
-      config = "require('indent_blankline').setup{}";
-    }
-    {
-      plugin = nvim-colorizer-lua;
-      type = "lua";
-      config = "require('colorizer').setup{}";
-    }
-    {
-      plugin = bufferline-nvim;
-      type = "lua";
-      config = "require('bufferline').setup{}";
-    }
     {
       plugin = gitsigns-nvim;
       type = "lua";
