@@ -6,11 +6,17 @@
     home-manager.url = github:nix-community/home-manager;
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Applications
+    nixvim.url = github:pta2002/nixvim;
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
     hyprland.url = github:hyprwm/Hyprland;
+
+    # Utilities
     impermanence.url = github:nix-community/impermanence;
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, ... } @ inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
