@@ -14,10 +14,10 @@
     enable = true;
     defaultEditor = true;
 
-    plugins = with pkgs.vimPlugins; [
-      catppuccin-nvim
-    ];
-
-    # extraConfig = { };
+    # extraConfig = ''
+    #   vim.opt.number = true
+    #   vim.opt.relativenumber = true
+    #   vim.opt.numberwidth = 4
+    # '';
   };
 }
