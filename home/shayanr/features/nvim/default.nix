@@ -1,16 +1,16 @@
 {
   imports = [
     # Editor configurations.
-    ./options.nix
-    ./keymaps.nix
+    ./editor
 
     # Language support.
-    # ./syntaxes.nix
-    # ./lsp.nix
+    # ./langs
 
-    # Aesthetics.
-    ./theme.nix
+    # User Interface plugins.
     ./ui
+
+    # Color theme.
+    ./theme.nix
   ];
 
   programs.nixvim.enable = true;
