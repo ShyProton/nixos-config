@@ -1,4 +1,3 @@
-{ config, pkgs, ... }:
 {
   programs.nixvim.plugins = {
     nvim-tree = {
