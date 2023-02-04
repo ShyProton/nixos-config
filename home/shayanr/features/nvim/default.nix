@@ -1,16 +1,20 @@
+/*
+  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗
+  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║
+  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║
+  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║
+  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║
+  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝
+
+  Neovim configuration for NixOS!
+  Using the NixVim flake: https://github.com/pta2002/nixvim
+*/
 {
   imports = [
-    # Editor configurations.
-    ./editor
-
-    # Language support.
-    ./langs
-
-    # User Interface plugins.
-    ./ui
-
-    # Color theme.
-    ./theme.nix
+    ./editor # Editor configurations.
+    ./langs # Language support
+    ./ui # User Interface plugins.
+    ./theme.nix # Color theme.
   ];
 
   programs.nixvim.enable = true;
