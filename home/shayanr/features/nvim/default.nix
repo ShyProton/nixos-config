@@ -4,7 +4,7 @@
     ./editor
 
     # Language support.
-    # ./langs
+    ./langs
 
     # User Interface plugins.
     ./ui

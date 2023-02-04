@@ -1,6 +1,6 @@
 {
   imports = [
-    ./syntaxes.nix
+    ./syntax.nix
     ./lsp.nix
   ];
 }
