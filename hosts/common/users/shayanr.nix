@@ -20,6 +20,8 @@
     imports = [
       # Impermanence for home-manager.
       inputs.impermanence.nixosModules.home-manager.impermanence
+      # Declarative Neovim configuration.
+      inputs.nixvim.homeManagerModules.nixvim
 
       # Home configurations.
       ../../../home/shayanr/${config.networking.hostName}.nix
