@@ -6,6 +6,7 @@
     hideMounts = true;
     directories = [
       "/etc/NetworkManager/system-connections"
+      "/etc/ssh"
 
       "/var/log"
       "/var/lib/systemd"
