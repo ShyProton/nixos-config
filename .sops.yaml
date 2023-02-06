@@ -1,0 +1,4 @@
+keys:
+  - &shayanr age1q4ttq3x90mpf9mrnrvnzzgduv6cdhkufeaw7a35qky3s387udu8qfz4g8e
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml$

@@ -15,8 +15,7 @@
       btop
       ranger
       firefox
-      git-crypt
-      gnupg
+      age
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {

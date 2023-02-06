@@ -75,15 +75,6 @@
     wget
   ];
 
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   # NOTE: Common.
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -91,7 +82,9 @@
   # NOTE: Common.
   # TODO: Probably do this using overlays
   security.sudo = {
-    package = pkgs.sudo.override { withInsults = true; };
+    package = pkgs.sudo.override {
+      withInsults = true;
+    };
     extraConfig = ''
       Defaults lecture = never
     '';
