@@ -20,8 +20,11 @@
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {
+      # TODO: Move persistent item declarations to their respective
+      # configuration directories.
       directories = [
         ".dotfiles"
+        ".ssh"
         ".mozilla/firefox"
       ];
       allowOther = true;

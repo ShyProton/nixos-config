@@ -6,7 +6,6 @@
 ### TODO:
 - Multiple functioning NixOS configurations
 - **Hyprland** configurations with **Nvidia** support
-- Seomthing
 - Application configurations
   - **Neovim**
   - **Kitty**

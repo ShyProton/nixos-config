@@ -9,10 +9,9 @@
     inputs.impermanence.nixosModules.impermanence
 
     ./hardware-configuration.nix
+    ../common/optional/btrfs-optin.nix
 
     ../common/users/shayanr.nix
-
-    ../common/optional/btrfs-optin-persistence.nix
   ];
 
   # Use the GRUB 2 boot loader.
@@ -29,8 +28,6 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-  # NOTE: Common.
-  # Set your time zone.
   time.timeZone = "Canada/Eastern";
 
   # NOTE: Common.
@@ -60,10 +57,6 @@
   #   "caps:escape" # map caps to escape.
   # };
 
-  # NOTE: Common.
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -92,27 +85,8 @@
   # };
 
   # NOTE: Common.
-  programs.fuse.userAllowOther = true;
-  # List services that you want to enable:
-
-  # NOTE: Common.
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # NOTE: Common.
-  environment.persistence."/persist" = {
-    hideMounts = true;
-    directories = [
-      "/etc/NetworkManager/system-connections"
-
-      "/var/log"
-      "/var/lib/systemd"
-    ];
-
-    files = [
-      "/etc/machine-id"
-    ];
-  };
 
   # NOTE: Common.
   # TODO: Probably do this using overlays

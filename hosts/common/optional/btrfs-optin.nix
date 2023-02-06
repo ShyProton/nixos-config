@@ -1,13 +1,17 @@
 { lib, config, ... }:
-let hostname = config.networking.hostName;
-in
 {
+  # NOTE: All instances of impermanent filesystems will implement the use of 
+  # persist.nix, which defines which dirs/files persist after each reboot.
+  imports = [
+    ./persist.nix
+  ];
+
   boot.initrd.supportedFilesystems = [ "btrfs" ];
 
   boot.initrd.postDeviceCommands = lib.mkBefore ''
     mkdir -p /mnt
 
-    mount -o subvol=/ /dev/disk/by-label/${hostname} /mnt
+    mount -o subvol=/ /dev/disk/by-label/${config.networking.hostName} /mnt
 
     echo "Removing ephemeral files..."
     btrfs subvolume list -o /mnt/root |
