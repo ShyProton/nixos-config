@@ -31,6 +31,18 @@
   programs = {
     home-manager.enable = true;
 
+    git = {
+      enable = true;
+
+      userName = "SaiProton";
+      userEmail = "shayanr@gmail.com";
+
+      diff-so-fancy = {
+        enable = true;
+        stripLeadingSymbols = false;
+      };
+    };
+
     direnv = {
       enable = true;
       nix-direnv.enable = true;
