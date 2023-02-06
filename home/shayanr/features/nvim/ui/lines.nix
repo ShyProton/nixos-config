@@ -1,6 +1,7 @@
 {
   programs.nixvim = {
     plugins = {
+      # TODO: Implement 'offsets' option
       bufferline = {
         enable = true;
         numbers = "none";
@@ -36,6 +37,14 @@
         enable = true;
         theme = "catppuccin";
         alwaysDivideMiddle = true;
+        disabledFiletypes = [
+          "toggleterm"
+          "dashboard"
+          "NvimTree"
+          "Outline"
+          "alpha"
+          "Trouble"
+        ];
 
         sections = {
           lualine_a = [ "mode" ];
