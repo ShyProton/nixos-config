@@ -3,13 +3,11 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    inputs.sops-nix.nixosModules.sops
   ];
 
-  # TODO: Maybe put in a 'secrets.nix' file or something
   sops = {
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-    secrets."shayanr-password" = {
+    secrets.shayanr-password = {
       sopsFile = ../secrets.yaml;
       neededForUsers = true;
     };
@@ -18,8 +16,8 @@
   users.mutableUsers = false;
   users.users.shayanr = {
     isNormalUser = true;
-    # TODO: Set hashedpassword or use secrets
-    initialPassword = "password";
+    initialPassword = "password"; # Fallback.
+    passwordFile = config.sops.secrets.shayanr-password.path;
     extraGroups = [ "wheel" ];
   };
 

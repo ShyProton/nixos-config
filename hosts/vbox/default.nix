@@ -7,6 +7,7 @@
 {
   imports = [
     inputs.impermanence.nixosModules.impermanence
+    inputs.sops-nix.nixosModules.sops
 
     ./hardware-configuration.nix
     ../common/optional/btrfs-optin.nix
