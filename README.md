@@ -5,7 +5,7 @@
 ### Machine
 - **Global:**
   - **Opt-in persistence** via [Impermanence](https://github.com/nix-community/impermanence)
-  - **Secrets** via [sops-nix](https://github.com/Mic92/sops-nix)
+  - **Secrets** via [agenix](https://github.com/ryantm/agenix)
   - **TODO:** [Hydra CI/CD](https://github.com/NixOS/hydra)
 - **Optional:**
   - **TODO:** Ablility to choose between btrfs/zfs/tmpfs... 

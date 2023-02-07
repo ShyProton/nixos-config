@@ -5,17 +5,12 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  sops.secrets.shayanr-password = {
-    sopsFile = ../secrets.yaml;
-    neededForUsers = true;
-  };
-
   users = {
     mutableUsers = false;
     users.shayanr = {
       isNormalUser = true;
       initialPassword = "password"; # Fallback password.
-      passwordFile = config.sops.secrets.shayanr-password.path;
+      passwordFile = config.age.secrets.shayanr-password.path;
       extraGroups = [ "wheel" ];
     };
   };

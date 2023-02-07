@@ -1,9 +1,0 @@
-keys:
-  - &shayanr age1q4ttq3x90mpf9mrnrvnzzgduv6cdhkufeaw7a35qky3s387udu8qfz4g8e
-  - &vbox age1rw7x00ye3fk34vw4upvl9p8m0d8hmudty3m6nt0lw6alk6tusv0qwacs5h
-creation_rules:
-  - path_regex: hosts/common/secrets.ya?ml$
-    key_groups:
-      - age:
-          - *shayanr
-          - *vbox
