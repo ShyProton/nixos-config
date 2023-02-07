@@ -13,7 +13,7 @@
   users.mutableUsers = false;
   users.users.shayanr = {
     isNormalUser = true;
-    initialPassword = "password"; # Fallback.
+    initialPassword = "password"; # Fallback password.
     passwordFile = config.sops.secrets.shayanr-password.path;
     extraGroups = [ "wheel" ];
   };

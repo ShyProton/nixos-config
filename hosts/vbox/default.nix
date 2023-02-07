@@ -6,8 +6,6 @@
 
 {
   imports = [
-    inputs.impermanence.nixosModules.impermanence
-
     ./hardware-configuration.nix # Machine-specific hardware
 
     ../common/global # Implemented by all machines.
@@ -16,7 +14,7 @@
     ../common/users/shayanr.nix
 
     # Optional features
-    ../common/optional/persistence/btrfs.nix
+    ../common/optional/impermanence/btrfs.nix # Type of opt-in persistence
   ];
 
   # Use the GRUB 2 boot loader.

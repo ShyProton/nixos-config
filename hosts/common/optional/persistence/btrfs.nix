@@ -1,11 +1,5 @@
 { lib, config, ... }:
 {
-  # NOTE: All instances of impermanent filesystems will implement the use of 
-  # persist.nix, which defines which dirs/files persist after each reboot.
-  imports = [
-    ./persist.nix
-  ];
-
   boot.initrd.supportedFilesystems = [ "btrfs" ];
 
   boot.initrd.postDeviceCommands = lib.mkBefore ''
@@ -30,4 +24,6 @@
     umount /mnt
     rm /mnt
   '';
+
+  # TODO: Add script for showing filesystem diff.
 }

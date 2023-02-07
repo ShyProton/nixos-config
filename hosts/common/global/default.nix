@@ -1,6 +1,7 @@
 {
   imports = [
     ./sops.nix
+    ./persistence.nix
   ];
 
   nixpkgs = {
