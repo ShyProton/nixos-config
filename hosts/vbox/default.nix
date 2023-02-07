@@ -7,12 +7,16 @@
 {
   imports = [
     inputs.impermanence.nixosModules.impermanence
-    inputs.sops-nix.nixosModules.sops
 
-    ./hardware-configuration.nix
-    ../common/optional/btrfs-optin.nix
+    ./hardware-configuration.nix # Machine-specific hardware
 
+    ../common/global # Implemented by all machines.
+
+    # Defining User(s)
     ../common/users/shayanr.nix
+
+    # Optional features
+    ../common/optional/persistence/btrfs.nix
   ];
 
   # Use the GRUB 2 boot loader.

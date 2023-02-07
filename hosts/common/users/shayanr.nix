@@ -5,12 +5,9 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  sops = {
-    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-    secrets.shayanr-password = {
-      sopsFile = ../secrets.yaml;
-      neededForUsers = true;
-    };
+  sops.secrets.shayanr-password = {
+    sopsFile = ../secrets.yaml;
+    neededForUsers = true;
   };
 
   users.mutableUsers = false;
