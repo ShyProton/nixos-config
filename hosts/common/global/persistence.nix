@@ -1,8 +1,4 @@
-# NOTE: It can be debated on whether or not impermanence should be a global
-# feature for all machines, mostly up to personal preference.
-# I choose to implement it on all machines since I want all my systems
-# to be as declarative as possible: any state not specified as persistent or
-# otherwise unspecified in the configuration should be removed.
+{ inputs, ... }:
 {
   imports = [
     inputs.impermanence.nixosModules.impermanence

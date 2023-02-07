@@ -1,5 +1,5 @@
 # Common home configurations for every system.
-{ config, pkgs, inputs, ... }:
+{ config, inputs, ... }:
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager

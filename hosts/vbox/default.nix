@@ -14,7 +14,7 @@
     ../common/users/shayanr.nix
 
     # Optional features
-    ../common/optional/impermanence/btrfs.nix # Type of opt-in persistence
+    ../common/optional/persistence/btrfs.nix # Type of opt-in persistence
   ];
 
   # Use the GRUB 2 boot loader.
