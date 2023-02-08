@@ -9,7 +9,12 @@
     mutableUsers = false;
     users.shayanr = {
       isNormalUser = true;
+<<<<<<< HEAD
       passwordFile = config.age.secrets.shayanr-password.path;
+=======
+      initialPassword = "password";
+      # passwordFile = "/home/shayanr/something.txt";
+>>>>>>> d77308659d2ec9251d7a73b2a82a72f36498e8cd
       extraGroups = [ "wheel" ];
     };
   };
