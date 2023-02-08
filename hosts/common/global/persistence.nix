@@ -15,6 +15,8 @@
 
       "/var/log"
       "/var/lib/systemd"
+
+      "/srv"
     ];
 
     files = [

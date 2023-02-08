@@ -9,8 +9,7 @@
     mutableUsers = false;
     users.shayanr = {
       isNormalUser = true;
-      initialPassword = "password"; # Fallback password.
-      passwordFile = config.age.secrets.shayanr-password.path;
+      passwordFile = "/home/shayanr/something.txt";
       extraGroups = [ "wheel" ];
     };
   };
