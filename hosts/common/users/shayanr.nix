@@ -9,7 +9,8 @@
     mutableUsers = false;
     users.shayanr = {
       isNormalUser = true;
-      passwordFile = "/home/shayanr/something.txt";
+      initialPassword = "password";
+      # passwordFile = "/home/shayanr/something.txt";
       extraGroups = [ "wheel" ];
     };
   };
