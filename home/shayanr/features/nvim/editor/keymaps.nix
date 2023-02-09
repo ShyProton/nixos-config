@@ -3,6 +3,7 @@
   programs.nixvim = {
     globals.mapleader = " ";
 
+    # TODO: Possibly contribute to have better-escape.nvim available. 
     plugins.easyescape.enable = true;
 
     maps = {
