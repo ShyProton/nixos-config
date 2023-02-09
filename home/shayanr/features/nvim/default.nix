@@ -14,6 +14,7 @@
     ./editor # Editor configurations.
     ./langs # Language support
     ./ui # User Interface plugins.
+    ./utils # Other Utilities.
     ./theme.nix # Color theme.
   ];
 

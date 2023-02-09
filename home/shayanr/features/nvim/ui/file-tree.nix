@@ -2,9 +2,12 @@
   programs.nixvim.plugins = {
     nvim-tree = {
       enable = true;
+      disableNetrw = true;
       hijackNetrw = true;
+      hijackCursor = true;
       openOnTab = false;
       syncRootWithCwd = true;
+      respectBufCwd = true;
 
       diagnostics = {
         enable = true;
