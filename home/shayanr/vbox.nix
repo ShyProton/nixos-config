@@ -15,6 +15,7 @@
       btop
       ranger
       firefox
+      ripgrep
       age
     ];
 

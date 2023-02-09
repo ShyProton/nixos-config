@@ -56,5 +56,12 @@
         };
       };
     };
+
+    maps.normal = {
+      "<S-l>".action = "<cmd>BufferLineCycleNext<cr>";
+      "<S-h>".action = "<cmd>BufferLineCyclePrev<cr>";
+      "<A-l>".action = "<cmd>BufferLineMoveNext<cr>";
+      "<A-h>".action = "<cmd>BufferLineMovePrev<cr>";
+    };
   };
 }
