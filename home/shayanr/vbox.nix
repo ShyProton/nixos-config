@@ -2,7 +2,7 @@
 {
   imports = [
     # TODO: Extract nvim to be implemented in all machines
-    ./features/nvim
+    ./features/cli
   ];
 
   home = {
@@ -12,11 +12,7 @@
 
     # TODO: Replace with dedicated feature modules for each package w/configs.
     packages = with pkgs; [
-      btop
-      ranger
       firefox
-      ripgrep
-      age
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {
