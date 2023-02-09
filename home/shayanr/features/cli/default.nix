@@ -2,9 +2,11 @@
 {
   # Command line programs.
   imports = [
-    ./nvim
+    ./tldr.nix # Short help-pages.
+    ./nvim # Text editor.
   ];
 
+  # TODO: Add aliases for the replacement utilities
   home.packages = with pkgs; [
     age
     btop
@@ -13,6 +15,5 @@
     bat
     exa
     ncdu
-    tealdeer
   ];
 }

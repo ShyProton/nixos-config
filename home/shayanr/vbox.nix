@@ -21,6 +21,7 @@
       directories = [
         ".dotfiles"
         ".ssh"
+        ".cache"
         ".mozilla/firefox"
       ];
       allowOther = true;
