@@ -3,20 +3,14 @@
   programs.nixvim = {
     globals.mapleader = " ";
 
-    extraPlugins = with pkgs.vimPlugins; [
-      better-escape-nvim
-    ];
-
-    # TODO: Implement better escaping with nixvim.
-    # FIXME: Escape keymapping not working.
-    extraConfigLua = ''
-      require('better_escape').setup = {
-        mapping = { 'kj' }
-      }
-    '';
+    plugins.easyescape.enable = true;
 
     maps = {
+      # Better mapping for escaping.
+      command."kj".action = "<esc>";
+
       normal = {
+
         # -- LEADER COMMANDS --
         # NvimTree.
         "<leader>e" = {
