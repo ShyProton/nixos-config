@@ -6,6 +6,7 @@
     # TODO: Possibly contribute to have better-escape.nvim available. 
     plugins.easyescape.enable = true;
 
+    # TODO: Move these keymaps to their respective plugin files.
     maps = {
       # Better mapping for escaping.
       command."kj".action = "<esc>";
@@ -26,6 +27,12 @@
 
         # Lspsaga.
         "<leader>o".action = "<cmd>Lspsaga outline<cr>";
+
+        # Telescope.
+        "<leader>ff".action = "<cmd>Telescope find_files theme=dropdown<cr>";
+        "<leader>fg".action = "<cmd>Telescope live_grep theme=dropdown<cr>";
+        "<leader>fb".action = "<cmd>Telescope buffers theme=dropdown<cr>";
+        "<leader>fh".action = "<cmd>Telescope help_tags theme=dropdown<cr>";
 
         # -- NORMAL COMMANDS --
         # Window navigation.

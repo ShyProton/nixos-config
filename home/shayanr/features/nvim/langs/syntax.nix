@@ -6,7 +6,7 @@
       indent = true;
     };
 
-    # Language specific options.
+    # Language autocommands.
     autoCmd = [
       {
         event = [ "FileType" ];
@@ -17,6 +17,10 @@
         event = [ "FileType" ];
         pattern = [ "nix" ];
         command = "setlocal nosmartindent";
+      }
+      {
+        event = [ "BufWritePre" ];
+        command = "lua vim.lsp.buf.format()";
       }
     ];
   };
