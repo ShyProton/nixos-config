@@ -2,8 +2,12 @@
 let
   # Script for showing the diff between the root and root-blank subvolumes.
   # This shows the ephemeral files which will be deleted on boot.
+  hostName = config.networking.hostName;
+
   fs-diff = pkgs.writeShellScriptBin "fs-diff" ''
     set -euo pipefail
+
+    sudo mount -o subvol=/ /dev/disk/by-label/${hostName} /mnt
 
     OLD_TRANSID=$(sudo btrfs subvolume find-new /mnt/root-blank 9999999) 
     OLD_TRANSID=''${OLD_TRANSID#transid marker was}
@@ -23,6 +27,8 @@ let
         echo "$path"
       fi
     done
+
+    sudo umount /mnt
   '';
 in
 {
