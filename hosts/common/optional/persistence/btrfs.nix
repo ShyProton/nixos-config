@@ -1,4 +1,30 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
+let
+  # Script for showing the diff between the root and root-blank subvolumes.
+  # This shows the ephemeral files which will be deleted on boot.
+  fs-diff = pkgs.writeShellScriptBin "fs-diff" ''
+    set -euo pipefail
+
+    OLD_TRANSID=$(sudo btrfs subvolume find-new /mnt/root-blank 9999999) 
+    OLD_TRANSID=''${OLD_TRANSID#transid marker was}
+
+    sudo btrfs subvolume find-new "/mnt/root" "$OLD_TRANSID" |
+    sed '$d' |
+    cut -f17- -d' ' |
+    sort |
+    uniq |
+    while read path; do
+      path="/$path"
+      if [ -L "$path" ]; then
+        : # The path is a symbolic link, probably handled by NixOS already
+      elif [ -d "$path" ]; then
+        : # The path is a directory, ignore
+      else
+        echo "$path"
+      fi
+    done
+  '';
+in
 {
   boot.initrd.supportedFilesystems = [ "btrfs" ];
 
@@ -22,8 +48,7 @@
     btrfs subvolume snapshot /mnt/root-blank /mnt/root
 
     umount /mnt
-    rm /mnt
   '';
 
-  # TODO: Add script for showing filesystem diff.
+  environment.systemPackages = [ fs-diff ];
 }
