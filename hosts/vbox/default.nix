@@ -2,15 +2,17 @@
 
 {
   imports = [
-    ./hardware-configuration.nix # Machine-specific hardware
+    ./hardware-configuration.nix # Machine-specific hardware.
 
     ../common/global # Implemented by all machines.
 
-    # Defining User(s)
+    # Defining User(s).
     ../common/users/shayanr.nix
 
-    # Optional features
-    ../common/optional/persistence/btrfs.nix # Type of opt-in persistence
+    # Optional features.
+    ../common/optional/persistence/btrfs.nix # Type of opt-in persistence.
+
+    ../common/optional/gnome.nix # Use The GNOME desktop environment.
   ];
 
   # Use the GRUB 2 boot loader.
