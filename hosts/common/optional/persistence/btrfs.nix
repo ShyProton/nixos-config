@@ -7,6 +7,7 @@ let
   fs-diff = pkgs.writeShellScriptBin "fs-diff" ''
     set -euo pipefail
 
+    sudo mkdir /mnt
     sudo mount -o subvol=/ /dev/disk/by-label/${hostName} /mnt
 
     OLD_TRANSID=$(sudo btrfs subvolume find-new /mnt/root-blank 9999999) 
@@ -29,6 +30,7 @@ let
     done
 
     sudo umount /mnt
+    sudo rmdir /mnt
   '';
 in
 {
@@ -54,6 +56,7 @@ in
     btrfs subvolume snapshot /mnt/root-blank /mnt/root
 
     umount /mnt
+    rmdir /mnt
   '';
 
   environment.systemPackages = [ fs-diff ];
