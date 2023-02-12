@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   # TODO: Probably needs to be a Lua string.
   kind_icons = '' {
@@ -116,6 +117,10 @@ in
       cmp-path.enable = true; # File path completions.
       cmp-buffer.enable = true; # Buffer completions.
     };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      friendly-snippets
+    ];
 
     # Utilities needed for proper functionality of nvim-cmp.
     extraConfigLua = ''

@@ -5,7 +5,18 @@
         enable = true;
 
         servers = {
+          html.enable = true;
+          cssls.enable = true;
+          tsserver.enable = true;
+          jsonls.enable = true;
+
+          texlab.enable = true;
+
+          pyright.enable = true;
+          rust-analyzer.enable = true;
+          clangd.enable = true;
           rnix-lsp.enable = true;
+          bashls.enable = true;
         };
       };
 
