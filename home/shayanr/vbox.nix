@@ -28,6 +28,7 @@
     };
   };
 
+  # TODO: Divide into individual feature files.
   programs = {
     home-manager.enable = true;
 
@@ -41,6 +42,18 @@
       diff-so-fancy = {
         enable = true;
         stripLeadingSymbols = false;
+      };
+    };
+
+    gh = {
+      enable = true;
+      enableGitCredentialHelper = true;
+
+      extensions = with pkgs; [ gh-markdown-preview ];
+
+      settings = {
+        git_protocol = "ssh";
+        prompt = "enabled";
       };
     };
 
