@@ -23,6 +23,7 @@
         ".ssh"
         ".cache"
         ".mozilla/firefox"
+        ".config/gh"
       ];
       allowOther = true;
     };
