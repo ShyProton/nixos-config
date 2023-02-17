@@ -10,7 +10,9 @@
 
     # Applications
     nixvim = {
-      url = github:pta2002/nixvim;
+      # HACK: Using revision before merge conflict introduced in PR #145.
+      # Wait until PR #168 or #170 is merged.
+      url = github:pta2002/nixvim?rev=c5d9ea91b588cbd1af771a9abd5c7bf4d1300db1;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
