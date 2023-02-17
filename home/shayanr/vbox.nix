@@ -33,6 +33,7 @@
 
     git = {
       enable = true;
+      lfs.enable = true;
 
       userName = "SaiProton";
       userEmail = "shayanr@gmail.com";
