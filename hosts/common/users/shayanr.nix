@@ -28,6 +28,8 @@
         inputs.impermanence.nixosModules.home-manager.impermanence
         # Declarative Neovim configuration.
         inputs.nixvim.homeManagerModules.nixvim
+        # Declarative system colorscheme.
+        inputs.nix-colors.homeManagerModule
 
         # Home configurations.
         ../../../home/shayanr/${config.networking.hostName}.nix
