@@ -13,31 +13,52 @@ in
   # TODO: Determine appropriate subvolume options specifically for the
   # type of drive that alphonse has.
   fileSystems."/" = {
-    device = "/dev/disk/by-label/${hostname}";
+    device = "/dev/disk/by-label/ROOT";
     fsType = "btrfs";
-    options = [ "subvol=root" "compress=zstd" "noatime" ];
+    options = [
+      "subvol=root"
+      "compress=zstd"
+      "space_cache=v2"
+      "ssd"
+      "noatime"
+    ];
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-label/${hostname}";
-    fsType = "btrfs";
-    options = [ "subvol=boot" "noatime" ];
+    device = "/dev/disk/by-label/BOOT";
+    fsType = "vfat";
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-label/${hostname}";
+    device = "/dev/disk/by-label/ROOT";
     fsType = "btrfs";
-    options = [ "subvol=nix" "compress=zstd" "noatime" ];
+    options = [
+      "subvol=nix"
+      "compress=zstd"
+      "space_cache=v2"
+      "ssd"
+      "noatime"
+    ];
   };
 
   fileSystems."/persist" = {
-    device = "/dev/disk/by-label/${hostname}";
+    device = "/dev/disk/by-label/ROOT";
     fsType = "btrfs";
     neededForBoot = true;
-    options = [ "subvol=persist" "compress=zstd" "noatime" ];
+    options = [
+      "subvol=persist"
+      "compress=zstd"
+      "space_cache=v2"
+      "ssd"
+      "noatime"
+    ];
   };
 
-  swapDevices = [ ];
+  # TODO: Add Large
+
+  swapDevices = [
+    { device = "/dev/disk/by-label/SWAP"; }
+  ];
 
   # TODO: Adjust to default hardware-configuration settings for alphonse.
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
