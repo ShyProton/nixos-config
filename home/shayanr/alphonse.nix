@@ -2,7 +2,7 @@
 {
   imports = [
     # TODO: Extract nvim to be implemented in all machines
-    ./features/nvim
+    ./features/cli
   ];
 
   home = {
@@ -12,11 +12,8 @@
 
     # TODO: Replace with dedicated feature modules for each package w/configs.
     packages = with pkgs; [
-      btop
-      ranger
       firefox
-      git-crypt
-      gnupg
+      kitty
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {
@@ -25,17 +22,29 @@
       directories = [
         ".dotfiles"
         ".ssh"
+        ".cache"
         ".mozilla/firefox"
+        ".config/gh"
       ];
       allowOther = true;
     };
   };
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    extraConfig = ''
+      bind=SUPER,Return,exec,kitty
+    '';
+  };
+
+  # TODO: Divide into individual feature files.
   programs = {
     home-manager.enable = true;
 
     git = {
       enable = true;
+      lfs.enable = true;
 
       userName = "SaiProton";
       userEmail = "shayanr@gmail.com";
@@ -43,6 +52,19 @@
       diff-so-fancy = {
         enable = true;
         stripLeadingSymbols = false;
+      };
+    };
+
+    gh = {
+      enable = true;
+      # TODO: Test if this is needed.
+      enableGitCredentialHelper = true;
+
+      extensions = with pkgs; [ gh-markdown-preview ];
+
+      settings = {
+        git_protocol = "ssh";
+        prompt = "enabled";
       };
     };
 

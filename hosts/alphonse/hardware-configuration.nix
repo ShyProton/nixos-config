@@ -3,15 +3,20 @@
 let hostname = config.networking.hostName;
 in
 {
-  # TODO: Adjust to default hardware-configuration settings for alphonse.
   # imports = [ ];
-  # boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
-  # boot.initrd.kernelModules = [ ];
-  # boot.kernelModules = [ ];
-  # boot.extraModulePackages = [ ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "ahci" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ rtw88 ];
+  boot.kernelParams = [
+    "radeon.si_support=0"
+    "amdgpu.si_support=1"
+    "radeon.cik_support=0"
+    "amdgpu.cik_support=1"
+  ];
 
-  # TODO: Determine appropriate subvolume options specifically for the
-  # type of drive that alphonse has.
+  hardware.firmware = [ pkgs.rtw88-firmware ];
+
   fileSystems."/" = {
     device = "/dev/disk/by-label/ROOT";
     fsType = "btrfs";
@@ -60,13 +65,11 @@ in
     { device = "/dev/disk/by-label/SWAP"; }
   ];
 
-  # TODO: Adjust to default hardware-configuration settings for alphonse.
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   # networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s3.useDHCP = lib.mkDefault true;
-  # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  # hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

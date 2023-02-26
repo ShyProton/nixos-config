@@ -13,7 +13,9 @@
     ../common/optional/persistence/btrfs.nix # Type of opt-in persistence.
   ];
 
-  # TODO: Boot options.
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "alphonse"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -21,13 +23,26 @@
   time.timeZone = "Canada/Eastern";
 
   # TODO: Enable pipewire for sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
     wget
+    pciutils
   ];
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.nvidiaPersistenced = true;
+
+  hardware.nvidia.prime = {
+    offload.enable = true;
+
+    amdgpuBusId = "PCI:5:0:0";
+    nvidiaBusId = "PCI:1:0:0";
+  };
 
   services.openssh = {
     enable = true;
@@ -56,5 +71,4 @@
 
   system.stateVersion = "22.11";
 }
-
 

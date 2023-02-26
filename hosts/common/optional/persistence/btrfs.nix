@@ -8,7 +8,7 @@ let
     set -euo pipefail
 
     sudo mkdir /mnt
-    sudo mount -o subvol=/ /dev/disk/by-label/${hostName} /mnt
+    sudo mount -o subvol=/ /dev/disk/by-label/ROOT /mnt
 
     OLD_TRANSID=$(sudo btrfs subvolume find-new /mnt/root-blank 9999999) 
     OLD_TRANSID=''${OLD_TRANSID#transid marker was}
@@ -39,7 +39,7 @@ in
   boot.initrd.postDeviceCommands = lib.mkBefore ''
     mkdir -p /mnt
 
-    mount -o subvol=/ /dev/disk/by-label/${config.networking.hostName} /mnt
+    mount -o subvol=/ /dev/disk/by-label/ROOT /mnt
 
     echo "Removing ephemeral files..."
     btrfs subvolume list -o /mnt/root |
