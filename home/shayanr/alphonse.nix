@@ -3,6 +3,7 @@
   imports = [
     # TODO: Extract nvim to be implemented in all machines
     ./features/cli
+    ./features/desktop
   ];
 
   home = {
@@ -13,8 +14,8 @@
     # TODO: Replace with dedicated feature modules for each package w/configs.
     packages = with pkgs; [
       firefox
-      cascadia-code
       wlr-randr
+      cascadia-code
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {
@@ -31,6 +32,7 @@
     };
   };
 
+  # TODO: Move to own configuration directory.
   wayland.windowManager.hyprland = {
     enable = true;
     nvidiaPatches = true;
@@ -43,14 +45,6 @@
   # TODO: Divide into individual feature files.
   programs = {
     home-manager.enable = true;
-
-    kitty = {
-      enable = true;
-      font = {
-        name = "Cascadia Code";
-        size = 12;
-      };
-    };
 
     git = {
       enable = true;

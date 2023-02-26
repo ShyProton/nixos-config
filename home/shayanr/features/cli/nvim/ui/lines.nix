@@ -35,7 +35,6 @@
 
       lualine = {
         enable = true;
-        theme = "catppuccin";
         alwaysDivideMiddle = true;
         disabledFiletypes = [
           "toggleterm"
