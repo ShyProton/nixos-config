@@ -13,7 +13,8 @@
     # TODO: Replace with dedicated feature modules for each package w/configs.
     packages = with pkgs; [
       firefox
-      kitty
+      cascadia-code
+      wlr-randr
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {
@@ -34,6 +35,7 @@
     enable = true;
     nvidiaPatches = true;
     extraConfig = ''
+      monitor=eDP-1,1920x1080@120,0x0,1
       bind=SUPER,Return,exec,kitty
     '';
   };
@@ -42,12 +44,20 @@
   programs = {
     home-manager.enable = true;
 
+    kitty = {
+      enable = true;
+      font = {
+        name = "Cascadia Code";
+        size = 12;
+      };
+    };
+
     git = {
       enable = true;
       lfs.enable = true;
 
       userName = "SaiProton";
-      userEmail = "shayanr@gmail.com";
+      userEmail = "shayanr1001@gmail.com";
 
       diff-so-fancy = {
         enable = true;
