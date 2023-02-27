@@ -47,6 +47,10 @@
       # Program bindings
       bind = SUPER,Return,exec,kitty
       bind = SUPER,f,exec,firefox
+
+      # WM controls
+      bind = SUPERSHIFT,c,killactive
+      bind = SUPERSHIFT,q,exit
     '';
   };
 }

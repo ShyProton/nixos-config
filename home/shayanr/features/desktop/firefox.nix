@@ -1,10 +1,17 @@
 { pkgs, config, inputs, ... }:
 let
+  # TODO: Check to see if using the flake is necessary.
   addons = inputs.firefox-addons.packages.${pkgs.system};
 in
 {
   programs.firefox = {
     enable = true;
+    package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+      extraPolicies = {
+        DisableFirefoxStudies = true;
+        DisablePocket = true;
+      };
+    };
     profiles.shayanr = {
       extensions = with addons; [
         ublock-origin
@@ -14,20 +21,59 @@ in
       settings = {
         "browser.disableResetPrompt" = true;
         "browser.download.panel.shown" = true;
-        "browser.download.useDownloadDir" = false;
+        "browser.download.useDownloadDir" = true;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
         "browser.shell.checkDefaultBrowser" = false;
         "browser.shell.defaultBrowserCheckCount" = 1;
+        "browser.uiCustomization.state" = ''
+          {
+            "placements": {
+              "widget-overflow-fixed-list": [],
+              "nav-bar": [
+                "back-button",
+                "forward-button",
+                "stop-reload-button",
+                "home-button",
+                "urlbar-container",
+                "downloads-button",
+                "library-button",
+                "_testpilot-containers-browser-action"
+              ],
+              "toolbar-menubar": ["menubar-items"],
+              "TabsToolbar": ["tabbrowser-tabs","new-tab-button","alltabs-button"],
+              "PersonalToolbar":["personal-bookmarks"]
+            },
+            "seen": [
+              "save-to-pocket-button",
+              "developer-button",
+              "ublock0_raymondhill_net-browser-action",
+              "_testpilot-containers-browser-action"
+            ],
+            "dirtyAreaCache": [
+              "nav-bar",
+              "PersonalToolbar",
+              "toolbar-menubar",
+              "TabsToolbar",
+              "widget-overflow-fixed-list"
+            ],
+            "currentVersion": 18,
+            "newElementCount": 4
+          }
+        '';
         "dom.security.https_only_mode" = true;
-        "identity.fxaccounts.enabled" = false;
+        "identity.fxaccounts.enabled" = true;
         "privacy.trackingprotection.enabled" = true;
-        "signon.rememberSignons" = false;
+        "signon.rememberSignons" = true;
       };
     };
   };
 
   home = {
-    sessionVariables.BROWSER = "firefox";
+    sessionVariables = {
+      BROWSER = "firefox";
+      MOZ_ENABLE_WAYLAND = 1;
+    };
+
     persistence."/persist${config.home.homeDirectory}".directories = [
       ".mozilla/firefox"
     ];
