@@ -45,6 +45,8 @@
       color13 = "#${config.colorScheme.colors.base0E}";
       color14 = "#${config.colorScheme.colors.base0C}";
       color15 = "#${config.colorScheme.colors.base04}";
+
+      background_opacity = "0.95";
     };
 
     extraConfig = ''
