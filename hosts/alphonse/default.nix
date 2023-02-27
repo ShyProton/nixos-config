@@ -14,11 +14,15 @@
   ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
-  networking.hostName = "alphonse"; # Define your hostname.
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "alphonse";
+    networkmanager.enable = true;
+  };
 
   time.timeZone = "Canada/Eastern";
 
@@ -32,31 +36,36 @@
     pciutils
   ];
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.nvidiaPersistenced = true;
-
-  hardware.nvidia.prime = {
-    offload.enable = true;
-
-    amdgpuBusId = "PCI:5:0:0";
-    nvidiaBusId = "PCI:1:0:0";
+  services = {
+    xserver.videoDrivers = [ "nvidia" ]; # Nvidia driver definition.
+    openssh = {
+      enable = true;
+      hostKeys = [
+        {
+          path = "/persist/etc/ssh/ssh_host_ed25519_key";
+          type = "ed25519";
+        }
+        {
+          path = "/persist/etc/ssh/ssh_host_rsa_key";
+          type = "rsa";
+        }
+      ];
+    };
   };
 
-  services.openssh = {
-    enable = true;
-    hostKeys = [
-      {
-        path = "/persist/etc/ssh/ssh_host_ed25519_key";
-        type = "ed25519";
-      }
-      {
-        path = "/persist/etc/ssh/ssh_host_rsa_key";
-        type = "rsa";
-      }
-    ];
+  hardware = {
+    opengl.enable = true;
+    nvidia = {
+      modesetting.enable = true;
+      prime = {
+        offload.enable = true;
+
+        amdgpuBusId = "PCI:5:0:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+    };
   };
+
 
   # TODO: Probably do this using overlays
   security.sudo = {
