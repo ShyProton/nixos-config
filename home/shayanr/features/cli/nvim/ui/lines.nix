@@ -36,14 +36,7 @@
       lualine = {
         enable = true;
         alwaysDivideMiddle = true;
-        disabledFiletypes = [
-          "toggleterm"
-          "dashboard"
-          "NvimTree"
-          "Outline"
-          "alpha"
-          "Trouble"
-        ];
+        globalstatus = true;
 
         sections = {
           lualine_a = [ "mode" ];

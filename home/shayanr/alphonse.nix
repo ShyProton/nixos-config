@@ -13,7 +13,6 @@
 
     # TODO: Replace with dedicated feature modules for each package w/configs.
     packages = with pkgs; [
-      firefox
       wlr-randr
       cascadia-code # TODO: Move to kitty.nix
     ];
@@ -25,7 +24,6 @@
         ".dotfiles"
         ".ssh"
         ".cache"
-        ".mozilla/firefox"
         ".config/gh"
       ];
       allowOther = true;

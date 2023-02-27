@@ -6,9 +6,10 @@
         disableNetrw = true;
         hijackNetrw = true;
         hijackCursor = true;
-        openOnTab = false;
         syncRootWithCwd = true;
         respectBufCwd = true;
+
+        tab.sync.open = false;
 
         diagnostics = {
           enable = true;
