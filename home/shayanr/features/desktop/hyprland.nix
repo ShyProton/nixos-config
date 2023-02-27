@@ -29,12 +29,23 @@
 
       animations {
         enabled = true
+
         bezier = overshot,0.13,0.99,0.29,1.1
+        bezier = easein,0.11,0,0.5,0
+        bezier = easeout,0.5,1,0.89,1
+
         animation = windows,1,4,overshot,slide
-        animation = border,1,10,default
-        animation = fade,1,10,default
-        animation = workspaces,1,6,overshot,slidevert
-        animation = windowsMove,1,4,overshot,slide
+        animation = windowsMove,1,4,overshot
+
+        animation = workspaces,1,2,easeout,slidevert
+
+        animation = border,1,3,easeout
+
+        animation = fadeIn,1,3,easeout
+        animation = fadeOut,1,3,easein
+        animation = fadeSwitch,1,3,easeout
+        animation = fadeShadow,1,3,easeout
+        animation = fadeDim,1,3,easeout
       }
 
       gestures {

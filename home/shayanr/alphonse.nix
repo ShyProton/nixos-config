@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 {
   imports = [
     ./features/system # Userspace system configurations.
     ./features/cli # Command-line apps/utils.
     ./features/desktop # Desktop apps/utils.
   ];
+
+  colorscheme = inputs.nix-colors.colorschemes.gruvbox-dark-medium;
 
   home = {
     username = "shayanr";
