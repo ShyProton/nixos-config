@@ -34,6 +34,7 @@
         animation = border,1,10,default
         animation = fade,1,10,default
         animation = workspaces,1,6,overshot,slidevert
+        animation = windowsMove,1,4,overshot,slide
       }
 
       gestures {
@@ -51,6 +52,19 @@
       # WM controls
       bind = SUPERSHIFT,c,killactive
       bind = SUPERSHIFT,q,exit
+
+      bindm = SUPER,mouse:272,movewindow
+      bindm = SUPER,mouse:273,resizewindow
+
+      bind = SUPERSHIFT,h,movewindow,l
+      bind = SUPERSHIFT,l,movewindow,r
+      bind = SUPERSHIFT,k,movewindow,u
+      bind = SUPERSHIFT,j,movewindow,d
+
+      bind = SUPER,h,resizeactive,-20 0
+      bind = SUPER,l,resizeactive,20 0
+      bind = SUPER,k,resizeactive,0 -20 
+      bind = SUPER,j,resizeactive,0 20
     '';
   };
 }
