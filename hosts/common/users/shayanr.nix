@@ -23,6 +23,8 @@
     useGlobalPkgs = true;
     useUserPackages = true;
 
+    extraSpecialArgs = { inherit inputs; };
+
     users.shayanr = {
       imports = [
         # Impermanence for home-manager.

@@ -1,8 +1,16 @@
-{ config, ... }:
+{ pkgs, config, inputs, ... }:
+let
+  addons = inputs.firefox-addons.packages.${pkgs.system};
+in
 {
   programs.firefox = {
     enable = true;
     profiles.shayanr = {
+      extensions = with addons; [
+        ublock-origin
+        darkreader
+        octotree
+      ];
       settings = {
         "browser.disableResetPrompt" = true;
         "browser.download.panel.shown" = true;
