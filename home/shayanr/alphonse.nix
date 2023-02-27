@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 {
   imports = [
-    # TODO: Extract nvim to be implemented in all machines
-    ./features/cli
-    ./features/desktop
+    ./features/system # Userspace system configurations.
+    ./features/cli # Command-line apps/utils.
+    ./features/desktop # Desktop apps/utils.
   ];
 
   home = {
