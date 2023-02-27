@@ -15,7 +15,7 @@
     packages = with pkgs; [
       firefox
       wlr-randr
-      cascadia-code
+      cascadia-code # TODO: Move to kitty.nix
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {
@@ -30,16 +30,6 @@
       ];
       allowOther = true;
     };
-  };
-
-  # TODO: Move to own configuration directory.
-  wayland.windowManager.hyprland = {
-    enable = true;
-    nvidiaPatches = true;
-    extraConfig = ''
-      monitor=eDP-1,1920x1080@120,0x0,1
-      bind=SUPER,Return,exec,kitty
-    '';
   };
 
   # TODO: Divide into individual feature files.
