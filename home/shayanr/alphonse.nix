@@ -61,11 +61,6 @@
       nix-direnv.enable = true;
     };
 
-    bash = {
-      enable = true;
-      enableCompletion = true;
-    };
-
     ssh = {
       enable = true;
       extraConfig = ''

@@ -1,5 +1,5 @@
 # Common home configurations for every system.
-{ config, inputs, ... }:
+{ pkgs, config, inputs, ... }:
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -10,6 +10,7 @@
     users.shayanr = {
       isNormalUser = true;
       passwordFile = config.age.secrets.shayanr-password.path;
+      shell = pkgs.zsh; # Default user shell.
       extraGroups = [ "wheel" "networkmanager" ];
 
       openssh.authorizedKeys.keys = [

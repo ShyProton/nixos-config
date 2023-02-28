@@ -2,18 +2,23 @@
 {
   # Command line programs.
   imports = [
-    ./tldr.nix # Short help-pages.
     ./nvim # Text editor.
+    ./zsh.nix # Shell.
+    ./tldr.nix # Short help-pages.
   ];
 
-  # TODO: Add aliases for the replacement utilities
   home.packages = with pkgs; [
+    # Utilities.
     age
-    btop
+
+    # Interfaces.
     ranger
-    ripgrep
+    btop
+    ncdu
+
+    # Replacements.
     bat
     exa
-    ncdu
+    ripgrep
   ];
 }
