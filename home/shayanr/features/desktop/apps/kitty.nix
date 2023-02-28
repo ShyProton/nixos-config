@@ -1,10 +1,18 @@
 { pkgs, config, ... }:
 {
+  home = {
+    packages = with pkgs; [
+      cascadia-code
+      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    ];
+
+    sessionVariables.TERMINAL = "kitty";
+  };
+
   programs.kitty = {
     enable = true;
     font = {
       name = "Cascadia Code";
-      package = (pkgs.nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; });
       size = 12;
     };
 

@@ -13,12 +13,6 @@
     homeDirectory = "/home/${config.home.username}";
     stateVersion = "22.11";
 
-    # TODO: Replace with dedicated feature modules for each package w/configs.
-    packages = with pkgs; [
-      wlr-randr
-      cascadia-code # TODO: Move to kitty.nix
-    ];
-
     persistence."/persist${config.home.homeDirectory}" = {
       # TODO: Move persistent item declarations to their respective
       # configuration directories.

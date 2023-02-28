@@ -3,9 +3,17 @@ let
   wallpaper = "Pictures/wallpapers/girl-reading-book.png";
 in
 {
-  home.packages = with pkgs; [
-    swaybg
-  ];
+  # WM Packages.
+  home = {
+    packages = with pkgs; [
+      wlr-randr
+      swaybg
+    ];
+
+    sessionVariables = {
+      HYPRLAND_LOG_WLR = 1;
+    };
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -69,6 +77,8 @@ in
 
       # Startup
       exec-once = waybar
+      exec-once = hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}
+
       exec = swaybg -i ${wallpaper} --mode fill
 
       # Program bindings

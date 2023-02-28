@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 {
   xdg = {
     userDirs = {
@@ -8,6 +8,7 @@
   };
 
   home = {
+    packages = with pkgs; [ xdg-utils ];
     persistence."/persist${config.home.homeDirectory}".directories = [
       "Desktop"
       "Documents"

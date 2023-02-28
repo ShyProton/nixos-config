@@ -36,6 +36,8 @@
     pciutils
   ];
 
+  programs.dconf.enable = true;
+
   services = {
     xserver.videoDrivers = [ "nvidia" ]; # Nvidia driver definition.
     openssh = {
