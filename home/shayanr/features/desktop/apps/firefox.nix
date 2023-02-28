@@ -23,6 +23,7 @@ in
         ublock-origin
         darkreader
         octotree
+        sidebery
       ];
       settings = {
         "browser.disableResetPrompt" = true;

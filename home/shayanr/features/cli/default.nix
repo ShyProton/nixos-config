@@ -15,6 +15,7 @@
     ranger
     btop
     ncdu
+    pulsemixer
 
     # Replacements.
     bat

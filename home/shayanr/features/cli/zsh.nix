@@ -13,4 +13,8 @@
       grep = "rg --colors=line:none --colors=line:style:bold --max-columns=150 --max-columns-preview --smart-case";
     };
   };
+
+  home.persistence."/persist${config.home.homeDirectory}".files = [
+    ".zsh_history"
+  ];
 }
