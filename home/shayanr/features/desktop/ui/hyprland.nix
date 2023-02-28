@@ -12,6 +12,11 @@ in
 
     sessionVariables = {
       HYPRLAND_LOG_WLR = 1;
+
+      # TODO: Only enable these if the host system has an nvidia card.
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      WLR_NO_HARDWARE_CURSORS = 1;
     };
   };
 

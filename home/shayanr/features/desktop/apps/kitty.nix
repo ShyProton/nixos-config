@@ -55,6 +55,8 @@
       color15 = "#${config.colorScheme.colors.base04}";
 
       background_opacity = "0.95";
+
+      cursor_shape = "beam";
     };
 
     extraConfig = ''
