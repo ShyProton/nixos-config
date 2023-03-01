@@ -164,11 +164,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1677663209,
-        "narHash": "sha256-pbxikEWO2zNCPM+xKN1h1Amla6Yx1w9O8dwSpYnmnJ8=",
+        "lastModified": 1677683675,
+        "narHash": "sha256-rH6rvTvJj++C1aF/VIaVSNDcIiKkI4gThzmA+0i1TlQ=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "72f528cb52d13d88471963a06e08dd7cfa2efffa",
+        "rev": "52878161e4bbe77ba9e73c44bab03d16356e36f7",
         "type": "github"
       },
       "original": {
@@ -288,15 +288,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1677627595,
-        "narHash": "sha256-zyD/9hWbsGRpXGFNxQxQsD1fEbg/70BxufmadsvRpBg=",
-        "owner": "pta2002",
+        "lastModified": 1677699089,
+        "narHash": "sha256-avP6O4vzWQMWq91H1MVnrc6GtSWqPE2FdaINtqsF1RM=",
+        "owner": "SaiProton",
         "repo": "nixvim",
-        "rev": "abc2d19a062d7b3150409318dbf1f77971086939",
+        "rev": "17957bc740a3fa1149ec8f92b7df4e713aae9651",
         "type": "github"
       },
       "original": {
-        "owner": "pta2002",
+        "owner": "SaiProton",
         "repo": "nixvim",
         "type": "github"
       }
