@@ -5,7 +5,11 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
-    history.save = 10000;
+
+    history = {
+      save = 10000;
+      path = "/persist${config.home.homeDirectory}/.zsh_history";
+    };
 
     shellAliases = {
       ls = "exa --header --icons";
@@ -13,8 +17,4 @@
       grep = "rg --colors=line:none --colors=line:style:bold --max-columns=150 --max-columns-preview --smart-case";
     };
   };
-
-  home.persistence."/persist${config.home.homeDirectory}".files = [
-    ".zsh_history"
-  ];
 }
