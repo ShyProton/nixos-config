@@ -57,6 +57,8 @@
       background_opacity = "0.95";
 
       cursor_shape = "beam";
+
+      enable_audio_bell = "no";
     };
 
     extraConfig = ''

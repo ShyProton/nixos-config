@@ -6,4 +6,9 @@
     ./project.nix # For setting working dir.
     ./finder.nix # For finding files.
   ];
+
+  # Plugins without extra configs.
+  programs.nixvim.plugins = {
+    comment-nvim.enable = true; # Comment toggling.
+  };
 }
