@@ -40,8 +40,24 @@
 
         sections = {
           lualine_a = [ "mode" ];
-          lualine_b = [ "branch" "diff" ];
-          lualine_c = [ "diagnostics" ];
+          lualine_b = [
+            {
+              name = "branch";
+              icon = " ";
+            }
+            "diff"
+          ];
+          lualine_c = [
+            {
+              name = "diagnostics";
+              extraConfig.symbols = {
+                hint = " ";
+                info = " ";
+                warn = " ";
+                error = " ";
+              };
+            }
+          ];
           lualine_x = [ "" ];
           lualine_y = [ "filetype" ];
           lualine_z = [ "progress" "location" ];
