@@ -4,6 +4,7 @@
   imports = [
     ./nvim # Text editor.
     ./zsh.nix # Shell.
+    ./prompt.nix # Shell prompt.
     ./tldr.nix # Short help-pages.
   ];
 

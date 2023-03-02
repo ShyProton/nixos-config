@@ -19,15 +19,6 @@
       };
     };
 
-    # TODO: Move to prompt file to be more shell-agnostic.
-    starship = {
-      enable = true;
-      enableZshIntegration = true;
-      settings = {
-        # TODO: Prompt settings.
-      };
-    };
+    starship.enableZshIntegration = true;
   };
-
-  home.sessionVariables.NIX_SHELL_PRESERVE_PROMPT = 1;
 }
