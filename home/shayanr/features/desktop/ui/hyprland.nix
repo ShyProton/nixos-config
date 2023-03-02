@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ inputs, pkgs, config, ... }:
 let
   wallpaper = "Pictures/wallpapers/girl-reading-book.png";
 in
@@ -6,6 +6,7 @@ in
   # WM Packages.
   home = {
     packages = with pkgs; [
+      inputs.hyprwm-contrib.packages.${system}.grimblast
       wlr-randr
       swaybg
     ];
@@ -104,6 +105,13 @@ in
       # Program bindings
       bind = SUPER,Return,exec,kitty
       bind = SUPER,f,exec,firefox
+
+      # Screenshots
+      bind = ,Print,exec,grimblast --notify copy output
+      bind = SHIFT,Print,exec,grimblast --notify copy active
+      bind = CONTROL,Print,exec,grimblast --notify copy screen
+      bind = SUPER,Print,exec,grimblast --notify copy window
+      bind = ALT,Print,exec,grimblast --notify copy area
 
       # WM controls
       bind = SUPERSHIFT,c,killactive

@@ -11,11 +11,12 @@
 
     # Applications.
     nixvim = {
-      url = github:SaiProton/nixvim; # HACK: Wait until PR is merged.
+      url = github:pta2002/nixvim;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland.url = github:hyprwm/Hyprland;
+    hyprwm-contrib.url = github:hyprwm/contrib;
 
     # Utilities.
     impermanence.url = github:nix-community/impermanence;
