@@ -19,6 +19,9 @@
     };
   };
 
+  # Proprietary licenses to accept.
+  nixpkgs.config.joypixels.acceptLicense = true;
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

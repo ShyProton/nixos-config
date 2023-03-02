@@ -3,6 +3,7 @@
   home = {
     packages = with pkgs; [
       cascadia-code
+      joypixels
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     ];
 
