@@ -9,6 +9,7 @@ in
       inputs.hyprwm-contrib.packages.${system}.grimblast
       wlr-randr
       swaybg
+      wl-clipboard
     ];
 
     sessionVariables = {
