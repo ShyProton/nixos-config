@@ -6,9 +6,10 @@ in
   # WM Packages.
   home = {
     packages = with pkgs; [
-      inputs.hyprwm-contrib.packages.${system}.grimblast
+      inputs.hyprwm-contrib.packages.${system}.grimblast # Screenshots.
+      swaybg # Wallpaper utility.
+
       wlr-randr
-      swaybg
       wl-clipboard
     ];
 
@@ -114,6 +115,9 @@ in
       bind = SUPER,Print,exec,grimblast --notify copy window
       bind = ALT,Print,exec,grimblast --notify copy area
 
+      # Launcher
+      bind = SUPER,a,exec,wofi -S drun
+
       # WM controls
       bind = SUPERSHIFT,c,killactive
       bind = SUPERSHIFT,q,exit
@@ -130,6 +134,8 @@ in
       bind = SUPER,l,resizeactive,20 0
       bind = SUPER,k,resizeactive,0 -20 
       bind = SUPER,j,resizeactive,0 20
+
+      blurls = waybar
     '';
   };
 }

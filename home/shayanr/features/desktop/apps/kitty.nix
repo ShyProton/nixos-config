@@ -2,7 +2,6 @@
 {
   home = {
     packages = with pkgs; [
-      cascadia-code
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     ];
 
@@ -12,6 +11,7 @@
   programs.kitty = {
     enable = true;
     font = {
+      package = pkgs.cascadia-code;
       name = "Cascadia Code";
       size = 12;
     };
@@ -53,8 +53,6 @@
       color13 = "#${config.colorScheme.colors.base0E}";
       color14 = "#${config.colorScheme.colors.base0C}";
       color15 = "#${config.colorScheme.colors.base04}";
-
-      background_opacity = "0.95";
 
       cursor_shape = "beam";
 
