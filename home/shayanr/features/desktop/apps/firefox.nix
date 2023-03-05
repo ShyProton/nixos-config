@@ -24,6 +24,7 @@ in
         darkreader
         octotree
         sidebery
+        gruvbox-dark-theme
       ];
       settings = {
         "browser.disableResetPrompt" = true;
