@@ -8,5 +8,7 @@
   home.packages = with pkgs; [
     audacity
     gimp
+    spotify
+    (discord.override { withOpenASAR = true; })
   ];
 }

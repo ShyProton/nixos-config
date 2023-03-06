@@ -63,8 +63,8 @@ in
 
         "network#strength" = {
           format-wifi = "{signalStrength}";
-          format-ethernet = "";
-          format-disconnected = "";
+          format-ethernet = "ETH";
+          format-disconnected = "0";
           tooltip-format = "{ifname} via {gwaddr}";
           tooltip-format-wifi = "{essid} ({signalStrength}%)";
           tooltip-format-ethernet = "{ifname} via ETH";

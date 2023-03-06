@@ -9,6 +9,8 @@ in
       inputs.hyprwm-contrib.packages.${system}.grimblast # Screenshots.
       swaybg # Wallpaper utility.
 
+      xorg.xprop
+
       wlr-randr
       wl-clipboard
     ];
@@ -101,6 +103,7 @@ in
       # Startup
       exec-once = waybar
       exec-once = hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}
+      exec-once = xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
 
       exec = swaybg -i ${wallpaper} --mode fill
 
@@ -135,7 +138,7 @@ in
       bind = SUPER,k,resizeactive,0 -20 
       bind = SUPER,j,resizeactive,0 20
 
-      blurls = waybar
+      env = GDK_SCALE,2
     '';
   };
 }

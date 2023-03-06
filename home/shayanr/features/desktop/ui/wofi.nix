@@ -28,7 +28,7 @@ in
         border: 1px;
         border-color: ${colors.base05};
         border-radius: 10px;
-        font-family: monospace;
+        font-family: "Roboto Mono";
         font-size: 18px;
       }
 
@@ -74,6 +74,7 @@ in
 
       #entry:selected {
         background-color: #${colors.base0D};
+        border-radius: 5px;
       }
 
       #scroll {
