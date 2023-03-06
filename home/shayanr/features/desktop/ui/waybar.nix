@@ -26,7 +26,9 @@ in
         modules-right = [
           "battery#icon"
           "battery#percentage"
-          "clock"
+          "clock#icon"
+          "clock#time"
+          "custom/power"
         ];
 
         "custom/nixos" = {
@@ -49,7 +51,7 @@ in
         "battery#icon" = {
           format = "{icon}";
           format-icons = [ "" "" "" "" "" "" "" "" "" "" "" ];
-          format-charging = "󰂄";
+          format-plugged = "󰂄";
           format-full = "󱈑";
           states = {
             warning = 25;
@@ -60,26 +62,34 @@ in
 
         "battery#percentage" = {
           format = "{capacity}";
+          tooltip = false; # TODO: Make tooltip estimated battery time.
+        };
+
+        "clock#icon" = {
+          format = "󰥔";
           tooltip = false;
         };
 
-        clock = {
-          format = "{:%H\n%M}";
+        "clock#time" = {
+          format = "{:%I\n%M}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        };
+
+        "custom/power" = {
+          format = "⏻";
         };
       };
     };
 
     style = ''
       window#waybar {
+        color: #${colors.base00};
         background-color: #${colors.base02};
-        opacity: 0.95;
         border-radius: 0 5px 5px 0;
         font-family: "Roboto Mono";
       }
 
       #custom-nixos {
-        color: #${colors.base00};
         background-image: linear-gradient(
           -45deg,
           #${colors.base0C} 0%, #${colors.base0D} 100%
@@ -120,10 +130,38 @@ in
         border-radius: 0 0 5px 0;
       }
 
-      #battery.charging:not(.percentage) {
+      #battery.plugged:not(.percentage) {
         /* HACK: Fixes oddity where charging icon is slightly smaller */
         font-size: 2.2em;
         padding: 3px 0 0 0;
+      }
+
+      #battery.full:not(.percentage) {
+        /* HACK: Fixes oddity where charging icon is slightly smaller */
+        font-size: 2.2em;
+        padding: 3px 0 0 0;
+      }
+
+      #clock.icon {
+        background-color: #${colors.base05};
+        font-size: 1.8em;
+        margin-top: 10px;
+        padding-top: 5px;
+        border-radius: 0 5px 0 0;
+      }
+
+      #clock.time {
+        background-color: #${colors.base05};
+        font-weight: bold;
+        border-radius: 0 0 5px 0;
+      }
+
+      #custom-power {
+        background-color: #${colors.base08};
+        font-size: 1.5em;
+        border-radius: 0 5px 5px 0;
+        margin-top: 10px;
+        padding: 10px 0;
       }
     '';
   };
