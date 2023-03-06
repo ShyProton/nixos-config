@@ -80,7 +80,7 @@ in
         };
 
         "memory#usage" = {
-          format = "{used}";
+          format = "{percentage}%";
           max-length = 4;
         };
 
@@ -108,7 +108,7 @@ in
         "network#strength" = {
           format-wifi = "{signalStrength}%";
           format-ethernet = "ETH";
-          format-disconnected = "0";
+          format-disconnected = "NONE";
           tooltip-format = "{ifname} via {gwaddr}";
           tooltip-format-wifi = "{essid} ({signalStrength}%)";
           tooltip-format-ethernet = "{ifname} via ETH";
@@ -155,8 +155,7 @@ in
     style = ''
       window#waybar {
         color: #${colors.base00};
-        background-color: #${colors.base02};
-        border-radius: 0 5px 5px 0;
+        background-color: rgba(0, 0, 0, 0.25);
         font-family: "Roboto Mono";
       }
 
