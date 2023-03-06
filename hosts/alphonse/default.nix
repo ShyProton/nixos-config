@@ -30,10 +30,14 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  # TODO: Extract these as common packages.
   environment.systemPackages = with pkgs; [
     vim
     wget
     pciutils
+    psmisc
+    zip
+    unzip
   ];
 
   programs.dconf.enable = true;
@@ -68,8 +72,6 @@
     };
   };
 
-
-  # TODO: Probably do this using overlays
   security.sudo = {
     package = pkgs.sudo.override {
       withInsults = true;

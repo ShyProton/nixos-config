@@ -24,7 +24,8 @@ in
         ];
 
         modules-right = [
-          "battery"
+          "battery#icon"
+          "battery#percentage"
           "clock"
         ];
 
@@ -45,10 +46,21 @@ in
           };
         };
 
-        battery = {
-          format = "{icon}\n{capacity}%";
+        "battery#icon" = {
+          format = "{icon}";
           format-icons = [ "" "" "" "" "" "" "" "" "" "" "" ];
           format-charging = "󰂄";
+          format-full = "󱈑";
+          states = {
+            warning = 25;
+            critical = 10;
+          };
+          tooltip = false;
+        };
+
+        "battery#percentage" = {
+          format = "{capacity}";
+          tooltip = false;
         };
 
         clock = {
@@ -61,12 +73,17 @@ in
     style = ''
       window#waybar {
         background-color: #${colors.base02};
+        opacity: 0.95;
         border-radius: 0 5px 5px 0;
+        font-family: "Roboto Mono";
       }
 
       #custom-nixos {
         color: #${colors.base00};
-        background-color: #${colors.base0D};
+        background-image: linear-gradient(
+          -45deg,
+          #${colors.base0C} 0%, #${colors.base0D} 100%
+        );
         font-size: 1.5em;
         border-radius: 0 5px 5px 0;
         padding: 10px 0;
@@ -77,6 +94,7 @@ in
         font-size: 1em;
         border-radius: 5px;
         margin-top: 10px;
+        border-radius: 0 5px 5px 0;
       }
 
       #workspaces button {
@@ -87,6 +105,25 @@ in
 
       #workspaces button.focused {
         color: #${colors.base01};
+      }
+
+      #battery.icon {
+        font-size: 1.8em;
+        background-color: #${colors.base0B};
+        padding: 5px 0 3px 0;
+        border-radius: 0 5px 0 0;
+      }
+
+      #battery.percentage {
+        font-weight: bold;
+        background-color: #${colors.base0B};
+        border-radius: 0 0 5px 0;
+      }
+
+      #battery.charging:not(.percentage) {
+        /* HACK: Fixes oddity where charging icon is slightly smaller */
+        font-size: 2.2em;
+        padding: 3px 0 0 0;
       }
     '';
   };
