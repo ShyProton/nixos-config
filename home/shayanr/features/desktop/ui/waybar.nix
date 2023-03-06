@@ -24,6 +24,8 @@ in
         ];
 
         modules-right = [
+          "network#icon"
+          "network#strength"
           "battery#icon"
           "battery#percentage"
           "clock#icon"
@@ -46,6 +48,27 @@ in
             default = "";
             urgent = "";
           };
+        };
+
+        "network#icon" = {
+          format = "{icon}";
+          format-icons = [ "󰤟" "󰤢" "󰤥" "󰤨" ];
+          format-ethernet = "󰈀";
+          format-disconnected = "󰤭";
+          tooltip-format = "{ifname} via {gwaddr}";
+          tooltip-format-wifi = "{essid} ({signalStrength}%)";
+          tooltip-format-ethernet = "{ifname} via ETH";
+          tooltip-format-disconnected = "Disconnected";
+        };
+
+        "network#strength" = {
+          format-wifi = "{signalStrength}";
+          format-ethernet = "";
+          format-disconnected = "";
+          tooltip-format = "{ifname} via {gwaddr}";
+          tooltip-format-wifi = "{essid} ({signalStrength}%)";
+          tooltip-format-ethernet = "{ifname} via ETH";
+          tooltip-format-disconnected = "Disconnected";
         };
 
         "battery#icon" = {
@@ -117,11 +140,24 @@ in
         color: #${colors.base01};
       }
 
+      #network.icon {
+        font-size: 1.8em;
+        background-color: #${colors.base0D};
+        border-radius: 0 5px 0 0;
+      }
+
+      #network.strength {
+        background-color: #${colors.base0D};
+        border-radius: 0 0 5px 0;
+        font-weight: bold;
+      }
+
       #battery.icon {
         font-size: 1.8em;
         background-color: #${colors.base0B};
         padding: 5px 0 3px 0;
         border-radius: 0 5px 0 0;
+        margin-top: 10px;
       }
 
       #battery.percentage {
@@ -146,7 +182,6 @@ in
         background-color: #${colors.base05};
         font-size: 1.8em;
         margin-top: 10px;
-        padding-top: 5px;
         border-radius: 0 5px 0 0;
       }
 
