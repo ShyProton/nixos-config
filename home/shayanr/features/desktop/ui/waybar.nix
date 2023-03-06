@@ -75,6 +75,7 @@ in
           format = "{icon}";
           format-icons = [ "" "" "" "" "" "" "" "" "" "" "" ];
           format-plugged = "󰂄";
+          format-charging = "󰂄";
           format-full = "󱈑";
           states = {
             warning = 25;
@@ -167,6 +168,12 @@ in
       }
 
       #battery.plugged:not(.percentage) {
+        /* HACK: Fixes oddity where charging icon is slightly smaller */
+        font-size: 2.2em;
+        padding: 3px 0 0 0;
+      }
+
+      #battery.charging:not(.percentage) {
         /* HACK: Fixes oddity where charging icon is slightly smaller */
         font-size: 2.2em;
         padding: 3px 0 0 0;
