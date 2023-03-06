@@ -24,6 +24,14 @@ in
         ];
 
         modules-right = [
+          "cpu#icon"
+          "cpu#usage"
+          "custom/seperator#sep1"
+          "memory#icon"
+          "memory#usage"
+          "custom/seperator#sep2"
+          "temperature#icon"
+          "temperature#temp"
           "network#icon"
           "network#strength"
           "battery#icon"
@@ -50,6 +58,42 @@ in
           };
         };
 
+        "cpu#icon" = {
+          format = "󰍛";
+        };
+
+        "cpu#usage" = {
+          format = "{usage}%";
+          max-length = 4;
+        };
+
+        "custom/seperator#sep1" = {
+          format = "───";
+        };
+
+        "custom/seperator#sep2" = {
+          format = "───";
+        };
+
+        "memory#icon" = {
+          format = "";
+        };
+
+        "memory#usage" = {
+          format = "{used}";
+          max-length = 4;
+        };
+
+        "temperature#icon" = {
+          format = "{icon}";
+          format-icons = [ "" "" "" "" "" ];
+        };
+
+        "temperature#temp" = {
+          format = "{temperatureC}C";
+          max-length = 4;
+        };
+
         "network#icon" = {
           format = "{icon}";
           format-icons = [ "󰤟" "󰤢" "󰤥" "󰤨" ];
@@ -62,13 +106,14 @@ in
         };
 
         "network#strength" = {
-          format-wifi = "{signalStrength}";
+          format-wifi = "{signalStrength}%";
           format-ethernet = "ETH";
           format-disconnected = "0";
           tooltip-format = "{ifname} via {gwaddr}";
           tooltip-format-wifi = "{essid} ({signalStrength}%)";
           tooltip-format-ethernet = "{ifname} via ETH";
           tooltip-format-disconnected = "Disconnected";
+          max-length = 4;
         };
 
         "battery#icon" = {
@@ -85,8 +130,9 @@ in
         };
 
         "battery#percentage" = {
-          format = "{capacity}";
+          format = "{capacity}%";
           tooltip = false; # TODO: Make tooltip estimated battery time.
+          max-length = 4;
         };
 
         "clock#icon" = {
@@ -105,6 +151,7 @@ in
       };
     };
 
+    # TODO Condense this better with the use of classes.
     style = ''
       window#waybar {
         color: #${colors.base00};
@@ -141,10 +188,53 @@ in
         color: #${colors.base01};
       }
 
+      #cpu.icon {
+        font-size: 1.8em;
+        background-color: #${colors.base0A};
+        border-radius: 0 5px 0 0;
+      }
+
+      #cpu.usage {
+        background-color: #${colors.base0A};
+        font-weight: bold;
+      }
+
+      #custom-seperator.sep1 {
+        background-image: linear-gradient(180deg, #${colors.base0A} 0%, #${colors.base09} 100%);
+        font-weight: bold;
+      }
+
+      #memory.icon {
+        font-size: 1.8em;
+        background-color: #${colors.base09};
+      }
+
+      #memory.usage {
+        background-color: #${colors.base09};
+        font-weight: bold;
+      }
+
+      #custom-seperator.sep2 {
+        background-image: linear-gradient(180deg, #${colors.base09} 0%, #${colors.base08} 100%);
+        font-weight: bold;
+      }
+
+      #temperature.icon {
+        font-size: 1.8em;
+        background-color: #${colors.base08};
+      }
+
+      #temperature.temp {
+        background-color: #${colors.base08};
+        border-radius: 0 0 5px 0;
+        font-weight: bold;
+      }
+
       #network.icon {
         font-size: 1.8em;
         background-color: #${colors.base0D};
         border-radius: 0 5px 0 0;
+        margin-top: 10px;
       }
 
       #network.strength {
