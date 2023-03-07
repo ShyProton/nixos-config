@@ -136,6 +136,8 @@ in
       bind = SUPER,j,resizeactive,0 20
 
       windowrulev2 = tile, class:^(Spotify)$
+      windowrulev2 = float, class:^(pavucontrol)$
+      windowrulev2 = float, class:^(.blueman-manager-wrapped)$
 
       blurls = waybar
     '';

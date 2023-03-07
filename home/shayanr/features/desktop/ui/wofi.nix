@@ -86,6 +86,20 @@ in
         margin: 0px;
         padding: 2px 2px 2px 10px;
       }
+
+      #text:selected {
+        color: #${colors.base00};
+        background-color: #${colors.base0D};
+        font-weight: bold;
+      }
+
+      #img {
+        border-radius: 5px;
+      }
+
+      #img:selected {
+        background-color: #${colors.base0D};
+      }
     '';
   };
 }

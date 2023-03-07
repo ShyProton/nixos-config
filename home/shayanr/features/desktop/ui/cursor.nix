@@ -14,11 +14,8 @@
     };
   };
 
-  gtk = {
-    enable = true; # TODO: Move to dedicated gtk.nix file.
-    cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      size = 22;
-    };
+  gtk.cursorTheme = {
+    name = "Bibata-Modern-Classic";
+    size = 22;
   };
 }
