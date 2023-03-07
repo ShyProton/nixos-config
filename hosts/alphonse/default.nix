@@ -11,6 +11,7 @@
 
     # Optional features.
     ../common/optional/persistence/btrfs.nix # Type of opt-in persistence.
+    ../common/optional/pipewire.nix # Pipewire for audio/video multimedia.
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -26,10 +27,6 @@
 
   time.timeZone = "Canada/Eastern";
 
-  # TODO: Enable pipewire for sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
   # TODO: Extract these as common packages.
   environment.systemPackages = with pkgs; [
     vim
@@ -43,6 +40,7 @@
   programs.dconf.enable = true;
 
   services = {
+    blueman.enable = true;
     xserver.videoDrivers = [ "nvidia" ]; # Nvidia driver definition.
     openssh = {
       enable = true;
@@ -60,6 +58,7 @@
   };
 
   hardware = {
+    bluetooth.enable = true;
     opengl.enable = true;
     nvidia = {
       modesetting.enable = true;

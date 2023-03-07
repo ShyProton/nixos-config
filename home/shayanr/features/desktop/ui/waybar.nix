@@ -155,7 +155,7 @@ in
     style = ''
       window#waybar {
         color: #${colors.base00};
-        background-color: rgba(0, 0, 0, 0.25);
+        background: shade(alpha(#${colors.base00}, 0.25), 0.25);
         font-family: "Roboto Mono";
       }
 

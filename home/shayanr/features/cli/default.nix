@@ -16,7 +16,7 @@
     ranger
     btop
     ncdu
-    pulsemixer
+    pavucontrol
 
     # Replacements.
     bat
