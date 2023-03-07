@@ -91,11 +91,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1678109477,
-        "narHash": "sha256-JC2I+ec4pTT1IPkJ6ToiDmig1jFD2yDSHZ1KzPpxepw=",
+        "lastModified": 1678161763,
+        "narHash": "sha256-YrTPUJNKnzDhs4yMQJFsBCcKfeIdbqiBqDBhL/Ae5Rg=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "efbd7bd941acb563eb34cec94ba2ef4868a154f2",
+        "rev": "ddbb16ffd6a4ea09e3ff68af92cef8024455301e",
         "type": "gitlab"
       },
       "original": {
@@ -217,11 +217,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1678093429,
-        "narHash": "sha256-TDegkSVDSTwOi9j1tc84xiIctxYwgt4kBLfKu88cjlQ=",
+        "lastModified": 1678199050,
+        "narHash": "sha256-4U0UDjSKcFgThNDY3JRf0D98sB4dqOiqqlbTGpKJ6hE=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "4f647a8e8be78d3817f126e41940bef49e81232e",
+        "rev": "a85a6fa6c8ff9e51ba774cec112b408bce601451",
         "type": "github"
       },
       "original": {
@@ -368,11 +368,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1677932085,
-        "narHash": "sha256-+AB4dYllWig8iO6vAiGGYl0NEgmMgGHpy9gzWJ3322g=",
+        "lastModified": 1678111249,
+        "narHash": "sha256-ZTIbK7vthZwti5XeLZE+twkb4l44q01q2XoLMmmJe94=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3c5319ad3aa51551182ac82ea17ab1c6b0f0df89",
+        "rev": "a028e2873d7fcf44e66b784b4ba061824315537f",
         "type": "github"
       },
       "original": {
@@ -392,11 +392,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1678115176,
-        "narHash": "sha256-uQ16lon2tDtzwgpX0CmNus7//xvO+bV8iPvr2jKwOvE=",
+        "lastModified": 1678214620,
+        "narHash": "sha256-kl+glaHyGnezdttcX0HacxKqukhztXwJ23VA5i1HIRI=",
         "owner": "pta2002",
         "repo": "nixvim",
-        "rev": "2c333c86d08218af1bdcad39be58ee2bacd991fa",
+        "rev": "09890171455cb313b3438c06114d6213e1d2f335",
         "type": "github"
       },
       "original": {
@@ -467,7 +467,28 @@
         "impermanence": "impermanence",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_3",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "spicetify-nix": "spicetify-nix"
+      }
+    },
+    "spicetify-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1675736383,
+        "narHash": "sha256-fjQmN3pYGstBNHCFdmPzDf1/Dt04v3b7+/w4cQ4gkKo=",
+        "owner": "the-argus",
+        "repo": "spicetify-nix",
+        "rev": "ec85c2a2f5d1035142b8e383cc77b68bb0b9ebc8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "the-argus",
+        "repo": "spicetify-nix",
+        "type": "github"
       }
     },
     "utils": {
