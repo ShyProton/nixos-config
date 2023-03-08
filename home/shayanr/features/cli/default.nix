@@ -5,6 +5,7 @@
     ./nvim # Text editor.
     ./zsh.nix # Shell.
     ./prompt.nix # Shell prompt.
+    ./git.nix # Git version control.
     ./tldr.nix # Short help-pages.
   ];
 
