@@ -55,10 +55,21 @@
           codeAction = "";
         };
       };
+
+      trouble = {
+        enable = true;
+        signs = {
+          error = " ";
+          warning = " ";
+          hint = " ";
+          information = " ";
+        };
+      };
     };
 
     maps.normal = {
       "<leader>o".action = "<cmd>Lspsaga outline<cr>";
+      "<leader>xd".action = "<cmd>Trouble workspace_diagnostics<cr>";
 
       "<S-k>".action = "<cmd>Lspsaga hover_doc<cr>";
       "<A-k>".action = "<cmd>Lspsaga show_line_diagnostics<cr>";
