@@ -2,7 +2,7 @@
 {
   imports = [
     ./hyprland # WM+Compositor
-    ./waybar.nix # Desktop bar.
+    ./waybar # Desktop bar.
     ./wofi.nix # App launcher.
     ./gtk.nix # GTK configurations.
     ./cursor.nix # Cursor theme.
