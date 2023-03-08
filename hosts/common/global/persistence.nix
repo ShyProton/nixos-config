@@ -15,6 +15,7 @@
 
       "/var/log"
       "/var/lib/systemd"
+      "/var/lib/bluetooth" # Persist bluetooth connections.
 
       "/srv"
     ];

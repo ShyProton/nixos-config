@@ -46,7 +46,6 @@ in
         gaps_in = 5
         gaps_out = 10
         border_size = 1
-        cursor_inactive_timeout = 4
 
         col.active_border=0xff${config.colorScheme.colors.base05}
         col.inactive_border=0xff${config.colorScheme.colors.base03}
