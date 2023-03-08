@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hyprland.nix # WM+Compositor
+    ./hyprland # WM+Compositor
     ./waybar.nix # Desktop bar.
     ./wofi.nix # App launcher.
     ./gtk.nix # GTK configurations.
