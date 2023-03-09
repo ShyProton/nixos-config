@@ -3,6 +3,7 @@
   programs.nixvim.plugins = {
     nvim-autopairs.enable = true;
     nvim-colorizer.enable = true;
+
     indent-blankline = {
       enable = true;
       useTreesitter = true;
@@ -22,6 +23,11 @@
         "Trouble"
       ];
       contextHighlightList = [ "ContextHighlight" ];
+    };
+
+    todo-comments = {
+      enable = true;
+      guiStyle.fg = "BOLD";
     };
   };
 }

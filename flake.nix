@@ -11,7 +11,7 @@
 
     # Applications.
     nixvim = {
-      url = github:pta2002/nixvim;
+      url = github:SaiProton/nixvim;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
