@@ -1,5 +1,5 @@
 # Hyprland configuration settings.
-{ config, wallpaper, ...}:
+{ config, wallpaper, ... }:
 ''
   general {
     gaps_in = 5
@@ -71,6 +71,15 @@
   bind = CONTROL, Print, exec, grimblast --notify copy screen
   bind = SUPER, Print, exec, grimblast --notify copy window
   bind = ALT, Print, exec, grimblast --notify copy area
+
+  # Function keys
+  bind = , XF86MonBrightnessUp, exec, light -A 10
+  bind = , XF86MonBrightnessDown, exec, light -U 10
+
+  bind = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
+  bind = , XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
+  bind = , XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
+  bind = , XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
   # Launcher
   bind = SUPER, a, exec, wofi -S drun

@@ -14,6 +14,7 @@
     ../common/optional/pipewire.nix # Pipewire for audio/video multimedia.
   ];
 
+  # TODO: Move to common.
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
     systemd-boot.enable = true;
@@ -22,12 +23,12 @@
 
   networking = {
     hostName = "alphonse";
-    networkmanager.enable = true;
+    networkmanager.enable = true; # TODO: Move NetworkManager configs to optional.
   };
 
   time.timeZone = "Canada/Eastern";
 
-  # TODO: Extract these as common packages.
+  # TODO: Move to common.
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -37,11 +38,15 @@
     unzip
   ];
 
-  programs.dconf.enable = true;
+  programs = {
+    dconf.enable = true; # TODO: Move to common.
+    light.enable = true; # Backlight control.
+  };
 
   services = {
-    blueman.enable = true;
+    blueman.enable = true; # TODO: Move bluetooth configs to optional.
     xserver.videoDrivers = [ "nvidia" ]; # Nvidia driver definition.
+    # TODO: Move to common.
     openssh = {
       enable = true;
       hostKeys = [
@@ -71,6 +76,7 @@
     };
   };
 
+  # TODO: Move to common.
   security.sudo = {
     package = pkgs.sudo.override {
       withInsults = true;
