@@ -1,21 +1,9 @@
 {
   imports = [
-    ./age.nix
-    ./persistence.nix
+    ./nix.nix # Nix configurations.
+    ./sudo.nix # Sudo configurations.
+    ./packages.nix # Packages for all machines.
+    ./age.nix # Secret management.
+    ./persistence.nix # Opt-in persistence configurations.
   ];
-
-  nixpkgs.config.allowUnfree = true;
-
-  nix = {
-    settings = {
-      warn-dirty = false;
-      auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-
-    gc = {
-      automatic = true;
-      dates = "weekly";
-    };
-  };
 }

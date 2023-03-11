@@ -10,7 +10,6 @@
   environment.persistence."/persist" = {
     hideMounts = true;
     directories = [
-      "/etc/NetworkManager/system-connections"
       "/etc/ssh"
 
       "/var/log"

@@ -1,5 +1,4 @@
 { config, pkgs, inputs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix # Machine-specific hardware.
@@ -10,38 +9,15 @@
     ../common/users/shayanr.nix
 
     # Optional features.
+    ../common/optional/boot/efi.nix # Boot configurations for EFI systems.
     ../common/optional/persistence/btrfs.nix # Type of opt-in persistence.
+    ../common/optional/networkmanager.nix # NetworkManager configurations.
     ../common/optional/pipewire.nix # Pipewire for audio/video multimedia.
+    ../common/optional/backlight.nix # Screen backlight configurations.
   ];
 
-  # TODO: Move to common.
-  # Use the systemd-boot EFI boot loader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-
-  networking = {
-    hostName = "alphonse";
-    networkmanager.enable = true; # TODO: Move NetworkManager configs to optional.
-  };
-
+  networking.hostName = "alphonse";
   time.timeZone = "Canada/Eastern";
-
-  # TODO: Move to common.
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    pciutils
-    psmisc
-    zip
-    unzip
-  ];
-
-  programs = {
-    dconf.enable = true; # TODO: Move to common.
-    light.enable = true; # Backlight control.
-  };
 
   services = {
     blueman.enable = true; # TODO: Move bluetooth configs to optional.
@@ -74,17 +50,6 @@
         nvidiaBusId = "PCI:1:0:0";
       };
     };
-  };
-
-  # TODO: Move to common.
-  security.sudo = {
-    package = pkgs.sudo.override {
-      withInsults = true;
-    };
-
-    extraConfig = ''
-      Defaults lecture = never
-    '';
   };
 
   # Hyprland package cache.
