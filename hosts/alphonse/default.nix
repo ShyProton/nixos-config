@@ -13,6 +13,7 @@
     ../common/optional/persistence/btrfs.nix # Type of opt-in persistence.
     ../common/optional/networkmanager.nix # NetworkManager configurations.
     ../common/optional/pipewire.nix # Pipewire for audio/video multimedia.
+    ../common/optional/bluetooth.nix # Bluetooth configurations.
     ../common/optional/backlight.nix # Screen backlight configurations.
   ];
 
@@ -20,26 +21,11 @@
   time.timeZone = "Canada/Eastern";
 
   services = {
-    blueman.enable = true; # TODO: Move bluetooth configs to optional.
+    blueman.enable = true;
     xserver.videoDrivers = [ "nvidia" ]; # Nvidia driver definition.
-    # TODO: Move to common.
-    openssh = {
-      enable = true;
-      hostKeys = [
-        {
-          path = "/persist/etc/ssh/ssh_host_ed25519_key";
-          type = "ed25519";
-        }
-        {
-          path = "/persist/etc/ssh/ssh_host_rsa_key";
-          type = "rsa";
-        }
-      ];
-    };
   };
 
   hardware = {
-    bluetooth.enable = true;
     opengl.enable = true;
     nvidia = {
       modesetting.enable = true;
@@ -60,4 +46,3 @@
 
   system.stateVersion = "22.11";
 }
-
