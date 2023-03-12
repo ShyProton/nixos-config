@@ -35,20 +35,9 @@ in
 
     extraSpecialArgs = { inherit inputs; };
 
-    users.shayanr = {
-      imports = [
-        # Impermanence for home-manager.
-        inputs.impermanence.nixosModules.home-manager.impermanence
-        # Declarative Neovim configuration.
-        inputs.nixvim.homeManagerModules.nixvim
-        # Declarative system colorscheme.
-        inputs.nix-colors.homeManagerModule
-        # Window manager.
-        inputs.hyprland.homeManagerModules.default
-
-        # Home configurations.
-        ../../../home/shayanr/${config.networking.hostName}.nix
-      ];
-    };
+    users.shayanr.imports = [
+      # Home configurations.
+      ../../../home/shayanr/${config.networking.hostName}.nix
+    ];
   };
 }

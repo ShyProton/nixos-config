@@ -1,6 +1,11 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, ... }:
 {
   imports = [
+    # Impermanence for home-manager.
+    inputs.impermanence.nixosModules.home-manager.impermanence
+    # Declarative system colorscheme.
+    inputs.nix-colors.homeManagerModule
+
     ./features/system # Userspace system configurations.
     ./features/cli # Command-line apps/utils.
     ./features/desktop # Desktop apps/utils.
@@ -14,19 +19,15 @@
     stateVersion = "22.11";
 
     persistence."/persist${config.home.homeDirectory}" = {
-      # TODO: Move persistent item declarations to their respective
-      # configuration directories.
+      allowOther = true;
       directories = [
         ".dotfiles"
         ".ssh"
         ".cache"
-        ".config/gh"
       ];
-      allowOther = true;
     };
   };
 
-  # TODO: Divide into individual feature files.
   programs = {
     home-manager.enable = true;
 

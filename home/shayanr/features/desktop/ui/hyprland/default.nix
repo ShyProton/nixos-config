@@ -3,6 +3,10 @@ let
   wallpaper = "Pictures/wallpapers/girl-reading-book.png";
 in
 {
+  imports = [
+    inputs.hyprland.homeManagerModules.default
+  ];
+
   # WM Packages.
   home = {
     packages = with pkgs; [

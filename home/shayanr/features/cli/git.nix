@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs = {
     git = {
@@ -27,4 +27,8 @@
       };
     };
   };
+
+  home.persistence."/persist${config.home.homeDirectory}".directories = [
+    ".config/gh"
+  ];
 }
