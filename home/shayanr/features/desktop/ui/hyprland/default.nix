@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }:
+{ inputs, pkgs, config, osConfig, lib, ... }:
 let
   wallpaper = "Pictures/wallpapers/girl-reading-book.png";
 in
@@ -17,34 +17,30 @@ in
       wl-clipboard
     ];
 
-    sessionVariables = {
-      HYPRLAND_LOG_WLR = 1;
+    sessionVariables = lib.mkMerge [
+      {
+        HYPRLAND_LOG_WLR = 1;
+      }
 
-      # TODO: Only enable these if the host system has nvidia.
-      LIBVA_DRIVER_NAME = "nvidia";
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-      WLR_NO_HARDWARE_CURSORS = 1;
-    };
-  };
-
-  # Automatically enter Hyprland when logging into tty1.
-  programs.zsh = {
-    loginExtra = ''
-      if [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland &> /dev/null
-      fi
-    '';
-
-    profileExtra = ''
-      if [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland &> /dev/null
-      fi
-    '';
+      # Conditionally add extra session variables if the system has nvidia.
+      (lib.mkIf
+        (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
+        {
+          LIBVA_DRIVER_NAME = "nvidia";
+          __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+          WLR_NO_HARDWARE_CURSORS = 1;
+        }
+      )
+    ];
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
-    nvidiaPatches = true; # TODO: Only enable if the host system has nvidia.
+    # Enable nvidia patches if the system has the nvidia driver.
+    nvidiaPatches = lib.mkIf
+      (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
+      true;
+
     extraConfig = import ./config.nix { inherit config wallpaper; };
   };
 }
