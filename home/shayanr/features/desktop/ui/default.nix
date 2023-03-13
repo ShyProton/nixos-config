@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hyprland # WM+Compositor
-    ./waybar # Desktop bar.
-    ./wofi.nix # App launcher.
+    ./wayland # Wayland WM.
     ./gtk.nix # GTK configurations.
     ./cursor.nix # Cursor theme.
   ];
