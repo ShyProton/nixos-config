@@ -59,6 +59,7 @@
   # Startup
   exec-once = waybar
   exec-once = hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}
+  exec-once = swayidle -w
 
   exec = swaybg -i ${wallpaper} --mode fill
 

@@ -29,6 +29,9 @@ in
     };
   };
 
+  # NOTE: Required for swaylock to function properly without the sway module.
+  security.pam.services.swaylock = { };
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
