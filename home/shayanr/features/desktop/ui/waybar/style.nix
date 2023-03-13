@@ -135,6 +135,13 @@
     border-radius: 0 0 5px 0;
   }
 
+  #tray {
+    background-color: #${colors.base00};
+    border-radius: 0 5px 5px 0;
+    padding: 2px 0 2px 0;
+    margin-top: 10px;
+  }
+
   #custom-power {
     background-color: #${colors.base08};
     font-size: 1.5em;

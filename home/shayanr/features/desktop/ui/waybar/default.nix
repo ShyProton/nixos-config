@@ -35,6 +35,7 @@
           "battery#percentage"
           "clock#icon"
           "clock#time"
+          "tray"
           "custom/power"
         ];
 
@@ -140,6 +141,11 @@
         "clock#time" = {
           format = "{:%I\n%M}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        };
+
+        "tray" = {
+          icon-size = 21;
+          spacing = 10;
         };
 
         "custom/power" = {

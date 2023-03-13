@@ -22,6 +22,9 @@
         "<C-Down>".action = "<cmd>resize -2<cr>";
         "<C-Right>".action = "<cmd>vertical resize +2<cr>";
         "<C-Left>".action = "<cmd>vertical resize -2<cr>";
+
+        # Close buffer.
+        "<C-x>".action = "<cmd>bd<cr>";
       };
     };
   };
