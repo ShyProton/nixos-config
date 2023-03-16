@@ -21,6 +21,7 @@
         ];
 
         modules-right = [
+          "mpris"
           "pulseaudio#icon"
           "pulseaudio#volume"
           "cpu#icon"
@@ -55,6 +56,20 @@
             active = "";
             default = "";
             urgent = "";
+          };
+        };
+
+        "mpris" = {
+          format = "{player_icon}\n{status_icon}";
+          player-icons = {
+            default = "";
+            spotify = "";
+            firefox = "󰈹";
+          };
+          status-icons = {
+            paused = "󰐊";
+            playing = "󰏤";
+            stopped = "";
           };
         };
 

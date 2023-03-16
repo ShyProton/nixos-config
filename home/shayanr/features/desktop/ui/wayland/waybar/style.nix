@@ -1,4 +1,4 @@
-# TODO Condense this better with the use of classes.
+# TODO: Condense this better with the use of classes.
 { colors, ... }:
 ''
   window#waybar {
@@ -35,14 +35,30 @@
     color: #${colors.base01};
   }
 
+  #mpris {
+    font-size: 1.8em;
+    padding-top: 3px;
+    border-radius: 0 5px 5px 0;
+  }
+
+  #mpris.spotify {
+    background-color: #${colors.base0B};
+  }
+
+  #mpris.firefox {
+    background-color: #${colors.base09}
+  }
+
   #pulseaudio.icon {
     font-size: 1.8em;
     background-color: #${colors.base0E};
     border-radius: 0 5px 0 0;
+    margin-top: 10px;
   }
 
   #pulseaudio.volume {
     background-color: #${colors.base0E};
+    border-radius: 0 0 5px 0;
     font-weight: bold;
   }
 
