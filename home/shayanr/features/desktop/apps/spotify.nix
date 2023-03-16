@@ -7,9 +7,12 @@ in
     inputs.spicetify-nix.homeManagerModule
   ];
 
-  home.persistence."/persist${config.home.homeDirectory}".directories = [
-    ".config/spotify"
-  ];
+  home = {
+    packages = with pkgs; [ playerctl ];
+    persistence."/persist${config.home.homeDirectory}".directories = [
+      ".config/spotify"
+    ];
+  };
 
   xdg.desktopEntries.spotify = {
     name = "Spotify";
@@ -26,4 +29,6 @@ in
     theme = spicePkgs.themes.Onepunch;
     colorScheme = "dark";
   };
+
+  services.playerctld.enable = true;
 }

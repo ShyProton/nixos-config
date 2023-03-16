@@ -21,6 +21,8 @@
         ];
 
         modules-right = [
+          "pulseaudio#icon"
+          "pulseaudio#volume"
           "cpu#icon"
           "cpu#usage"
           "custom/seperator#sep1"
@@ -54,6 +56,32 @@
             default = "";
             urgent = "";
           };
+        };
+
+        # NOTE: Using pulseaudio module since wireplumber has errors.
+        # WARN: Sets scroll-step to 0 since scrolling causes crashes.
+        "pulseaudio#icon" = {
+          format = "{icon}";
+          format-icons = {
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
+            default = [ "󰕿" "󰖀" "󰕾" ];
+          };
+          format-muted = "󰖁";
+          format-bluetooth = "󰂰";
+          on-click = "pavucontrol";
+          scroll-step = 0;
+        };
+
+        "pulseaudio#volume" = {
+          format = "{volume}%";
+          max-length = 4;
+          onclick = "pavucontrol";
+          scroll-step = 0;
         };
 
         "cpu#icon" = {

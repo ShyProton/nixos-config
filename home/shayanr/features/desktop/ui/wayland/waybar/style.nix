@@ -35,10 +35,22 @@
     color: #${colors.base01};
   }
 
+  #pulseaudio.icon {
+    font-size: 1.8em;
+    background-color: #${colors.base0E};
+    border-radius: 0 5px 0 0;
+  }
+
+  #pulseaudio.volume {
+    background-color: #${colors.base0E};
+    font-weight: bold;
+  }
+
   #cpu.icon {
     font-size: 1.8em;
     background-color: #${colors.base0A};
     border-radius: 0 5px 0 0;
+    margin-top: 10px;
   }
 
   #cpu.usage {
