@@ -121,8 +121,7 @@
         };
 
         "memory#usage" = {
-          format = "{percentage}%";
-          max-length = 4;
+          format = "{used:0.1f}\nGiB";
         };
 
         "temperature#icon" = {

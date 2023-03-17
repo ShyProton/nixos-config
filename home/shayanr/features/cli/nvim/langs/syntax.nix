@@ -10,7 +10,7 @@
     autoCmd = [
       {
         event = [ "FileType" ];
-        pattern = [ "nix" ];
+        pattern = [ "nix" "html" "css" "js" "json" ];
         command = "setlocal tabstop=2 shiftwidth=2";
       }
       {
