@@ -1,5 +1,8 @@
-{ config, lib, ... }:
-{
+{ pkgs, config, osConfig, lib, ... }:
+# NOTE: Only configures zsh if it's defined as the default user shell.
+lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.zsh) {
+  home.packages = with pkgs; [ exa ];
+
   programs = {
     zsh = lib.mkMerge [
       {

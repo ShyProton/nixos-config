@@ -15,7 +15,7 @@ in
     users.shayanr = {
       isNormalUser = true;
       passwordFile = config.age.secrets.shayanr-password.path;
-      shell = pkgs.zsh; # Default user shell.
+      shell = pkgs.nushell; # Default user shell.
       extraGroups = [
         "wheel"
       ] ++ ifTheyExist [
