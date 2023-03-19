@@ -42,13 +42,7 @@ in
           { name = "buffer"; }
         ];
 
-        snippet = {
-          expand = ''
-            function(args)
-              luasnip.lsp_expand(args.body)
-            end
-          '';
-        };
+        snippet.expand = "luasnip";
 
         formatting = {
           fields = [ "kind" "abbr" "menu" ];
