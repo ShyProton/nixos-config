@@ -10,5 +10,6 @@
   # Plugins without extra configs.
   programs.nixvim.plugins = {
     comment-nvim.enable = true; # Comment toggling.
+    surround.enable = true; # Editing 'surroundings'.
   };
 }

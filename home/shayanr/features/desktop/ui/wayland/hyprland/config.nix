@@ -92,6 +92,9 @@
   bindm = SUPER, mouse:272, movewindow
   bindm = SUPER, mouse:273, resizewindow
 
+  bind = SUPER, f, fullscreen, 1
+  bind = SUPER, space, togglefloating
+
   bind = SUPER, h, movefocus, l
   bind = SUPER, l, movefocus, r
   bind = SUPER, k, movefocus, u

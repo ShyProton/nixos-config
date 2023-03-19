@@ -16,7 +16,6 @@
     # Interfaces.
     ranger
     btop
-    ncdu
     pavucontrol
 
     # Replacements.
