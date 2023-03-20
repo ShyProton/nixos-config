@@ -2,7 +2,7 @@
   imports = [
     # Shells.
     ./zsh.nix
-    ./nushell.nix
+    ./nushell
 
     ./prompt.nix # Shell prompt.
   ];
