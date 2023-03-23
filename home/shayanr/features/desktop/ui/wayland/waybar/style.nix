@@ -5,6 +5,7 @@
     color: #${colors.base00};
     background: shade(alpha(#${colors.base00}, 0.25), 0.25);
     font-family: "Roboto Mono";
+    border-radius: 0 5px 5px 0;
   }
 
   #custom-nixos {

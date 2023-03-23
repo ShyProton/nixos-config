@@ -196,15 +196,16 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1679067095,
-        "narHash": "sha256-G2dJQURL/CCi+8RP6jNJG8VqgtzEMCA+6mNodd3VR6E=",
-        "owner": "nix-community",
+        "lastModified": 1679346444,
+        "narHash": "sha256-XF9RYd6hykuwqRzt2OXtxZoSsGBKOGQaA+VJkcX+I9Y=",
+        "owner": "SaiProton",
         "repo": "home-manager",
-        "rev": "3239e0b40f242f47bf6c0c37b2fd35ab3e76e370",
+        "rev": "ff4aa8ff2b097abc7f124173d80c831d27e4be58",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "SaiProton",
+        "ref": "nushell-login",
         "repo": "home-manager",
         "type": "github"
       }

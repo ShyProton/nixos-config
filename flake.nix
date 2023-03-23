@@ -5,7 +5,8 @@
     nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
 
     home-manager = {
-      url = github:nix-community/home-manager;
+      # NOTE: Temporary flake input until my PR for nushell gets merged.
+      url = github:SaiProton/home-manager/nushell-login;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

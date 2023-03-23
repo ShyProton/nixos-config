@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   imports = [
+    ./discord # Discord chat.
+
     ./kitty.nix # Terminal emulator.
     ./firefox.nix # Web browser.
     ./spotify.nix # Music player.

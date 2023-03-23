@@ -16,24 +16,23 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.nushell) {
 
       envFile.text = import ./env.nix;
       configFile.text = import ./config.nix;
+
+      # WARN: Check if this breaks when the hyprland module is not in imports.
+      # Enter Hyprland when logging into tty1 if Hyprland is enabled.
+      loginFile.text = lib.optionalString
+        config.wayland.windowManager.hyprland.enable
+        ''
+          if (tty) == "/dev/tty1" {
+            exec Hyprland | ignore
+          }
+        '';
+
       extraConfig = (
         # Completions.
         import ./git.nix
       );
     };
   };
-
-  # WARN: Check if this breaks when the hyprland module is not in imports.
-  # Enter Hyprland when logging into tty1 if Hyprland is enabled.
-  # TODO: Contribute to home-manager by adding login.nu as another file that
-  # can be configured.
-  xdg.configFile."nushell/login.nu".text = lib.optionalString
-    config.wayland.windowManager.hyprland.enable
-    ''
-      if (tty) == "/dev/tty1" {
-        exec Hyprland | ignore
-      }
-    '';
 
   # Persists shell history between reboots.
   home.persistence."/persist${config.home.homeDirectory}".files = [
