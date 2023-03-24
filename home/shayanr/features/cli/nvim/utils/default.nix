@@ -5,6 +5,7 @@
     ./git.nix # Git utilities.
     ./project.nix # For setting working dir.
     ./finder.nix # For finding files.
+    ./presence.nix # Discord rich presence.
   ];
 
   # Plugins without extra configs.

@@ -12,7 +12,8 @@
 
     # Applications.
     nixvim = {
-      url = github:pta2002/nixvim;
+      # NOTE: Temporary flake input until my PR for presence-nvim gets merged.
+      url = github:SaiProton/nixvim;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
