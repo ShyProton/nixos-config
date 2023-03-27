@@ -17,7 +17,7 @@ in
   xdg.desktopEntries.spotify = {
     name = "Spotify";
     genericName = "Music Player";
-    exec = "spotifywm";
+    exec = "spotify";
     terminal = false;
     categories = [ "Application" ];
     icon = "Papirus"; # TODO: Set icon properly.
@@ -25,9 +25,9 @@ in
 
   programs.spicetify = {
     enable = true;
-    spotifyPackage = pkgs.spotifywm;
     theme = spicePkgs.themes.Onepunch;
     colorScheme = "dark";
+    windowManagerPatch = true;
   };
 
   services.playerctld.enable = true;

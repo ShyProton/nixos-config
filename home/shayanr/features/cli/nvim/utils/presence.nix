@@ -7,7 +7,7 @@
     mainImage = "file";
 
     # TODO: Fix their issue with nushell, then add button to current working repo.
-    buttons.static = [
+    buttons = [
       {
         label = "GitHub Profile";
         url = "https://github.com/SaiProton";

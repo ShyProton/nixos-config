@@ -6,14 +6,15 @@
 
     home-manager = {
       # NOTE: Temporary flake input until my PR for nushell gets merged.
-      url = github:SaiProton/home-manager/nushell-login;
+      # url = github:SaiProton/home-manager/nushell-login;
+
+      url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Applications.
     nixvim = {
-      # NOTE: Temporary flake input until my PR for presence-nvim gets merged.
-      url = github:SaiProton/nixvim;
+      url = github:pta2002/nixvim;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

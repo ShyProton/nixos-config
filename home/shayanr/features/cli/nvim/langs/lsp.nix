@@ -16,6 +16,7 @@
           rust-analyzer.enable = true;
           clangd.enable = true;
           rnix-lsp.enable = true;
+          lua-ls.enable = true;
           bashls.enable = true;
         };
       };
