@@ -45,5 +45,6 @@
     "identity.fxaccounts.enabled" = true;
     "privacy.trackingprotection.enabled" = true;
     "signon.rememberSignons" = true;
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
   };
 }

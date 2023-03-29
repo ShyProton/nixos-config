@@ -8,6 +8,7 @@
 
   # Extra UI packages.
   home.packages = with pkgs; [
+    roboto
     roboto-mono
   ];
 }

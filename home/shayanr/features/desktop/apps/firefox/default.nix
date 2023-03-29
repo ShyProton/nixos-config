@@ -2,6 +2,7 @@
 {
   imports = [
     ./settings.nix # Firefox settings. 
+    ./style.nix # Firefox styling.
     ./extensions.nix # Firefox extensions.
   ];
 
