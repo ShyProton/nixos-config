@@ -4,6 +4,7 @@ let
   addons = inputs.firefox-addons.packages.${pkgs.system};
 in
 {
+  # NOTE: Most extensions are currently being configured imperatively.
   programs.firefox.profiles.shayanr.extensions = with addons; [
     ublock-origin
     darkreader

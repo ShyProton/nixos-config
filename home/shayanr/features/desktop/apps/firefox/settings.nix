@@ -11,6 +11,7 @@
         "placements": {
           "widget-overflow-fixed-list": [],
           "nav-bar": [
+            "_3c078156-979c-498b-8990-85f7987dd929_-browser-action",
             "back-button",
             "forward-button",
             "stop-reload-button",

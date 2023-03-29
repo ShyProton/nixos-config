@@ -10,7 +10,7 @@
     }
 
     #main-window[titlepreface*="[S]"] #nav-bar {
-      margin-top: -40px;
+      margin-top: -37px;
     }
     #main-window[titlepreface*="[S]"][tabsintitlebar="true"] #nav-bar {
       margin-right: 137px;
