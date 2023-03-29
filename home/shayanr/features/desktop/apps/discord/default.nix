@@ -1,5 +1,7 @@
 { pkgs, config, ... }:
 {
+  # WARN: On package update, an imperative step is involved where openASAR must
+  # be disabled then re-enabled in order for discord to function correctly.
   home = {
     packages = [
       (pkgs.discord-canary.override {
