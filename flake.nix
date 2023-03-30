@@ -51,14 +51,14 @@
       # TODO: If possible, abstract the creation of nixosSystem(s) by
       # defining a list of machine names and making one for each.
 
-      # TODO: Offload common configuration options to the common directories.
+      templates = import ./templates;
+
       nixosConfigurations = rec {
         vbox = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/vbox # System module
-            # ./home/shayanr # Home module
           ];
         };
 
@@ -67,7 +67,6 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/alphonse # System module
-            # ./home/shayanr # Home module
           ];
         };
       };

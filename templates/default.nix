@@ -5,7 +5,7 @@
     welcomeText = ''
       # Rust/Cargo Template
       ## Intended usage
-      For getting a rust/cargo project up and running.
+      Template for a rust/cargo project built with crate2nix.
 
       ## More info
       - [Rust language](https://www.rust-lang.org)
