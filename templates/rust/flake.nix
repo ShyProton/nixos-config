@@ -22,26 +22,32 @@
       });
     in
     rec {
-      packages = forAllSystems (system: rec {
-        crate = naersk.lib."${system}".buildPackage {
-          inherit (manifest) version;
-          pname = manifest.name;
-          root = nixpkgs.lib.cleanSource ./.;
+      overlays = rec {
+        default = final: prev: {
+          crate = prev.callPackage ./. { inherit naersk; };
         };
-        default = crate;
-      });
+      };
+
+      packages = forAllSystems (system:
+        let pkgs = pkgsFor.${system}; in
+        rec {
+          inherit (pkgs) crate;
+          default = crate;
+        });
 
       devShells = forAllSystems (system:
-        let pkgs = pkgsFor.${system};
-        in
-        {
+        let pkgs = pkgsFor.${system}; in
+        rec {
           crate = pkgs.mkShell {
             inputsFrom = [ pkgs.crate ];
             buildInputs = with pkgs; [
+              rustc
               cargo
               cargo-edit
+              clippy
             ];
           };
+          default = crate;
         });
     };
 }

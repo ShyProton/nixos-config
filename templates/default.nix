@@ -4,12 +4,11 @@
     description = "Rust environment (Cargo)";
     welcomeText = ''
       # Rust/Cargo Template
-      ## Intended usage
-      Template for a rust/cargo project built with crate2nix.
+      Template for a rust/cargo project using naersk.
 
       ## More info
-      - [Rust language](https://www.rust-lang.org)
-      - [Rust on the NixOS Wiki](https://nixos.wiki/wiki/rust)
+      - Rust language: https://www.rust-lang.org
+      - NixOS Wiki entry: https://nixos.wiki/wiki/rust
     '';
   };
 }

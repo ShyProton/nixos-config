@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./rust-analyzer.nix
+  ];
+}
