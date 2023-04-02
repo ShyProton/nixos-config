@@ -7,6 +7,7 @@
 
     ./git.nix # Git version control.
     ./tldr.nix # Short help-pages.
+    ./direnv.nix # Augments shell environment variables.
   ];
 
   home.packages = with pkgs; [
