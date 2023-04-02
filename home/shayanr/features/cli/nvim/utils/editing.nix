@@ -28,6 +28,10 @@
     todo-comments = {
       enable = true;
       guiStyle.fg = "BOLD";
+
+      keywords = {
+        NOTE.icon = "󰵅";
+      };
     };
   };
 }
