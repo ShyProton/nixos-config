@@ -42,6 +42,7 @@
             inputsFrom = [ pkgs.crate ];
             buildInputs = with pkgs; [
               rustc
+              rustfmt
               cargo
               cargo-edit
               clippy

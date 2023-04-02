@@ -1,5 +1,6 @@
-# nix build
+# Builds
 result
-
-# cargo build
 target
+
+# Misc
+.direnv

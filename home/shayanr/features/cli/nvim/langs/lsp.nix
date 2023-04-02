@@ -53,7 +53,7 @@
         };
 
         icons = {
-          codeAction = "";
+          codeAction = "";
         };
       };
 
