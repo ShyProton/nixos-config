@@ -89,7 +89,12 @@
           # prevent downstream consumers from building our crate by itself.
           crate-clippy = craneLib.cargoClippy (commonArgs // {
             inherit cargoArtifacts;
-            cargoClippyExtraArgs = "--all-targets -- --deny warnings";
+            cargoClippyExtraArgs = ''--all-targets -- --deny warnings \
+              -W clippy::pedantic \
+              -W clippy::nursery \
+              -W clippy::unwrap_used \
+              -W clippy::expect_used
+            '';
           });
 
           crate-doc = craneLib.cargoDoc (commonArgs // {

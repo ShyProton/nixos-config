@@ -9,5 +9,8 @@
     "--all-features"
     "--"
     "-Wclippy::pedantic"
+    "-Wclippy::nursery"
+    "-Wclippy::unwrap_used"
+    "-Wclippy::expect_used"
   ];
 }
