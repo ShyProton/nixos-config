@@ -15,6 +15,7 @@
       inputs.rust-analyzer-src.follows = "";
     };
 
+    nix-filter.url = github:numtide/nix-filter;
     flake-utils.url = github:numtide/flake-utils;
 
     advisory-db = {
@@ -23,7 +24,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, crane, fenix, flake-utils, advisory-db, ... }:
+  outputs = { self, nixpkgs, crane, fenix, nix-filter, flake-utils, advisory-db, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs {
@@ -33,7 +34,15 @@
         inherit (pkgs) lib;
 
         craneLib = crane.lib.${system};
-        src = craneLib.cleanCargoSource (craneLib.path ./.);
+        src = nix-filter.lib.filter {
+          root = craneLib.path ./.;
+          include = [
+            "src"
+            "Cargo.lock"
+            (nix-filter.lib.matchExt "rs")
+            (nix-filter.lib.matchExt "toml")
+          ];
+        };
 
         # Common arguments can be set here to avoid repeating them later
         commonArgs = {
