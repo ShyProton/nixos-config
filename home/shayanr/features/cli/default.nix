@@ -2,8 +2,9 @@
 {
   # Command line programs.
   imports = [
-    ./nvim # Text editor.
     ./shell # Shell configurations.
+    ./nvim # Text editor.
+    ./btop # Task manager.
 
     ./git.nix # Git version control.
     ./tldr.nix # Short help-pages.
@@ -13,11 +14,6 @@
   home.packages = with pkgs; [
     # Utilities.
     age
-
-    # Interfaces.
-    ranger
-    btop
-    pavucontrol
 
     # Replacements.
     bat
