@@ -8,6 +8,7 @@
 
     ./git.nix # Git version control.
     ./tldr.nix # Short help-pages.
+    ./nnn.nix # File browser.
     ./direnv.nix # Augments shell environment variables.
   ];
 
