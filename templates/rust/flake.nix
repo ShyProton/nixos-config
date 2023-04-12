@@ -147,6 +147,8 @@
           # Extra inputs can be added here
           nativeBuildInputs = with pkgs; [
             rustc
+            bacon
+            cargo-modules
           ];
         };
       });

@@ -3,7 +3,7 @@
   home = {
     packages = with pkgs; [
       jetbrains.idea-ultimate
-      jdk
+      jdk11
     ];
 
     persistence."/persist${config.home.homeDirectory}".directories = [
