@@ -6,13 +6,10 @@
 
     ./kitty.nix # Terminal emulator.
     ./spotify.nix # Music player.
-    ./idea.nix # IntelliJ IDEA.
+    # ./idea.nix # IntelliJ IDEA.
   ];
 
   home.packages = with pkgs; [
     pavucontrol
-
-    audacity
-    gimp
   ];
 }

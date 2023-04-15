@@ -34,14 +34,6 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.nushell) {
       }
     '';
 
-  # HACK: Waiting for https://github.com/starship/starship/issues/5063
-  xdg.configFile."nushell/env.nu".text = import ./env.nix + ''
-    starship init nu
-    | str replace --string 'PROMPT_COMMAND = {' 'PROMPT_COMMAND = { ||'
-    | str replace --string 'PROMPT_COMMAND_RIGHT = {' 'PROMPT_COMMAND_RIGHT = { ||'
-    | save -f ~/.cache/starship/init.nu
-  '';
-
   # Persists shell history between reboots.
   home.persistence."/persist${config.home.homeDirectory}".files = [
     ".config/nushell/history.txt"
