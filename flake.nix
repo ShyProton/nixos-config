@@ -18,7 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = github:hyprwm/Hyprland;
+    # HACK: Until https://github.com/hyprwm/Hyprland/issues/2120 is resolved.
+    # Wayland 1.22 is not yet available upstream in nixpkgs.
+    # Wait until https://github.com/NixOS/nixpkgs/pull/226283 is merged.
+    hyprland.url = github:hyprwm/Hyprland/2df0d034bc4a18fafb3524401eeeceaa6b23e753;
     hyprwm-contrib.url = github:hyprwm/contrib;
 
     # Utilities.
