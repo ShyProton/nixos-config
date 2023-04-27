@@ -110,6 +110,9 @@
   bind = SUPERCONTROL, k, resizeactive, 0 -20
   bind = SUPERCONTROL, j, resizeactive, 0 20
 
+  bind = SUPER, up, workspace, -1
+  bind = SUPER, down, workspace, +1
+
   bind = SUPER, 1, workspace, 01
   bind = SUPER, 2, workspace, 02
   bind = SUPER, 3, workspace, 03
