@@ -52,7 +52,10 @@
       ];
     };
 
-    # TODO: Add Large
+    "/mnt/Large" = {
+      device = "/dev/disk/by-label/Large";
+      fsType = "ext4";
+    };
   };
 
   swapDevices = [

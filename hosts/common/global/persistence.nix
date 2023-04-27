@@ -16,6 +16,7 @@
       "/var/lib/systemd"
 
       "/srv"
+      "/mnt"
     ];
 
     files = [
