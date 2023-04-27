@@ -7,13 +7,13 @@ let
   fs-diff = pkgs.writeShellScriptBin "fs-diff" ''
     set -euo pipefail
 
-    sudo mkdir /mnt
-    sudo mount -o subvol=/ /dev/disk/by-label/ROOT /mnt
+    sudo mkdir /mnt/fs-diff
+    sudo mount -o subvol=/ /dev/disk/by-label/ROOT /mnt/fs-diff
 
-    OLD_TRANSID=$(sudo btrfs subvolume find-new /mnt/root-blank 9999999) 
+    OLD_TRANSID=$(sudo btrfs subvolume find-new /mnt/fs-diff/root-blank 9999999) 
     OLD_TRANSID=''${OLD_TRANSID#transid marker was}
 
-    sudo btrfs subvolume find-new "/mnt/root" "$OLD_TRANSID" |
+    sudo btrfs subvolume find-new "/mnt/fs-diff/root" "$OLD_TRANSID" |
     sed '$d' |
     cut -f17- -d' ' |
     sort |
@@ -29,8 +29,8 @@ let
       fi
     done
 
-    sudo umount /mnt
-    sudo rmdir /mnt
+    sudo umount /mnt/fs-diff
+    sudo rmdir /mnt/fs-diff
   '';
 in
 {

@@ -4,8 +4,8 @@
     ./firefox # Web browser.
     # ./discord # Discord app.
 
-    ./webcord.nix # Discord client.
     ./kitty.nix # Terminal emulator.
+    ./webcord.nix # Discord client.
     ./spotify.nix # Music player.
     # ./idea.nix # IntelliJ IDEA.
   ];
