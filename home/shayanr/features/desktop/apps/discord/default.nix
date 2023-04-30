@@ -5,7 +5,7 @@
   home = {
     packages = [
       (pkgs.discord-canary.override {
-        withOpenASAR = true;
+        withOpenASAR = false;
       })
     ];
 
@@ -16,7 +16,7 @@
 
   xdg.configFile."discordcanary/settings.json".text = ''
     {
-      "SKIP_HOST_UPDATE": true,
+      "SKIP_HOST_UPDATE": false,
       "openasar": {
         "setup": true,
         "quickstart": true,

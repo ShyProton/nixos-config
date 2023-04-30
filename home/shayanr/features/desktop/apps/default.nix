@@ -2,11 +2,11 @@
 {
   imports = [
     ./firefox # Web browser.
-    # ./discord # Discord app.
+    ./discord # Discord app.
 
     ./kitty.nix # Terminal emulator.
-    ./webcord.nix # Discord client.
     ./spotify.nix # Music player.
+    # ./webcord.nix # Discord client.
     # ./idea.nix # IntelliJ IDEA.
   ];
 
