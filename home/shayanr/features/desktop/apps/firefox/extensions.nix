@@ -10,6 +10,7 @@ in
     darkreader
     octotree
     gruvbox-dark-theme
+    return-youtube-dislikes
     # NOTE: Custom implementation for sidebery beta.
     (buildFirefoxXpiAddon {
       pname = "sidebery";
@@ -18,7 +19,7 @@ in
       url = "https://github.com/mbnuqw/sidebery/releases/download/v5.0.0b31/sidebery-5.0.0b31.xpi";
       sha256 = "sha256-J7N1w7T421c0B/oZJjpJJ4AsL1YpqUYaAkJsY5IhI+Y=";
       meta = with lib; {
-        homepage = "https://github.com/mbnuI type extremely slowly so I use vim to convince people that im actually very fastqw/sidebery";
+        homepage = "https://github.com/mbnuqw/sidebery";
         description = "Tabs tree and bookmarks in sidebar with advanced containers configuration.";
         license = licenses.mit;
         platforms = platforms.all;
