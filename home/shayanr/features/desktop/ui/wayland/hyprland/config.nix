@@ -54,7 +54,8 @@
   }
 
   # Monitor configurations
-  monitor = eDP-1, 1920x1080@120, 0x0, 1
+  monitor = eDP-1, 1920x1080@120, 0x500, 1
+  monitor = HDMI-A-1, 1920x1080@144, 1920x0, 1
 
   # Startup
   exec-once = waybar
