@@ -41,7 +41,7 @@ in
       username.show_always = true;
 
       directory = {
-        format = "[ $path]($style)[$read_only]($read_only_style) ";
+        format = "[ $path]($style)[$read_only]($read_only_style) ";
         read_only = "  ";
         truncation_length = 1;
       };
