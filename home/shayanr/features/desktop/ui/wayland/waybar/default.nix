@@ -59,6 +59,7 @@
           };
         };
 
+        # TODO: Fix mpris status icon misalignment.
         "mpris" = {
           format = "{player_icon}\n{status_icon}";
           player-icons = {
