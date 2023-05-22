@@ -38,15 +38,23 @@
           number = false;
           relativenumber = true;
           side = "left";
-          mappings = {
-            customOnly = false;
-            list = [
-              { key = [ "l" "<CR>" "o" ]; action = "edit"; }
-              { key = [ "h" ]; action = "close_node"; }
-              { key = [ "v" ]; action = "vsplit"; }
-            ];
-          };
         };
+
+        onAttach.__raw = ''
+          function(bufnr)
+            local api = require('nvim-tree.api')
+
+            local function opts(desc)
+              return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+            end
+
+            vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
+            vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+            vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
+            vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('Close Directory'))
+            vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
+          end
+        '';
       };
     };
 
