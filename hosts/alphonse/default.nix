@@ -26,7 +26,18 @@
   };
 
   hardware = {
-    opengl.enable = true;
+    # TODO: Move each section to its own file.
+    opengl = {
+      enable = true;
+
+      driSupport = true;
+      driSupport32Bit = true;
+
+      extraPackages = with pkgs; [
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
+    };
     nvidia = {
       modesetting.enable = true;
       prime = {

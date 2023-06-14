@@ -2,11 +2,12 @@
 {
   imports = [
     ./firefox # Web browser.
-    ./discord # Discord app.
+    # ./discord # Discord app.
 
     ./kitty.nix # Terminal emulator.
     ./spotify.nix # Music player.
-    # ./webcord.nix # Discord client.
+    # FIXME: Webcord & Discord both fail to launch due to a problem with opengl.
+    ./webcord.nix # Discord client.
     # ./idea.nix # IntelliJ IDEA.
   ];
 
