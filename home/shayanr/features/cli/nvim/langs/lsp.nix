@@ -74,7 +74,7 @@
 
       "<S-k>".action = "<cmd>Lspsaga hover_doc<cr>";
       "<A-k>".action = "<cmd>Lspsaga show_line_diagnostics<cr>";
-      "<S-f>".action = "<cmd>Lspsaga lsp_finder";
+      "<A-f>".action = "<cmd>Lspsaga lsp_finder<cr>";
       "<A-a>".action = "<cmd>Lspsaga code_action<cr>";
       "<S-r>".action = "<cmd>Lspsaga rename<cr>";
     };
