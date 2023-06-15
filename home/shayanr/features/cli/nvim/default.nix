@@ -11,6 +11,7 @@
 */
 { inputs, ... }:
 {
+  # FIXME: Included python host doesn't have pynvim installed.
   imports = [
     # Declarative Neovim configuration.
     inputs.nixvim.homeManagerModules.nixvim
