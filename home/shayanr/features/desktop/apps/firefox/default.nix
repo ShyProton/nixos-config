@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, ... }:
+{ pkgs, config, osConfig, lib, inputs, ... }:
 {
   imports = [
     ./settings.nix # Firefox settings. 
@@ -23,10 +23,20 @@
   };
 
   home = {
-    sessionVariables = {
-      BROWSER = "firefox";
-      MOZ_ENABLE_WAYLAND = 1;
-    };
+    sessionVariables = lib.mkMerge [
+      {
+        BROWSER = "firefox";
+        MOZ_ENABLE_WAYLAND = 1;
+      }
+
+      # Conditionally add extra session variables if the system has nvidia.
+      (lib.mkIf
+        (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
+        {
+          MOZ_DRM_DEVICE = "/dev/dri/card0";
+        }
+      )
+    ];
 
     persistence."/persist${config.home.homeDirectory}".directories = [
       ".mozilla/firefox"

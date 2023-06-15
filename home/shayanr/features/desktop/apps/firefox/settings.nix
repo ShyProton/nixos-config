@@ -42,6 +42,7 @@
         "newElementCount": 4
       }
     '';
+    "media.ffmpeg.vaapi.enabled" = true;
     "dom.security.https_only_mode" = true;
     "identity.fxaccounts.enabled" = true;
     "privacy.trackingprotection.enabled" = true;
