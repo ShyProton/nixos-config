@@ -20,7 +20,7 @@ in
     exec = "spotify";
     terminal = false;
     categories = [ "Application" ];
-    icon = "Papirus"; # TODO: Set icon properly.
+    icon = "spotify";
   };
 
   programs.spicetify = {
