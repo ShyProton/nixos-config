@@ -10,6 +10,7 @@
     ./tldr.nix # Short help-pages.
     ./ranger.nix # File browser.
     ./direnv.nix # Augments shell environment variables.
+    ./podman.nix # Rootless containers.
   ];
 
   home.packages = with pkgs; [
