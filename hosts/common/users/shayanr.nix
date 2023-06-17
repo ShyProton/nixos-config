@@ -21,6 +21,7 @@ in
       ] ++ ifTheyExist [
         "video"
         "networkmanager"
+        "podman"
       ];
 
       openssh.authorizedKeys.keys = [

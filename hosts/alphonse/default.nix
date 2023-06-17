@@ -15,6 +15,8 @@
     ../common/optional/pipewire.nix # Pipewire for audio/video multimedia.
     ../common/optional/bluetooth.nix # Bluetooth configurations.
     ../common/optional/backlight.nix # Screen backlight configurations.
+
+    ../common/optional/podman.nix # Rootless containers.
   ];
 
   networking.hostName = "alphonse";

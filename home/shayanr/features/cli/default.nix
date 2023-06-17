@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, osConfig, ... }:
 {
   # Command line programs.
   imports = [
@@ -10,7 +10,8 @@
     ./tldr.nix # Short help-pages.
     ./ranger.nix # File browser.
     ./direnv.nix # Augments shell environment variables.
-    ./podman.nix # Rootless containers.
+  ] ++ lib.optionals (osConfig.virtualisation.podman.enable) [
+    ./podman.nix # User podman settings.
   ];
 
   home.packages = with pkgs; [
