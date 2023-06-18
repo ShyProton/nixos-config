@@ -75,6 +75,15 @@
         crate = craneLib.buildPackage (commonArgs // {
           inherit cargoArtifacts;
         });
+
+        dockerImage = pkgs.dockerTools.buildImage {
+          name = "template";
+          tag = "latest";
+          copyToRoot = [ crate ];
+          config = {
+            Cmd = [ "${crate}/bin/template" ];
+          };
+        };
       in
       {
         checks = {
@@ -128,6 +137,7 @@
         };
 
         packages = {
+          inherit crate dockerImage;
           default = crate;
           crate-llvm-coverage = craneLibLLvmTools.cargoLlvmCov (commonArgs // {
             inherit cargoArtifacts;
@@ -149,6 +159,7 @@
             rustc
             bacon
             cargo-modules
+            dive
           ];
         };
       });
