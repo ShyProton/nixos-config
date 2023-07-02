@@ -1,6 +1,6 @@
 { inputs, pkgs, config, osConfig, lib, ... }:
 let
-  wallpaper = "Pictures/wallpapers/glados.jpg";
+  wallpaper = "Pictures/wallpapers/gruvbox_waves.png";
 in
 {
   imports = [

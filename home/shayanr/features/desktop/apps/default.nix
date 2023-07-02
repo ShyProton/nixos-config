@@ -8,7 +8,6 @@
 
     ./kitty.nix # Terminal emulator.
     ./spotify.nix # Music player.
-    # FIXME: Electron applications fail to launch due to a problem with opengl.
     ./webcord.nix # Discord client.
     ./obsidian.nix # Note taking.
     # ./idea.nix # IntelliJ IDEA.
