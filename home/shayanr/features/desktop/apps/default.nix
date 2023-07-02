@@ -1,13 +1,16 @@
 { pkgs, ... }:
 {
+  # TODO: Make shorthand function to quickly add apps that only need the package
+  # added and a config directory persisted.
   imports = [
     ./firefox # Web browser.
     # ./discord # Discord app.
 
     ./kitty.nix # Terminal emulator.
     ./spotify.nix # Music player.
-    # FIXME: Webcord & Discord both fail to launch due to a problem with opengl.
+    # FIXME: Electron applications fail to launch due to a problem with opengl.
     ./webcord.nix # Discord client.
+    ./obsidian.nix # Note taking.
     # ./idea.nix # IntelliJ IDEA.
   ];
 
