@@ -61,6 +61,7 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
 - [x] [**Discord Canary**](home/shayanr/features/desktop/apps/discord)
   - [x] [**Styling**](home/shayanr/features/desktop/apps/discord/style.nix)
   - [x] **OpenAsar** alternative to `app.asar`
+- [x] [**WebCord**](home/shayanr/features/desktop/apps/webcord.nix) open source Discord client
 - [x] [**Spotify**](home/shayanr/features/desktop/apps/spotify.nix)
   - [x] **Styling** via [spicetify-nix](https://github.com/the-argus/spicetify-nix)
 - [x] **JetBrains IDEs**
@@ -74,7 +75,7 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
 - [x] [**TealDeer**](home/shayanr/features/cli/tldr.nix) for simpler manpages
 - [x] [**Bat**, **Rg**](home/shayanr/features/cli/default.nix) alternatives to `cat`, `grep`
 - [x] [**Direnv**](home/shayanr/features/cli/direnv.nix) for easier development environments
-- [ ] **Podman** for containers
+- [x] [**Podman**](hosts/common/optional/podman.nix) for containers
 - [ ] **Virt-manager** for virtualization
 
 ## System details
