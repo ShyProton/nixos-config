@@ -6,12 +6,6 @@
     ./extensions.nix # Firefox extensions.
   ];
 
-  # Essential fonts.
-  home.packages = with pkgs; [
-    liberation_ttf
-    dejavu_fonts
-  ];
-
   programs.firefox = {
     enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
