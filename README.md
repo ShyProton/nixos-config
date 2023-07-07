@@ -36,6 +36,8 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
     - [x] [**NetworkManager**](hosts/common/optional/networkmanager.nix) for Wi-Fi
     - [x] [**light**](hosts/common/optional/backlight.nix) for backlight control 
     - [x] [**Bluetooth**](hosts/common/optional/bluetooth.nix)
+  - [x] **Containers**
+    - [x] [**Podman**](hosts/common/optional/podman.nix), with some extra [user-side configuration](home/shayanr/features/cli/podman.nix)
   - [ ] **NVIDIA** offloading
 
 ### User(s)
@@ -75,7 +77,6 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
 - [x] [**TealDeer**](home/shayanr/features/cli/tldr.nix) for simpler manpages
 - [x] [**Bat**, **Rg**](home/shayanr/features/cli/default.nix) alternatives to `cat`, `grep`
 - [x] [**Direnv**](home/shayanr/features/cli/direnv.nix) for easier development environments
-- [x] [**Podman**](hosts/common/optional/podman.nix) for containers
 - [ ] **Virt-manager** for virtualization
 
 ## System details
