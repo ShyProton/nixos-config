@@ -43,37 +43,22 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+
+      nixos-system = system-module: nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          system-module
+        ];
+      };
     in
     rec {
-      # TODO: If possible, abstract the creation of nixosSystem(s) by
-      # defining a list of machine names and making one for each.
-
       templates = import ./templates;
 
       nixosConfigurations = rec {
-        vbox = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/vbox # System module
-          ];
-        };
-
-        alphonse = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/alphonse # System module
-          ];
-        };
-
-        mob = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/mob # System module
-          ];
-        };
+        vbox = nixos-system ./hosts/vbox;
+        alphonse = nixos-system ./hosts/alphonse;
+        mob = nixos-system ./hosts/mob;
       };
     };
 }
