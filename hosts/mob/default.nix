@@ -16,6 +16,7 @@
     ../common/optional/bluetooth.nix # Bluetooth configurations.
     ../common/optional/backlight.nix # Screen backlight configurations.
 
+    ../common/optional/hyprland-cache.nix # Hyprland package cache.
     ../common/optional/podman.nix # Rootless containers.
   ];
 
@@ -30,16 +31,7 @@
     driSupport = true;
     driSupport32Bit = true;
 
-    extraPackages = with pkgs; [
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
-
-  # Hyprland package cache.
-  nix.settings = {
-    substituters = [ "https://hyprland.cachix.org" ];
-    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+    package = pkgs.mesa_drivers;
   };
 
   # WARNING: Update this to the iso version on install.
