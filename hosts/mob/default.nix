@@ -1,0 +1,47 @@
+{ config, pkgs, inputs, ... }:
+{
+  imports = [
+    ./hardware-configuration.nix # Machine-specific hardware.
+
+    ../common/global # Implemented by all machines.
+
+    # Defining User(s).
+    ../common/users/shayanr.nix
+
+    # Optional features.
+    ../common/optional/boot/efi.nix # Boot configurations for EFI systems.
+    ../common/optional/persistence/btrfs.nix # Type of opt-in persistence.
+    ../common/optional/networkmanager.nix # NetworkManager configurations.
+    ../common/optional/pipewire.nix # Pipewire for audio/video multimedia.
+    ../common/optional/bluetooth.nix # Bluetooth configurations.
+    ../common/optional/backlight.nix # Screen backlight configurations.
+
+    ../common/optional/podman.nix # Rootless containers.
+  ];
+
+  networking.hostName = "mob";
+  time.timeZone = "Canada/Eastern";
+
+  services.blueman.enable = true;
+
+  hardware.opengl = {
+    enable = true;
+
+    driSupport = true;
+    driSupport32Bit = true;
+
+    extraPackages = with pkgs; [
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+  };
+
+  # Hyprland package cache.
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
+
+  # WARNING: Update this to the iso version on install.
+  system.stateVersion = "22.11";
+}

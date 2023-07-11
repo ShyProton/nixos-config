@@ -66,6 +66,14 @@
             ./hosts/alphonse # System module
           ];
         };
+
+        mob = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/mob # System module
+          ];
+        };
       };
     };
 }
