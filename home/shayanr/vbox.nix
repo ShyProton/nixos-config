@@ -37,7 +37,7 @@
       enable = true;
       lfs.enable = true;
 
-      userName = "SaiProton";
+      userName = "ShyProton";
       userEmail = "shayanr@gmail.com";
 
       diff-so-fancy = {

@@ -6,7 +6,7 @@
     package = pkgs.vimUtils.buildVimPlugin {
       name = "presence.nvim";
       src = pkgs.fetchFromGitHub {
-        owner = "SaiProton";
+        owner = "ShyProton";
         repo = "presence.nvim";
         rev = "25b0c1e816383358aa0ebe5101df0d244a055f81";
         sha256 = "sha256-Ct7MlC2DGJ8lvGYo9jR/1S74krEwQIkBUZrwdCs0iPk=";
@@ -20,7 +20,7 @@
     buttons = [
       {
         label = "GitHub Profile";
-        url = "https://github.com/SaiProton";
+        url = "https://github.com/ShyProton";
       }
     ];
   };

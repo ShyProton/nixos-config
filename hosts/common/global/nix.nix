@@ -18,7 +18,7 @@
       # Adds this flake to the registry for easy access (e.g. for templates)
       dotfiles.to = {
         type = "github";
-        owner = "SaiProton";
+        owner = "ShyProton";
         repo = "nixos-config";
       };
     };
