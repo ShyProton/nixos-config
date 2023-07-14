@@ -34,6 +34,5 @@
     package = pkgs.mesa_drivers;
   };
 
-  # WARNING: Update this to the iso version on install.
   system.stateVersion = "22.11";
 }

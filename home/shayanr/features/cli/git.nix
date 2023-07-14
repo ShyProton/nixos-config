@@ -26,6 +26,16 @@
         prompt = "enabled";
       };
     };
+
+    ssh = {
+      enable = true;
+      extraConfig = ''
+        Host github.com
+          Hostname ssh.github.com
+          Port 443
+          User git
+      '';
+    };
   };
 
   home.persistence."/persist${config.home.homeDirectory}".directories = [
