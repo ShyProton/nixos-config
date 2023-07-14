@@ -1,5 +1,5 @@
 # Common home configurations for every system.
-{ pkgs, config, inputs, ... }:
+{ inputs, outputs, config, pkgs, ... }:
 let
   ifTheyExist = groups: builtins.filter
     (group: builtins.hasAttr group config.users.groups)
@@ -37,7 +37,7 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
 
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs outputs; };
 
     users.shayanr.imports = [
       # Home configurations.

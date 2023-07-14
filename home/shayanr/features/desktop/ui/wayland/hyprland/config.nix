@@ -1,5 +1,5 @@
 # Hyprland configuration settings.
-{ config, wallpaper, ... }:
+{ config, ... }:
 ''
   general {
     gaps_in = 5
@@ -62,7 +62,7 @@
   exec-once = hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}
   exec-once = swayidle -w
 
-  exec = swaybg -i ${wallpaper} --mode fill
+  exec = swaybg -i ${config.wallpapers.desktop} --mode fill
 
   # Program bindings
   bind = SUPER, Return, exec, kitty

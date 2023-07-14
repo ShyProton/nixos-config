@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 let
   inherit (config.colorScheme) colors;
-
-  lockscreen-wallpaper = ''
-    ${config.home.homeDirectory}/Pictures/wallpapers/rainbow.png
-  '';
 in
 {
   home.packages = with pkgs; [ swaylock ];
@@ -22,7 +18,7 @@ in
     indicator-radius = 200;
     indicator-thickness = 20;
 
-    image = lockscreen-wallpaper;
+    image = config.wallpapers.lockscreen;
 
     color = "#${colors.base00}";
     ring-color = "#${colors.base02}";

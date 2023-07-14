@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ inputs, outputs, config, ... }:
 {
   imports = [
     # Impermanence for home-manager.
@@ -9,7 +9,12 @@
     ./features/system # Userspace system configurations.
     ./features/cli # Command-line apps/utils.
     ./features/desktop # Desktop apps/utils.
-  ];
+  ] ++ (builtins.attrValues outputs.homeManagerModules);
+
+  wallpapers = {
+    desktop = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1080/glados.jpg";
+    lockscreen = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1080/rainbow.png";
+  };
 
   colorscheme = inputs.nix-colors.colorschemes.gruvbox-dark-medium;
 

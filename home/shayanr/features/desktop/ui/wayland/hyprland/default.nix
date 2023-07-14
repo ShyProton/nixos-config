@@ -1,7 +1,4 @@
 { inputs, pkgs, config, osConfig, lib, ... }:
-let
-  wallpaper = "Pictures/wallpapers/gruvbox_waves.png";
-in
 {
   imports = [
     inputs.hyprland.homeManagerModules.default
@@ -45,6 +42,6 @@ in
       (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
       true;
 
-    extraConfig = import ./config.nix { inherit config wallpaper; };
+    extraConfig = import ./config.nix { inherit config; };
   };
 }

@@ -41,18 +41,23 @@
 
   outputs = { self, nixpkgs, ... } @ inputs:
     let
+      inherit (self) outputs;
+
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
       nixos-system = system-module: nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs outputs; };
         modules = [
           system-module
         ];
       };
     in
     rec {
+      nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
+
       templates = import ./templates;
 
       nixosConfigurations = rec {
