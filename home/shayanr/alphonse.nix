@@ -29,6 +29,5 @@
     }
   ];
 
-
   colorscheme = inputs.nix-colors.colorschemes.gruvbox-dark-medium;
 }

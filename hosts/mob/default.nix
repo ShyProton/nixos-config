@@ -23,7 +23,10 @@
   networking.hostName = "mob";
   time.timeZone = "Canada/Eastern";
 
-  services.blueman.enable = true;
+  services = {
+    blueman.enable = true;
+    tlp.enable = true;
+  };
 
   hardware.opengl = {
     enable = true;
