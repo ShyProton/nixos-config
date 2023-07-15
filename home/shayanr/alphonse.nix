@@ -13,6 +13,8 @@
     ./features/desktop # Desktop apps/utils.
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
+  home.stateVersion = "22.11";
+
   wallpapers = {
     desktop = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1080/glados.jpg";
     lockscreen = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1080/rainbow.png";
