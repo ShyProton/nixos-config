@@ -16,8 +16,8 @@
   home.stateVersion = "23.05";
 
   wallpapers = {
-    desktop = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/jellies.jpg";
-    lockscreen = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/sun_circle.jpg";
+    desktop = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/gruvbox/solar_system_poster.jpeg";
+    lockscreen = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/gruvbox/sun_circle.jpg";
   };
 
   monitors = [
