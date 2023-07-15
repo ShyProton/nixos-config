@@ -4,18 +4,18 @@
     pointerCursor = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
-      size = 22;
+      size = 24;
       gtk.enable = true;
     };
 
     sessionVariables = {
       XCURSOR_THEME = "Bibata-Modern-Classic";
-      XCURSOR_SIZE = 22;
+      XCURSOR_SIZE = 24;
     };
   };
 
   gtk.cursorTheme = {
     name = "Bibata-Modern-Classic";
-    size = 22;
+    size = 24;
   };
 }
