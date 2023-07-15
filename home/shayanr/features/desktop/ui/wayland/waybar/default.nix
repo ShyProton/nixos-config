@@ -12,8 +12,8 @@
         position = "left";
 
         height =
-          let gap = 10;
-          in (builtins.head config.monitors).height - gap * 2;
+          let window-gap = 10;
+          in (builtins.head config.monitors).height - window-gap * 2;
 
         width = 40;
 
@@ -195,10 +195,12 @@
 
         "custom/power" = {
           format = "";
+          tooltip = false;
+          on-click = "powermenu";
         };
       };
     };
 
-    style = import ./style.nix { colors = config.colorScheme.colors; };
+    style = import ./style.nix { inherit (config.colorScheme) colors; };
   };
 }

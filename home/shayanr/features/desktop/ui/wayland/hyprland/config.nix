@@ -90,6 +90,9 @@
   # Launcher
   bind = SUPER, a, exec, wofi -S drun
 
+  # Power menu
+  bind = SUPER, q, exec, powermenu
+
   # WM controls
   bind = SUPERSHIFT, c, killactive
   bind = SUPERSHIFT, q, exit

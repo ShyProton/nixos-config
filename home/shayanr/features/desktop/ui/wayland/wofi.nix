@@ -1,9 +1,33 @@
 { pkgs, config, ... }:
 let
+  window-gap = 10;
+
   colors = config.colorScheme.colors;
+
+  powermenu = pkgs.writeShellScriptBin "powermenu" ''
+    op=$(
+      echo -e " Lock\n Suspend\n Logout\n Reboot\n Poweroff" | 
+      wofi -i --dmenu --width 250 --height 210 --cache-file /dev/null \
+        --y ${toString ((builtins.head config.monitors).height - 210 - window-gap)} |
+      awk '{print tolower($2)}'
+    )
+
+    case $op in
+      lock)
+        swaylock;;
+      suspend)
+        systemctl suspend;;
+      logout)
+        hyprctl dispatch exit;;
+      reboot)
+        reboot;;
+      poweroff)
+        poweroff;;
+    esac
+  '';
 in
 {
-  home.packages = with pkgs; [ wofi ];
+  home.packages = with pkgs; [ wofi powermenu ];
 
   gtk.iconTheme = {
     package = pkgs.papirus-icon-theme;
@@ -16,8 +40,8 @@ in
       allow_images=true
       insensitive=true
       run-exec_search=true
-      x=10
-      y=10
+      x=${toString window-gap}
+      y=${toString window-gap}
       width=25%
       height=60%
     '';
@@ -26,7 +50,7 @@ in
       window {
         opacity: 0.95;
         border: 1px;
-        border-color: ${colors.base05};
+        border-color: #${colors.base05};
         border-radius: 10px;
         font-family: "Roboto Mono";
         font-size: 18px;
