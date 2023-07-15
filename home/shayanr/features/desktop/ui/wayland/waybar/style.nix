@@ -120,9 +120,9 @@
   }
 
   #battery.icon {
-    font-size: 1.8em;
+    font-size: 2.2em;
     background-color: #${colors.base0B};
-    padding: 5px 0 3px 0;
+    padding: 3px 0 0 0;
     border-radius: 0 5px 0 0;
     margin-top: 10px;
   }
@@ -131,24 +131,6 @@
     font-weight: bold;
     background-color: #${colors.base0B};
     border-radius: 0 0 5px 0;
-  }
-
-  #battery.plugged:not(.percentage) {
-    /* HACK: Fixes oddity where charging icon is slightly smaller */
-    font-size: 2.2em;
-    padding: 3px 0 0 0;
-  }
-
-  #battery.charging:not(.percentage) {
-    /* HACK: Fixes oddity where charging icon is slightly smaller */
-    font-size: 2.2em;
-    padding: 3px 0 0 0;
-  }
-
-  #battery.full:not(.percentage) {
-    /* HACK: Fixes oddity where charging icon is slightly smaller */
-    font-size: 2.2em;
-    padding: 3px 0 0 0;
   }
 
   #clock.icon {

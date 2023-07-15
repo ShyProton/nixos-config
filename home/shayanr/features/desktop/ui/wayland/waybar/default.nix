@@ -161,7 +161,7 @@
 
         "battery#icon" = {
           format = "{icon}";
-          format-icons = [ "" "" "" "" "" "" "" "" "" "" "" ];
+          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" ];
           format-plugged = "󰂄";
           format-charging = "󰂄";
           format-full = "󱈑";
