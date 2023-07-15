@@ -15,11 +15,19 @@
 
   home.stateVersion = "23.05";
 
-  # TODO: To be decided.
   wallpapers = {
-    desktop = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/...";
-    lockscreen = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/...";
+    desktop = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/jellies.jpg";
+    lockscreen = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/sun_circle.jpg";
   };
+
+  monitors = [
+    {
+      name = "eDP-1";
+      width = 1920;
+      height = 1200;
+      refreshRate = 60;
+    }
+  ];
 
   colorscheme = inputs.nix-colors.colorschemes.gruvbox-dark-medium;
 }

@@ -20,5 +20,15 @@
     lockscreen = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1080/rainbow.png";
   };
 
+  monitors = [
+    {
+      name = "eDP-1";
+      width = 1920;
+      height = 1080;
+      refreshRate = 120;
+    }
+  ];
+
+
   colorscheme = inputs.nix-colors.colorschemes.gruvbox-dark-medium;
 }

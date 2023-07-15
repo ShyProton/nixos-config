@@ -11,8 +11,10 @@
         layer = "top";
         position = "left";
 
-        # TODO: Replace with display size - gap size * 2
-        height = 1060;
+        height =
+          let gap = 10;
+          in (builtins.head config.monitors).height - gap * 2;
+
         width = 40;
 
         modules-left = [
@@ -24,14 +26,14 @@
           "mpris"
           "pulseaudio#icon"
           "pulseaudio#volume"
-          "cpu#icon"
-          "cpu#usage"
-          "custom/seperator#sep1"
-          "memory#icon"
-          "memory#usage"
-          "custom/seperator#sep2"
-          "temperature#icon"
-          "temperature#temp"
+          # "cpu#icon"
+          # "cpu#usage"
+          # "custom/seperator#sep1"
+          # "memory#icon"
+          # "memory#usage"
+          # "custom/seperator#sep2"
+          # "temperature#icon"
+          # "temperature#temp"
           "network#icon"
           "network#strength"
           "battery#icon"
