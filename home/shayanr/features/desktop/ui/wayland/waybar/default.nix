@@ -194,7 +194,7 @@
         };
 
         "custom/power" = {
-          format = "⏻";
+          format = "";
         };
       };
     };
