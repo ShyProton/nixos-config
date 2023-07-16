@@ -15,6 +15,7 @@
     ../common/optional/pipewire.nix # Pipewire for audio/video multimedia.
     ../common/optional/bluetooth.nix # Bluetooth configurations.
     ../common/optional/backlight.nix # Screen backlight configurations.
+    ../common/optional/fprintd.nix # Fingerprint authentication.
 
     ../common/optional/hyprland-cache.nix # Hyprland package cache.
     ../common/optional/podman.nix # Rootless containers.
@@ -26,13 +27,6 @@
   services = {
     blueman.enable = true;
     tlp.enable = true;
-    fprintd = {
-      enable = true;
-      tod = {
-        enable = true;
-        driver = pkgs.libfprint-2-tod1-goodix;
-      };
-    };
   };
 
   hardware.opengl = {
