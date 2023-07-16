@@ -22,6 +22,7 @@ in
         "video"
         "networkmanager"
         "podman"
+        "libvirtd"
       ];
 
       openssh.authorizedKeys.keys = [
