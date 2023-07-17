@@ -1,4 +1,3 @@
-# FIXME: Dashboard only shows blank page.
 {
   programs.nixvim.plugins.dashboard = {
     enable = true;

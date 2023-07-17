@@ -5,7 +5,7 @@
     ./git.nix # Git utilities.
     ./project.nix # For setting working dir.
     ./finder.nix # For finding files.
-    ./presence.nix # Discord rich presence.
+    # ./presence.nix # Discord rich presence. #FIXME: Doesn't work with WebCord.
   ];
 
   # Plugins without extra configs.
