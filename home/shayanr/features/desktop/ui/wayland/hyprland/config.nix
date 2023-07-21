@@ -19,8 +19,10 @@
     blur_size = 5
     blur_passes = 3
     blur_new_optimizations = true
-    blur_ignore_opacity = true
+    blur_ignore_opacity = false
     drop_shadow = true
+    dim_inactive = true
+    dim_strength = 0.2
     shadow_range = 12
     shadow_offset = 4 4
     col.shadow = 0x99000000
