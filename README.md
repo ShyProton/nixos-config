@@ -7,6 +7,11 @@ My NixOS configuration files.
 Split into global machine configurations with opt-in features, and user
 configurations using [home-manager](https://github.com/nix-community/home-manager).
 
+## Machines
+- [**alphonse**](hosts/alphonse): ASUS TUF Gaming FX505DU
+- [**mob**](hosts/mob): Lenovo ThinkPad T14 Gen 3 (AMD) 21CF003UUS
+- [**vbox**](hosts/vbox): Virtual Machine
+
 ## Features
 
 ### Machine
@@ -38,7 +43,9 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
     - [x] [**Bluetooth**](hosts/common/optional/bluetooth.nix)
   - [x] **Containers**
     - [x] [**Podman**](hosts/common/optional/podman.nix), with some extra [user-side configuration](home/shayanr/features/cli/podman.nix)
+  - [x] [**Virt-manager**](hosts/common/optional/virtualization.nix) for virtualization
   - [ ] **NVIDIA** offloading
+  - [x] [**TLP**](hosts/common/optional/tlp.nix) for power management
 
 ### User(s)
 - [x] [**Neovim**](home/shayanr/features/cli/nvim) 
@@ -77,7 +84,6 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
 - [x] [**TealDeer**](home/shayanr/features/cli/tldr.nix) for simpler manpages
 - [x] [**Bat**, **Rg**](home/shayanr/features/cli/default.nix) alternatives to `cat`, `grep`
 - [x] [**Direnv**](home/shayanr/features/cli/direnv.nix) for easier development environments
-- [ ] **Virt-manager** for virtualization
 
 ## System details
 - **Intended partition labels:**
