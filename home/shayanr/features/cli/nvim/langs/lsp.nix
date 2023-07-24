@@ -15,7 +15,12 @@
           pyright.enable = true;
           rust-analyzer.enable = true;
           clangd.enable = true;
-          nil_ls.enable = true;
+
+          nil_ls = {
+            enable = true;
+            settings.formatting.command = ["alejandra"];
+          };
+
           lua-ls.enable = true;
           bashls.enable = true;
         };

@@ -39,30 +39,40 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs:
-    let
-      inherit (self) outputs;
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
 
-      system = "x86_64-linux";
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
 
-      nixos-system = system-module: nixpkgs.lib.nixosSystem {
+    nixos-system = system-module:
+      nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs outputs; };
+        specialArgs = {inherit inputs outputs;};
         modules = [
           system-module
         ];
       };
-    in
-    {
-      nixosModules = import ./modules/nixos;
-      homeManagerModules = import ./modules/home-manager;
+  in {
+    nixosModules = import ./modules/nixos;
+    homeManagerModules = import ./modules/home-manager;
 
-      templates = import ./templates;
+    templates = import ./templates;
 
-      nixosConfigurations = {
-        vbox = nixos-system ./hosts/vbox;
-        alphonse = nixos-system ./hosts/alphonse;
-        mob = nixos-system ./hosts/mob;
-      };
+    formatter.${system} = pkgs.alejandra;
+
+    nixosConfigurations = {
+      vbox = nixos-system ./hosts/vbox;
+      alphonse = nixos-system ./hosts/alphonse;
+      mob = nixos-system ./hosts/mob;
     };
+
+    devShell.${system} = pkgs.mkShell {
+      nativeBuildInputs = with pkgs; [alejandra];
+    };
+  };
 }
