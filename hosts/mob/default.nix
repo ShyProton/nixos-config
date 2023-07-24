@@ -27,6 +27,7 @@
   time.timeZone = "Canada/Eastern";
 
   services.blueman.enable = true;
+  hardware.bluetooth.powerOnBoot = false;
 
   hardware.opengl = {
     enable = true;
