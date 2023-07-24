@@ -1,7 +1,3 @@
-{ config, ... }:
-let
-  colors = config.colorScheme.colors;
-in
 {
   programs.starship = {
     enable = true;

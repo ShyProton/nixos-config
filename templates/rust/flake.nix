@@ -2,24 +2,24 @@
   description = "Template cargo project";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-unstable;
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     crane = {
-      url = github:ipetkov/crane;
+      url = "github:ipetkov/crane";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     fenix = {
-      url = github:nix-community/fenix;
+      url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.rust-analyzer-src.follows = "";
     };
 
-    nix-filter.url = github:numtide/nix-filter;
-    flake-utils.url = github:numtide/flake-utils;
+    nix-filter.url = "github:numtide/nix-filter";
+    flake-utils.url = "github:numtide/flake-utils";
 
     advisory-db = {
-      url = github:rustsec/advisory-db;
+      url = "github:rustsec/advisory-db";
       flake = false;
     };
   };

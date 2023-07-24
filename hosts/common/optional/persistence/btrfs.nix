@@ -1,9 +1,7 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, ... }:
 let
   # Script for showing the diff between the root and root-blank subvolumes.
   # This shows the ephemeral files which will be deleted on boot.
-  hostName = config.networking.hostName;
-
   fs-diff = pkgs.writeShellScriptBin "fs-diff" ''
     set -euo pipefail
 

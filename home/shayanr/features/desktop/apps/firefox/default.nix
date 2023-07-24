@@ -1,4 +1,4 @@
-{ pkgs, config, osConfig, lib, inputs, ... }:
+{ pkgs, config, osConfig, lib, ... }:
 {
   imports = [
     ./settings.nix # Firefox settings. 
