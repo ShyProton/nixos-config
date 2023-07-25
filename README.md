@@ -46,6 +46,7 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
   - [x] [**Virt-manager**](hosts/common/optional/virtualization.nix) for virtualization
   - [ ] **NVIDIA** offloading
   - [x] [**TLP**](hosts/common/optional/tlp.nix) for power management
+  - [x] [**fprintd**](hosts/common/optional/fprintd.nix) for fingerprint authentication
 
 ### User(s)
 - [x] [**Neovim**](home/shayanr/features/cli/nvim) 
