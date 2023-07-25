@@ -1,10 +1,9 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   virtualisation.libvirtd.enable = true;
-  environment.systemPackages = with pkgs; [ virt-manager ];
+  environment.systemPackages = with pkgs; [virt-manager];
 
   # Ensure libvirtd group exists.
-  users.groups.libvirtd = { };
+  users.groups.libvirtd = {};
 
-  environment.persistence."/persist".directories = [ "/var/lib/libvirt" ];
+  environment.persistence."/persist".directories = ["/var/lib/libvirt"];
 }

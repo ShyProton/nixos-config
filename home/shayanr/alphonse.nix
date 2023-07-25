@@ -1,17 +1,23 @@
-{ inputs, outputs, config, ... }:
 {
-  imports = [
-    # Impermanence for home-manager.
-    inputs.impermanence.nixosModules.home-manager.impermanence
-    # Declarative system colorscheme.
-    inputs.nix-colors.homeManagerModule
+  inputs,
+  outputs,
+  config,
+  ...
+}: {
+  imports =
+    [
+      # Impermanence for home-manager.
+      inputs.impermanence.nixosModules.home-manager.impermanence
+      # Declarative system colorscheme.
+      inputs.nix-colors.homeManagerModule
 
-    ./global # Implemented by all machines.
+      ./global # Implemented by all machines.
 
-    ./features/system # Userspace system configurations.
-    ./features/cli # Command-line apps/utils.
-    ./features/desktop # Desktop apps/utils.
-  ] ++ (builtins.attrValues outputs.homeManagerModules);
+      ./features/system # Userspace system configurations.
+      ./features/cli # Command-line apps/utils.
+      ./features/desktop # Desktop apps/utils.
+    ]
+    ++ (builtins.attrValues outputs.homeManagerModules);
 
   home.stateVersion = "22.11";
 

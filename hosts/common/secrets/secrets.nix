@@ -1,10 +1,9 @@
 let
   shayanr = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMqm+dODcOsPVZNmaAkVjiD1g5ZVgucyuoMSIAbwLsvRlhZTiG61g8w2+hsvm7zcqkO/yyMlaCSd33gv11HMz0H0JVDPCRSMZ6pxzoXhAwv9SpPXEvYa4E2xyh/IkqohvCvdVFRh8SOGgQ/ZjBaYXvf4VWoIGSfkn5WxRXfqd0tYTsvCTiZXI9nETXuK4bERdczZRlVznxq1LfahPPV7ZsyE/ybO6hGqWFxXGHjhrJ/OhbYUhyeOrX1eCcUyu0ENeWL9cC7B90GpXGYIVIwvdRKUZK9mf4QDKMCUDhgB4CSp1ICOA8xuIYWR9Vd2ldqTKhETbO/89ugwmqvVQ/lWOs3QDRdB3Sq2ck3/5YNRIaGrobmMTjeaowLl35ho+3wEdE+Cpq8g25SilKRPEi9rQWGDau40qoZd2k1+mxX64yCatQ8iIgR/iaLympMDvnDN7eB6kWVCXN5ZKT7FgzgP2Sx20faaJGOCyAM0G2goz2lu/PFbHgoGNHbE6vKMOHIEU= shayanr@alphonse";
-  users = [ shayanr ];
+  users = [shayanr];
 
   alphonse = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxobnlFyTaNqetzXoqdKA08lgmp10USaDTGwL7btUpH88w2nd/xxaBOvFy/gI09N7EOmRehetCgBe4xgrKP/0cJON1eUAlbJv/vjTVXhkVbUgmTOXY7gn4lSNO9nIfZo6RjHUEuoyu5rpukxkW2j+9eD1UDMHZ24RywbeOYwqvvasm14kzRMRI28le/yiqQ8TUZE+xQnUTnJuAopp6a+BjSsW/fDtGkqxq4v6JkR1gkLcgWoYYZ7SCWu6B5SUX+lBWbvBGUrutFsKm22zM+qPRgy1UZsYUbLqNxCCziESET3rsj50VGJDLErIPhJay2kb+GJxGdHHpkA4Rp+4oBGXRD7haDFXAGK9EwWQLXOSzZJ5tfNTn+PTdOSBHvsB9OnuQleHnf/spSxNPfvSoN4fE1pLC+yHqIHkPNa4jP4AypA47sue+3Q0K5ga5Zlbv1VK7jGccOIjFIY+1nxb20pu8kNJZjItzKY+vz+HB9pf+gI2QF/TPSneRpFypuNmMZZk= root@alphonse";
-  systems = [ alphonse ];
-in
-{
+  systems = [alphonse];
+in {
   "shayanr-password.age".publicKeys = users ++ systems;
 }

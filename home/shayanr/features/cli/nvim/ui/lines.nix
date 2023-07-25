@@ -39,7 +39,7 @@
         globalstatus = true;
 
         sections = {
-          lualine_a = [ "mode" ];
+          lualine_a = ["mode"];
           lualine_b = [
             {
               name = "branch";
@@ -58,9 +58,9 @@
               };
             }
           ];
-          lualine_x = [ "" ];
-          lualine_y = [ "filetype" ];
-          lualine_z = [ "progress" "location" ];
+          lualine_x = [""];
+          lualine_y = ["filetype"];
+          lualine_z = ["progress" "location"];
         };
       };
     };

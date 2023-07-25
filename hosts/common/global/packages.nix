@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Packages to be implemented on all machines.
   environment.systemPackages = with pkgs; [
     vim

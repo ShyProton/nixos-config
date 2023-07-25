@@ -6,5 +6,5 @@
   ];
 
   # Ensure networkmanager group exists.
-  users.groups.networkmanager = { };
+  users.groups.networkmanager = {};
 }

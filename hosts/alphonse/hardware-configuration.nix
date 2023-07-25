@@ -1,12 +1,16 @@
-{ config, lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "nvme" "ahci" "usb_storage" "sd_mod" ];
-      kernelModules = [ "amdgpu" ];
+      availableKernelModules = ["xhci_pci" "nvme" "ahci" "usb_storage" "sd_mod"];
+      kernelModules = ["amdgpu"];
     };
-    kernelModules = [ "kvm-amd" ];
-    extraModulePackages = with config.boot.kernelPackages; [ rtw88 ]; # For WiFi.
+    kernelModules = ["kvm-amd"];
+    extraModulePackages = with config.boot.kernelPackages; [rtw88]; # For WiFi.
   };
 
   fileSystems = {
@@ -59,15 +63,14 @@
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-label/SWAP"; }
+    {device = "/dev/disk/by-label/SWAP";}
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hardware = {
-    firmware = with pkgs; [ rtw88-firmware ];
+    firmware = with pkgs; [rtw88-firmware];
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 }
-

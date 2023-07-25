@@ -1,10 +1,17 @@
-{ pkgs, config, osConfig, lib, ... }:
+{
+  pkgs,
+  config,
+  osConfig,
+  lib,
+  ...
+}:
 # NOTE: Only configures nushell if it's defined as the default user shell.
 lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.nushell) {
   programs = {
     # Enable starship prompt integration if it's enabled.
     starship = {
-      enableNushellIntegration = lib.mkIf
+      enableNushellIntegration =
+        lib.mkIf
         config.programs.starship.enable
         true;
 
@@ -26,7 +33,8 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.nushell) {
 
   # WARN: Check if this breaks when the hyprland module is not in imports.
   # Enter Hyprland when logging into tty1 if Hyprland is enabled.
-  xdg.configFile."nushell/login.nu".text = lib.optionalString
+  xdg.configFile."nushell/login.nu".text =
+    lib.optionalString
     config.wayland.windowManager.hyprland.enable
     ''
       if (tty) == "/dev/tty1" {

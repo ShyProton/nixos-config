@@ -1,5 +1,11 @@
-{ inputs, pkgs, config, osConfig, lib, ... }:
 {
+  inputs,
+  pkgs,
+  config,
+  osConfig,
+  lib,
+  ...
+}: {
   imports = [
     inputs.hyprland.homeManagerModules.default
   ];
@@ -21,7 +27,8 @@
       }
 
       # Conditionally add extra session variables if the system has nvidia.
-      (lib.mkIf
+      (
+        lib.mkIf
         (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
         {
           LIBVA_DRIVER_NAME = "nvidia";
@@ -38,10 +45,11 @@
   wayland.windowManager.hyprland = {
     enable = true;
     # Enable nvidia patches if the system has the nvidia driver.
-    nvidiaPatches = lib.mkIf
+    nvidiaPatches =
+      lib.mkIf
       (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
       true;
 
-    extraConfig = import ./config.nix { inherit config; };
+    extraConfig = import ./config.nix {inherit config;};
   };
 }

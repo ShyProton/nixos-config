@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   programs.btop = {
     enable = true;
     settings = {

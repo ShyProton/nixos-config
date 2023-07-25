@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.nixvim.plugins.presence-nvim = {
     enable = true;
     # NOTE: Using temporary fork of presence until PR is merged.

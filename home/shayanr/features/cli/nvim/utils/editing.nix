@@ -22,7 +22,7 @@
         "NvimTree"
         "Trouble"
       ];
-      contextHighlightList = [ "ContextHighlight" ];
+      contextHighlightList = ["ContextHighlight"];
     };
 
     todo-comments = {

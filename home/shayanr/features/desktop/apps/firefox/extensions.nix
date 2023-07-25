@@ -1,9 +1,12 @@
-{ pkgs, lib, inputs, ... }:
-let
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: let
   inherit (inputs.firefox-addons.lib.${pkgs.system}) buildFirefoxXpiAddon;
   addons = inputs.firefox-addons.packages.${pkgs.system};
-in
-{
+in {
   # NOTE: Most extensions are currently being configured imperatively.
   programs.firefox.profiles.shayanr.extensions = with addons; [
     ublock-origin

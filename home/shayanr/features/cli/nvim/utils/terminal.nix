@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.nixvim = {
     extraPlugins = with pkgs.vimPlugins; [
       toggleterm-nvim

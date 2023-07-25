@@ -1,12 +1,15 @@
-{ pkgs, config, ... }:
-let
+{
+  pkgs,
+  config,
+  ...
+}: let
   window-gap = 10;
 
   colors = config.colorScheme.colors;
 
   powermenu = pkgs.writeShellScriptBin "powermenu" ''
     op=$(
-      echo -e " Lock\n Suspend\n Logout\n Reboot\n Poweroff" | 
+      echo -e " Lock\n Suspend\n Logout\n Reboot\n Poweroff" |
       wofi -i --dmenu --width 250 --height 210 --cache-file /dev/null \
         --y ${toString ((builtins.head config.monitors).height - 210 - window-gap)} |
       awk '{print tolower($2)}'
@@ -25,9 +28,8 @@ let
         poweroff;;
     esac
   '';
-in
-{
-  home.packages = with pkgs; [ wofi powermenu ];
+in {
+  home.packages = with pkgs; [wofi powermenu];
 
   gtk.iconTheme = {
     package = pkgs.papirus-icon-theme;

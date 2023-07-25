@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     # TODO: Extract nvim to be implemented in all machines
     ./features/cli
@@ -51,7 +54,7 @@
       # TODO: Test if this is needed.
       enableGitCredentialHelper = true;
 
-      extensions = with pkgs; [ gh-markdown-preview ];
+      extensions = with pkgs; [gh-markdown-preview];
 
       settings = {
         git_protocol = "ssh";

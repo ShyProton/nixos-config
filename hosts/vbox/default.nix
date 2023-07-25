@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix # Machine-specific hardware.
 
@@ -61,4 +59,3 @@
 
   system.stateVersion = "22.11";
 }
-

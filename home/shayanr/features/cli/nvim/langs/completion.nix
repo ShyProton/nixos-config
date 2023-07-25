@@ -1,51 +1,49 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   # TODO: Probably needs to be a Lua string.
-  kind_icons = '' {
-    Text = "",
-    Method = "m",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "",
-    Interface = "",
-    Module = "",
-    Property = "",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = "",
-  } '';
-in
-{
+  kind_icons = ''    {
+       Text = "",
+       Method = "m",
+       Function = "",
+       Constructor = "",
+       Field = "",
+       Variable = "",
+       Class = "",
+       Interface = "",
+       Module = "",
+       Property = "",
+       Unit = "",
+       Value = "",
+       Enum = "",
+       Keyword = "",
+       Snippet = "",
+       Color = "",
+       File = "",
+       Reference = "",
+       Folder = "",
+       EnumMember = "",
+       Constant = "",
+       Struct = "",
+       Event = "",
+       Operator = "",
+       TypeParameter = "",
+     } '';
+in {
   programs.nixvim = {
     plugins = {
       nvim-cmp = {
         enable = true; # Autocompletion.
 
         sources = [
-          { name = "nvim_lsp"; }
-          { name = "luasnip"; }
-          { name = "path"; }
-          { name = "buffer"; }
+          {name = "nvim_lsp";}
+          {name = "luasnip";}
+          {name = "path";}
+          {name = "buffer";}
         ];
 
         snippet.expand = "luasnip";
 
         formatting = {
-          fields = [ "kind" "abbr" "menu" ];
+          fields = ["kind" "abbr" "menu"];
           format = ''
             function(entry, vim_item)
               vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
@@ -66,7 +64,7 @@ in
           "<cr>" = "cmp.mapping.confirm({ select = true })";
 
           "<Tab>" = {
-            modes = [ "i" "s" ];
+            modes = ["i" "s"];
             action = ''
               function(fallback)
                 if cmp.visible() then
@@ -85,7 +83,7 @@ in
           };
 
           "<S-Tab>" = {
-            modes = [ "i" "s" ];
+            modes = ["i" "s"];
             action = ''
               function(fallback)
                 if cmp.visible() then
@@ -103,7 +101,7 @@ in
 
       luasnip = {
         enable = true;
-        fromVscode = [{ }];
+        fromVscode = [{}];
       };
 
       cmp-nvim-lsp.enable = true; # Lsp completions.

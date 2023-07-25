@@ -1,9 +1,12 @@
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     package = pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
     });
     settings = {
       primary = {
@@ -11,9 +14,10 @@
         layer = "top";
         position = "left";
 
-        height =
-          let window-gap = 10;
-          in (builtins.head config.monitors).height - window-gap * 2;
+        height = let
+          window-gap = 10;
+        in
+          (builtins.head config.monitors).height - window-gap * 2;
 
         width = 40;
 
@@ -87,7 +91,7 @@
             phone = "";
             portable = "";
             car = "";
-            default = [ "󰕿" "󰖀" "󰕾" ];
+            default = ["󰕿" "󰖀" "󰕾"];
           };
           format-muted = "󰖁";
           format-bluetooth = "󰂰";
@@ -129,7 +133,7 @@
 
         "temperature#icon" = {
           format = "{icon}";
-          format-icons = [ "" "" "" "" "" ];
+          format-icons = ["" "" "" "" ""];
         };
 
         "temperature#temp" = {
@@ -139,7 +143,7 @@
 
         "network#icon" = {
           format = "{icon}";
-          format-icons = [ "󰤟" "󰤢" "󰤥" "󰤨" ];
+          format-icons = ["󰤟" "󰤢" "󰤥" "󰤨"];
           format-ethernet = "󰈀";
           format-disconnected = "󰤭";
           tooltip-format = "{ifname} via {gwaddr}";
@@ -161,7 +165,7 @@
 
         "battery#icon" = {
           format = "{icon}";
-          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" ];
+          format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂"];
           format-plugged = "󰂄";
           format-charging = "󰂄";
           format-full = "󱈑";
@@ -201,6 +205,6 @@
       };
     };
 
-    style = import ./style.nix { inherit (config.colorScheme) colors; };
+    style = import ./style.nix {inherit (config.colorScheme) colors;};
   };
 }

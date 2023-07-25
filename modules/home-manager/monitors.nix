@@ -1,7 +1,6 @@
-{ lib, ... }:
-let inherit (lib) types mkOption;
-in
-{
+{lib, ...}: let
+  inherit (lib) types mkOption;
+in {
   options.monitors = mkOption {
     type = types.listOf (types.submodule {
       options = {

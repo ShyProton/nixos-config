@@ -1,5 +1,8 @@
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   programs = {
     git = {
       enable = true;
@@ -19,7 +22,7 @@
       # TODO: Test if this is needed.
       enableGitCredentialHelper = true;
 
-      extensions = with pkgs; [ gh-markdown-preview ];
+      extensions = with pkgs; [gh-markdown-preview];
 
       settings = {
         git_protocol = "ssh";

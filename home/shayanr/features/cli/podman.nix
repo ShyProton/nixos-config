@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   xdg.configFile."containers/storage.conf".text = ''
     [storage]
     driver = "overlay"

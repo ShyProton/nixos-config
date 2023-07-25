@@ -1,5 +1,4 @@
-{ colors }:
-''
+{colors}: ''
   # Main background, empty for terminal default, need to be empty if you want transparent background
   theme[main_bg]="#${colors.base00}"
 

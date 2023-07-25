@@ -1,5 +1,8 @@
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   # WARN: On package update, an imperative step is involved where openASAR must
   # be disabled then re-enabled in order for discord to function correctly.
   home = {
@@ -21,10 +24,10 @@
         "setup": true,
         "quickstart": true,
         "css": "${
-          builtins.replaceStrings [ "\n" ] [ "" ] (import ./style.nix {
-            colors = config.colorScheme.colors;
-          })
-        }"
+      builtins.replaceStrings ["\n"] [""] (import ./style.nix {
+        colors = config.colorScheme.colors;
+      })
+    }"
       },
       "IS_MAXIMIZED": false,
       "IS_MINIMIZED": false,

@@ -1,7 +1,12 @@
-{ pkgs, config, osConfig, lib, ... }:
 {
+  pkgs,
+  config,
+  osConfig,
+  lib,
+  ...
+}: {
   imports = [
-    ./settings.nix # Firefox settings. 
+    ./settings.nix # Firefox settings.
     ./style.nix # Firefox styling.
     ./extensions.nix # Firefox extensions.
   ];
@@ -24,7 +29,8 @@
       }
 
       # Conditionally add extra session variables if the system has nvidia.
-      (lib.mkIf
+      (
+        lib.mkIf
         (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
         {
           MOZ_DRM_DEVICE = "/dev/dri/card0";
@@ -38,9 +44,9 @@
   };
 
   xdg.mimeApps.defaultApplications = {
-    "text/html" = [ "firefox.desktop" ];
-    "text/xml" = [ "firefox.desktop" ];
-    "x-scheme-handler/http" = [ "firefox.desktop" ];
-    "x-scheme-handler/https" = [ "firefox.desktop" ];
+    "text/html" = ["firefox.desktop"];
+    "text/xml" = ["firefox.desktop"];
+    "x-scheme-handler/http" = ["firefox.desktop"];
+    "x-scheme-handler/https" = ["firefox.desktop"];
   };
 }

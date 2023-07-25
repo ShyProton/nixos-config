@@ -1,11 +1,13 @@
-{ pkgs, config, ... }:
-let
-  colors = config.colorScheme.colors;
-in
 {
+  pkgs,
+  config,
+  ...
+}: let
+  colors = config.colorScheme.colors;
+in {
   home = {
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
     ];
 
     sessionVariables.TERMINAL = "kitty";

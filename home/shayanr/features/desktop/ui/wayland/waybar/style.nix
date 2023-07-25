@@ -1,6 +1,5 @@
 # TODO: Condense this better with the use of classes.
-{ colors, ... }:
-''
+{colors, ...}: ''
   window#waybar {
     color: #${colors.base00};
     background: shade(alpha(#${colors.base00}, 0.25), 0.25);

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # TODO: Make shorthand function to quickly add apps that only need the package
   # added and a config directory persisted.
   imports = [

@@ -1,6 +1,5 @@
 # TODO: Make more theme-agnostic.
-{ colors, ... }:
-''
+{colors, ...}: ''
   /*
     Set basic color variables. Some parts of Discord don't use these,
     so we need to do more after...

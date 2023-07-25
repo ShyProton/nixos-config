@@ -39,7 +39,7 @@
       } else if $in < 52wk {
         'deepskyblue3b'
       } else { 'dark_gray' }
-    }    
+    }
 
     range: white
     float: white

@@ -1,7 +1,13 @@
-{ pkgs, config, osConfig, lib, ... }:
+{
+  pkgs,
+  config,
+  osConfig,
+  lib,
+  ...
+}:
 # NOTE: Only configures zsh if it's defined as the default user shell.
 lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.zsh) {
-  home.packages = with pkgs; [ exa ];
+  home.packages = with pkgs; [exa];
 
   programs = {
     zsh = lib.mkMerge [
@@ -41,7 +47,8 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.zsh) {
     ];
 
     # Enable starship prompt integration if it's enabled.
-    starship.enableZshIntegration = lib.mkIf
+    starship.enableZshIntegration =
+      lib.mkIf
       config.programs.starship.enable
       true;
   };

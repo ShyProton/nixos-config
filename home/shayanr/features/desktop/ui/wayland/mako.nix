@@ -1,8 +1,6 @@
-{ config, ... }:
-let
+{config, ...}: let
   inherit (config.colorScheme) colors;
-in
-{
+in {
   services.mako = {
     enable = true;
     font = "Roboto 12";

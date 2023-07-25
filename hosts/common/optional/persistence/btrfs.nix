@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   # Script for showing the diff between the root and root-blank subvolumes.
   # This shows the ephemeral files which will be deleted on boot.
   fs-diff = pkgs.writeShellScriptBin "fs-diff" ''
@@ -8,7 +11,7 @@ let
     sudo mkdir /mnt/fs-diff
     sudo mount -o subvol=/ /dev/disk/by-label/ROOT /mnt/fs-diff
 
-    OLD_TRANSID=$(sudo btrfs subvolume find-new /mnt/fs-diff/root-blank 9999999) 
+    OLD_TRANSID=$(sudo btrfs subvolume find-new /mnt/fs-diff/root-blank 9999999)
     OLD_TRANSID=''${OLD_TRANSID#transid marker was}
 
     sudo btrfs subvolume find-new "/mnt/fs-diff/root" "$OLD_TRANSID" |
@@ -30,9 +33,8 @@ let
     sudo umount /mnt/fs-diff
     sudo rmdir /mnt/fs-diff
   '';
-in
-{
-  boot.initrd.supportedFilesystems = [ "btrfs" ];
+in {
+  boot.initrd.supportedFilesystems = ["btrfs"];
 
   boot.initrd.postDeviceCommands = lib.mkBefore ''
     mkdir -p /mnt
@@ -57,5 +59,5 @@ in
     rmdir /mnt
   '';
 
-  environment.systemPackages = [ fs-diff ];
+  environment.systemPackages = [fs-diff];
 }

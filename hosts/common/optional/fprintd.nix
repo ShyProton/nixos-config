@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   services.fprintd = {
     enable = true;
     tod = {
@@ -8,5 +7,5 @@
     };
   };
 
-  environment.persistence."/persist".directories = [ "/var/lib/fprint" ];
+  environment.persistence."/persist".directories = ["/var/lib/fprint"];
 }

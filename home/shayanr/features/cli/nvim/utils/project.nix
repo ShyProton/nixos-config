@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins.project-nvim = {
     enable = true;
-    detectionMethods = [ "pattern" ];
+    detectionMethods = ["pattern"];
     silentChdir = true;
     showHidden = false;
     manualMode = false;

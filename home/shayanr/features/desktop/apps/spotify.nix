@@ -1,14 +1,17 @@
-{ inputs, config, pkgs, ... }:
-let
-  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
-in
 {
+  inputs,
+  config,
+  pkgs,
+  ...
+}: let
+  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
+in {
   imports = [
     inputs.spicetify-nix.homeManagerModule
   ];
 
   home = {
-    packages = with pkgs; [ playerctl ];
+    packages = with pkgs; [playerctl];
     persistence."/persist${config.home.homeDirectory}".directories = [
       ".config/spotify"
     ];
@@ -19,7 +22,7 @@ in
     genericName = "Music Player";
     exec = "spotify";
     terminal = false;
-    categories = [ "Application" ];
+    categories = ["Application"];
     icon = "spotify";
   };
 

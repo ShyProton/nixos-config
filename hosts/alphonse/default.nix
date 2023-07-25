@@ -1,5 +1,4 @@
-{ pkgs,  ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix # Machine-specific hardware.
 
@@ -25,7 +24,7 @@
 
   services = {
     blueman.enable = true;
-    xserver.videoDrivers = [ "nvidia" ]; # Nvidia driver definition.
+    xserver.videoDrivers = ["nvidia"]; # Nvidia driver definition.
   };
 
   hardware = {
