@@ -96,14 +96,16 @@
   bind = SUPER, q, exec, powermenu
 
   # WM controls
-  bind = SUPERSHIFT, c, killactive
   bind = SUPERSHIFT, q, exit
 
   bindm = SUPER, mouse:272, movewindow
   bindm = SUPER, mouse:273, resizewindow
 
+  bind = SUPER, c, killactive
   bind = SUPER, f, fullscreen, 1
   bind = SUPER, space, togglefloating
+  bind = SUPER, g, togglegroup
+  bind = SUPER, Tab, changegroupactive
 
   bind = SUPER, h, movefocus, l
   bind = SUPER, l, movefocus, r
