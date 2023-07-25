@@ -5,5 +5,8 @@
   # Ensure libvirtd group exists.
   users.groups.libvirtd = {};
 
-  environment.persistence."/persist".directories = ["/var/lib/libvirt"];
+  environment.persistence."/persist".directories = [
+    "/var/lib/libvirt"
+    "/var/cache/libvirt"
+  ];
 }
