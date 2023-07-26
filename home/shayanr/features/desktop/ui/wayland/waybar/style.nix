@@ -3,9 +3,10 @@
   inherit (config.window-decorations) border-radius;
   inherit (config.colorScheme) colors;
 
-  mkBorderRadius = tl: tr: br: bl: ''
-    border-radius: ${toString tl}px ${toString tr}px ${toString br}px ${toString bl}px;
-  '';
+  margins = 10;
+
+  toPx = num: "${toString num}px";
+  mkBorderRadius = tl: tr: br: bl: "border-radius: ${toPx tl} ${toPx tr} ${toPx br} ${toPx bl};";
 in ''
   window#waybar {
     color: #${colors.base00};
@@ -27,7 +28,7 @@ in ''
   #workspaces {
     background-color: #${colors.base0E};
     font-size: 1em;
-    margin-top: 10px;
+    margin-top: ${toPx margins};
     ${mkBorderRadius 0 border-radius border-radius 0}
   }
 
@@ -58,7 +59,7 @@ in ''
   #pulseaudio.icon {
     font-size: 1.8em;
     background-color: #${colors.base0E};
-    margin-top: 10px;
+    margin-top: ${toPx margins};
     ${mkBorderRadius 0 border-radius 0 0}
   }
 
@@ -71,7 +72,7 @@ in ''
   #cpu.icon {
     font-size: 1.8em;
     background-color: #${colors.base0A};
-    margin-top: 10px;
+    margin-top: ${toPx margins};
     ${mkBorderRadius 0 border-radius 0 0}
   }
 
@@ -114,7 +115,7 @@ in ''
   #network.icon {
     font-size: 1.8em;
     background-color: #${colors.base0D};
-    margin-top: 10px;
+    margin-top: ${toPx margins};
     ${mkBorderRadius 0 border-radius 0 0}
   }
 
@@ -128,7 +129,7 @@ in ''
     font-size: 2.2em;
     background-color: #${colors.base0B};
     padding: 3px 0 0 0;
-    margin-top: 10px;
+    margin-top: ${toPx margins};
     ${mkBorderRadius 0 border-radius 0 0}
   }
 
@@ -141,7 +142,7 @@ in ''
   #clock.icon {
     background-color: #${colors.base05};
     font-size: 1.8em;
-    margin-top: 10px;
+    margin-top: ${toPx margins};
     ${mkBorderRadius 0 border-radius 0 0}
   }
 
@@ -154,14 +155,14 @@ in ''
   #tray {
     background-color: #${colors.base00};
     padding: 2px 0 2px 0;
-    margin-top: 10px;
+    margin-top: ${toPx margins};
     ${mkBorderRadius 0 border-radius border-radius 0}
   }
 
   #custom-power {
     background-color: #${colors.base08};
     font-size: 1.5em;
-    margin-top: 10px;
+    margin-top: ${toPx margins};
     padding: 10px 0;
     ${mkBorderRadius 0 border-radius border-radius 0}
   }
