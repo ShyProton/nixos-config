@@ -16,6 +16,7 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.zsh) {
         enableAutosuggestions = true;
         enableCompletion = true;
         syntaxHighlighting.enable = true;
+        defaultKeymap = "viins";
 
         history = {
           save = 10000;
@@ -27,6 +28,10 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.zsh) {
           cat = "bat";
           grep = "rg --colors=line:none --colors=line:style:bold --max-columns=150 --max-columns-preview --smart-case";
         };
+
+        initExtra = ''
+          KEYTIMEOUT=1
+        '';
       }
 
       # WARN: Check if this breaks when the hyprland module is not in imports.

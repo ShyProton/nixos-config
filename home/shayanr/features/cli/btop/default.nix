@@ -86,6 +86,6 @@
   };
 
   xdg.configFile."btop/themes/theme.theme".text = import ./theme.nix {
-    colors = config.colorScheme.colors;
+    inherit (config.colorScheme) colors;
   };
 }
