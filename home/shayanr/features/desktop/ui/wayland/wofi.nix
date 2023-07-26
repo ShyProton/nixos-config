@@ -6,27 +6,34 @@
   inherit (config.window-decorations) gap-size border-radius;
   inherit (config.colorScheme) colors;
 
-  powermenu = pkgs.writeShellScriptBin "powermenu" ''
-    op=$(
-      echo -e " Lock\n Suspend\n Logout\n Reboot\n Poweroff" |
-      wofi -i --dmenu --width 250 --height 210 --cache-file /dev/null \
-        --y ${toString ((builtins.head config.monitors).height - 210 - gap-size)} |
-      awk '{print tolower($2)}'
-    )
+  toPx = num: "${toString num}px";
 
-    case $op in
-      lock)
-        swaylock;;
-      suspend)
-        systemctl suspend;;
-      logout)
-        hyprctl dispatch exit;;
-      reboot)
-        reboot;;
-      poweroff)
-        poweroff;;
-    esac
-  '';
+  powermenu = let
+    width = 250;
+    height = 210;
+  in
+    pkgs.writeShellScriptBin "powermenu" ''
+      op=$(
+        echo -e " Lock\n Suspend\n Logout\n Reboot\n Poweroff" |
+        wofi -i --dmenu --cache-file /dev/null \
+          --width ${toString width} --height ${toString height} \
+          --y ${toString ((builtins.head config.monitors).height - height - gap-size)} |
+        awk '{print tolower($2)}'
+      )
+
+      case $op in
+        lock)
+          swaylock;;
+        suspend)
+          systemctl suspend;;
+        logout)
+          hyprctl dispatch exit;;
+        reboot)
+          reboot;;
+        poweroff)
+          poweroff;;
+      esac
+    '';
 in {
   home.packages = [powermenu];
 
@@ -52,13 +59,13 @@ in {
         opacity: 0.95;
         border: 1px;
         border-color: #${colors.base05};
-        border-radius: ${toString border-radius}px;
+        border-radius: ${toPx border-radius};
         font-family: "Roboto Mono";
         font-size: 18px;
       }
 
       #input {
-        border-radius: ${toString border-radius}px ${toString border-radius}px 0px 0px;
+        border-radius: ${toPx border-radius} ${toPx border-radius} 0px 0px;
         border:  1px;
         padding: 10px;
         margin: 0px;
@@ -88,7 +95,7 @@ in {
       #outer-box {
         margin: 0px;
         background-color: #${colors.base01};
-        border-radius: ${toString border-radius}px;
+        border-radius: ${toPx border-radius};
       }
 
       #entry {
@@ -99,7 +106,7 @@ in {
 
       #entry:selected {
         background-color: #${colors.base0D};
-        border-radius: ${toString border-radius}px;
+        border-radius: ${toPx border-radius};
       }
 
       #scroll {
@@ -119,7 +126,7 @@ in {
       }
 
       #img {
-        border-radius: ${toString border-radius}px;
+        border-radius: ${toPx border-radius};
       }
 
       #img:selected {
