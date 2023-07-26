@@ -29,26 +29,26 @@
     esac
   '';
 in {
-  home.packages = with pkgs; [wofi powermenu];
+  home.packages = [powermenu];
 
   gtk.iconTheme = {
     package = pkgs.papirus-icon-theme;
     name = "Papirus";
   };
 
-  xdg.configFile = {
-    "wofi/config".text = ''
-      image_size=36
-      allow_images=true
-      insensitive=true
-      run-exec_search=true
-      x=${toString window-gap}
-      y=${toString window-gap}
-      width=25%
-      height=60%
-    '';
-
-    "wofi/style.css".text = ''
+  programs.wofi = {
+    enable = true;
+    settings = {
+      image_size = 36;
+      allow_images = true;
+      insensitive = true;
+      run-exec_search = true;
+      x = window-gap;
+      y = window-gap;
+      width = "25%";
+      height = "60%";
+    };
+    style = ''
       window {
         opacity: 0.95;
         border: 1px;
