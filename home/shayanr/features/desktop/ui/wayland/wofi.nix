@@ -3,15 +3,14 @@
   config,
   ...
 }: let
-  window-gap = 10;
-
-  colors = config.colorScheme.colors;
+  inherit (config.window-decorations) gap-size border-radius;
+  inherit (config.colorScheme) colors;
 
   powermenu = pkgs.writeShellScriptBin "powermenu" ''
     op=$(
       echo -e " Lock\n Suspend\n Logout\n Reboot\n Poweroff" |
       wofi -i --dmenu --width 250 --height 210 --cache-file /dev/null \
-        --y ${toString ((builtins.head config.monitors).height - 210 - window-gap)} |
+        --y ${toString ((builtins.head config.monitors).height - 210 - gap-size)} |
       awk '{print tolower($2)}'
     )
 
@@ -43,8 +42,8 @@ in {
       allow_images = true;
       insensitive = true;
       run-exec_search = true;
-      x = window-gap;
-      y = window-gap;
+      x = gap-size;
+      y = gap-size;
       width = "25%";
       height = "60%";
     };
@@ -53,13 +52,13 @@ in {
         opacity: 0.95;
         border: 1px;
         border-color: #${colors.base05};
-        border-radius: 10px;
+        border-radius: ${toString border-radius}px;
         font-family: "Roboto Mono";
         font-size: 18px;
       }
 
       #input {
-        border-radius: 10px 10px 0px 0px;
+        border-radius: ${toString border-radius}px ${toString border-radius}px 0px 0px;
         border:  1px;
         padding: 10px;
         margin: 0px;
@@ -89,7 +88,7 @@ in {
       #outer-box {
         margin: 0px;
         background-color: #${colors.base01};
-        border-radius: 5px;
+        border-radius: ${toString border-radius}px;
       }
 
       #entry {
@@ -100,7 +99,7 @@ in {
 
       #entry:selected {
         background-color: #${colors.base0D};
-        border-radius: 5px;
+        border-radius: ${toString border-radius}px;
       }
 
       #scroll {
@@ -120,7 +119,7 @@ in {
       }
 
       #img {
-        border-radius: 5px;
+        border-radius: ${toString border-radius}px;
       }
 
       #img:selected {

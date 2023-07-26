@@ -14,10 +14,9 @@
         layer = "top";
         position = "left";
 
-        height = let
-          window-gap = 10;
-        in
-          (builtins.head config.monitors).height - window-gap * 2;
+        height =
+          (builtins.head config.monitors).height
+          - config.window-decorations.gap-size * 2;
 
         width = 40;
 
@@ -205,6 +204,6 @@
       };
     };
 
-    style = import ./style.nix {inherit (config.colorScheme) colors;};
+    style = import ./style.nix {inherit config;};
   };
 }

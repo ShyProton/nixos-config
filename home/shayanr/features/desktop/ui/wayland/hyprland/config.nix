@@ -1,19 +1,22 @@
 # Hyprland configuration settings.
-{config, ...}: ''
+{config, ...}: let
+  inherit (config.window-decorations) gap-size border-radius;
+  inherit (config.colorScheme) colors;
+in ''
   general {
-    gaps_in = 5
-    gaps_out = 10
+    gaps_in = ${toString (gap-size / 2)}
+    gaps_out = ${toString gap-size}
     border_size = 2
 
-    col.active_border=0xff${config.colorScheme.colors.base05}
-    col.inactive_border=0xff${config.colorScheme.colors.base03}
+    col.active_border=0xff${colors.base05}
+    col.inactive_border=0xff${colors.base03}
   }
 
   decoration {
     active_opacity = 1.0
     inactive_opacity = 0.85
     fullscreen_opacity = 1.0
-    rounding = 5
+    rounding = ${toString border-radius}
     blur = true
     blur_size = 5
     blur_passes = 3

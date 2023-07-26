@@ -35,5 +35,10 @@
     }
   ];
 
+  window-decorations = {
+    gap-size = 10;
+    border-radius = 5;
+  };
+
   colorscheme = inputs.nix-colors.colorschemes.gruvbox-dark-medium;
 }
