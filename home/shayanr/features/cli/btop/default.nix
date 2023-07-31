@@ -10,7 +10,7 @@
 
       # Misc settings.
       vim_keys = true;
-      base_10_sizes = false;
+      base_10_sizes = true;
       clock_format = "%X";
       log_level = "WARNING";
       presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty";
@@ -62,7 +62,7 @@
       zfs_arc_cached = true;
       show_swap = true;
       swap_disk = true;
-      show_disks = true;
+      show_disks = false;
       only_physical = true;
       use_fstab = true;
       zfs_hide_datasets = false;
