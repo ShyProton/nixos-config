@@ -42,7 +42,8 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
     - [x] [**light**](hosts/common/optional/backlight.nix) for backlight control 
     - [x] [**Bluetooth**](hosts/common/optional/bluetooth.nix)
   - [x] **Containers**
-    - [x] [**Podman**](hosts/common/optional/podman.nix), with some extra [user-side configuration](home/shayanr/features/cli/podman.nix)
+    - [x] [**Podman**](hosts/common/optional/podman.nix), with some extra 
+      [user-side configuration](home/shayanr/features/cli/podman.nix)
   - [x] [**Virt-manager**](hosts/common/optional/virtualization.nix) for virtualization
   - [ ] **NVIDIA** offloading
   - [x] [**TLP**](hosts/common/optional/tlp.nix) for power management
@@ -70,7 +71,7 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
 - [x] [**Kitty**](home/shayanr/features/desktop/apps/kitty.nix) terminal emulator
 - [x] [**Discord Canary**](home/shayanr/features/desktop/apps/discord)
   - [x] [**Styling**](home/shayanr/features/desktop/apps/discord/style.nix)
-  - [x] **OpenAsar** alternative to `app.asar`
+  - [x] [**OpenAsar**](https://github.com/GooseMod/OpenAsar) alternative to `app.asar`
 - [x] [**WebCord**](home/shayanr/features/desktop/apps/webcord.nix) open source Discord client
 - [x] [**Spotify**](home/shayanr/features/desktop/apps/spotify.nix)
   - [x] **Styling** via [spicetify-nix](https://github.com/the-argus/spicetify-nix)
@@ -85,6 +86,13 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
 - [x] [**TealDeer**](home/shayanr/features/cli/tldr.nix) for simpler manpages
 - [x] [**Bat**, **Rg**](home/shayanr/features/cli/default.nix) alternatives to `cat`, `grep`
 - [x] [**Direnv**](home/shayanr/features/cli/direnv.nix) for easier development environments
+
+---
+- [**Modules**](modules/home-manager)
+  - [**Monitors**](modules/home-manager/monitors.nix) for monitor definitions
+  - [**Wallpaper**](modules/home-manager/wallpaper.nix) for defining home and lockscreen wallpapers
+  - [**Window decorations**](modules/home-manager/window-decorations.nix) for defining window styles
+    such as border radius and gap size
 
 ## System details
 - **Intended partition labels:**
@@ -102,6 +110,7 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
     - `/var/log`
     - `/var/lib/systemd`
     - `/srv`
+    - `/mnt`
   - Files:
     - `/etc/machine-id`
 
