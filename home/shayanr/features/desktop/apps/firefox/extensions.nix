@@ -17,10 +17,10 @@ in {
     # NOTE: Custom implementation for sidebery beta.
     (buildFirefoxXpiAddon {
       pname = "sidebery";
-      version = "5.0.0b31";
+      version = "5.0.0rc4";
       addonId = "{3c078156-979c-498b-8990-85f7987dd929}";
-      url = "https://github.com/mbnuqw/sidebery/releases/download/v5.0.0b31/sidebery-5.0.0b31.xpi";
-      sha256 = "sha256-J7N1w7T421c0B/oZJjpJJ4AsL1YpqUYaAkJsY5IhI+Y=";
+      url = "https://github.com/mbnuqw/sidebery/releases/download/v5.0.0rc4/sidebery-5.0.0rc4.xpi";
+      sha256 = "sha256-YsH9yYfGefClRS93dMV/eLMFuoPFKPrx0NL2hIv4dEk=";
       meta = with lib; {
         homepage = "https://github.com/mbnuqw/sidebery";
         description = "Tabs tree and bookmarks in sidebar with advanced containers configuration.";
