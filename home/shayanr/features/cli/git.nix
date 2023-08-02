@@ -20,7 +20,7 @@
     gh = {
       enable = true;
       # TODO: Test if this is needed.
-      enableGitCredentialHelper = true;
+      gitCredentialHelper.enable = true;
 
       extensions = with pkgs; [gh-markdown-preview];
 
