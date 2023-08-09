@@ -17,11 +17,15 @@ in ''
     inactive_opacity = 0.85
     fullscreen_opacity = 1.0
     rounding = ${toString border-radius}
-    blur = true
-    blur_size = 5
-    blur_passes = 3
-    blur_new_optimizations = true
-    blur_ignore_opacity = false
+
+    blur {
+      enabled = true
+      size = 5
+      passes = 3
+      new_optimizations = true
+      ignore_opacity = false
+    }
+
     drop_shadow = true
     dim_inactive = true
     dim_strength = 0.2
