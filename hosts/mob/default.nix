@@ -30,15 +30,16 @@
     fstrim.enable = true;
   };
 
-  hardware.bluetooth.powerOnBoot = false;
+  hardware = {
+    bluetooth.powerOnBoot = false;
+    opengl = {
+      enable = true;
 
-  hardware.opengl = {
-    enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
 
-    driSupport = true;
-    driSupport32Bit = true;
-
-    package = pkgs.mesa_drivers;
+      package = pkgs.mesa_drivers;
+    };
   };
 
   system.stateVersion = "23.05";
