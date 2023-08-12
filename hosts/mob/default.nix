@@ -25,7 +25,11 @@
   networking.hostName = "mob";
   time.timeZone = "Canada/Eastern";
 
-  services.blueman.enable = true;
+  services = {
+    blueman.enable = true;
+    fstrim.enable = true;
+  };
+
   hardware.bluetooth.powerOnBoot = false;
 
   hardware.opengl = {
