@@ -8,7 +8,8 @@
       availableKernelModules = ["xhci_pci" "nvme" "ahci" "usb_storage" "sd_mod"];
       kernelModules = [];
     };
-    kernelModules = ["kvm-amd"];
+    kernelModules = ["kvm-amd" "acpi_call"];
+    extraModulePackages = with config.boot.kernelPackages; [acpi_call];
   };
 
   fileSystems = let
