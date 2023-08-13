@@ -10,7 +10,6 @@
     });
     settings = {
       primary = {
-        mode = "dock";
         layer = "top";
         position = "left";
 

@@ -182,5 +182,5 @@ in ''
   windowrulev2 = float, class:^(pavucontrol)$
   windowrulev2 = float, class:^(.blueman-manager-wrapped)$
 
-  blurls = waybar
+  layerrule = blur, waybar
 ''
