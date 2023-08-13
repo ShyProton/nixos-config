@@ -27,7 +27,7 @@
       };
 
       lspsaga = {
-        enable = true;
+        enable = false;
 
         headers = {
           hint = " ";
