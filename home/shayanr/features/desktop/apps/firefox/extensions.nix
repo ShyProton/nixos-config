@@ -12,6 +12,7 @@ in {
     ublock-origin
     darkreader
     octotree
+    github-file-icons
     gruvbox-dark-theme
     return-youtube-dislikes
     # NOTE: Custom implementation for sidebery beta.
