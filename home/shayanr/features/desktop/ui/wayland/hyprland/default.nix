@@ -45,7 +45,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     # Enable nvidia patches if the system has the nvidia driver.
-    nvidiaPatches =
+    enableNvidiaPatches =
       lib.mkIf
       (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
       true;
