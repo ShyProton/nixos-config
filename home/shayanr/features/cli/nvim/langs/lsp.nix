@@ -9,6 +9,7 @@
           cssls.enable = true;
           tsserver.enable = true;
           jsonls.enable = true;
+          svelte.enable = true;
 
           texlab.enable = true;
 

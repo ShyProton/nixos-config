@@ -19,7 +19,7 @@
     splitright = true;
 
     shiftwidth = 4;
-    tabstop = 8;
+    tabstop = 4;
     softtabstop = 4;
     showtabline = 4;
     expandtab = true;
