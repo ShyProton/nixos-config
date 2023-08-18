@@ -11,4 +11,16 @@
       - NixOS Wiki entry: https://nixos.wiki/wiki/rust
     '';
   };
+
+  node = {
+    path = ./node;
+    description = "Node environment";
+    welcomeText = ''
+      # NodeJS Template
+      Template for a NodeJS project.
+
+      ## More info
+      - NixOS Wiki entry: https://nixos.wiki/wiki/Node.js
+    '';
+  };
 }
