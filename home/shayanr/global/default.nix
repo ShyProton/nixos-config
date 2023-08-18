@@ -10,6 +10,7 @@
         ".ssh"
         ".cache"
         ".cargo" # TODO: Probably a better place to put this.
+        ".npm"
       ];
     };
   };
