@@ -6,8 +6,8 @@
   lib,
   ...
 }: {
-  # WM Packages.
   home = {
+    # WM Packages.
     packages = with pkgs; [
       inputs.hyprwm-contrib.packages.${system}.grimblast # Screenshots.
       swaybg # Wallpaper utility.
@@ -46,6 +46,6 @@
       (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
       true;
 
-    extraConfig = import ./config.nix {inherit config;};
+    settings = import ./config.nix {inherit config;};
   };
 }
