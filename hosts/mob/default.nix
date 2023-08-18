@@ -17,7 +17,6 @@
     ../common/optional/fprintd.nix # Fingerprint authentication.
     ../common/optional/tlp.nix # Power management.
 
-    ../common/optional/hyprland-cache.nix # Hyprland package cache.
     ../common/optional/virtualization.nix # For virtual machines.
     ../common/optional/podman.nix # Rootless containers.
   ];

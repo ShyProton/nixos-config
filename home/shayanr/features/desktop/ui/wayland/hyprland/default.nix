@@ -6,10 +6,6 @@
   lib,
   ...
 }: {
-  imports = [
-    inputs.hyprland.homeManagerModules.default
-  ];
-
   # WM Packages.
   home = {
     packages = with pkgs; [
