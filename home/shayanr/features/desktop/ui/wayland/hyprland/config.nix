@@ -81,10 +81,11 @@ in {
   ];
 
   # Monitor configurations
-  monitor = [
-    "eDP-1, 1920x1080@120, 0x500, 1"
-    "HDMI-A-1, 1920x1080@144, 1920x0, 1"
-  ];
+  monitor = let
+    monitorConf = monitor:
+      with monitor; "${name}, ${toString width}x${toString height}@${toString refreshRate}, ${toString x}x${toString y}, 1";
+  in
+    map monitorConf config.monitors;
 
   bind = [
     # Program bindings
