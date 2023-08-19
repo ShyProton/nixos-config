@@ -66,7 +66,10 @@ in {
     workspace_swipe_fingers = 3;
   };
 
-  misc.disable_hyprland_logo = true;
+  misc = {
+    disable_hyprland_logo = true;
+    background_color = "0x${colors.base00}";
+  };
 
   # Startup
   exec-once = [
