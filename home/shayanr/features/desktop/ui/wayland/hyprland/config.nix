@@ -66,7 +66,7 @@ in {
     workspace_swipe_fingers = 3;
   };
 
-  misc.vfr = true;
+  misc.disable_hyprland_logo = true;
 
   # Startup
   exec-once = [
