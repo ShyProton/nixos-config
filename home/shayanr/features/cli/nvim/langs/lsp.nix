@@ -31,8 +31,8 @@
         enable = true;
 
         finder.keys = {
-          vsplit = "v";
-          split = "s";
+          vsplit = "<C-v>";
+          split = "<C-s>";
           toggleOrOpen = "l";
           shuttle = "<C-w>";
         };
