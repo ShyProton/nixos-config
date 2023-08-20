@@ -25,7 +25,7 @@
         ];
 
         modules-right = [
-          "mpris"
+          # "mpris"
           "pulseaudio#icon"
           "pulseaudio#volume"
           # "cpu#icon"
