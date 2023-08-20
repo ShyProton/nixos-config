@@ -37,7 +37,10 @@
       driSupport = true;
       driSupport32Bit = true;
 
-      package = pkgs.mesa_drivers;
+      extraPackages = with pkgs; [
+        libvdpau-va-gl
+        vaapiVdpau
+      ];
     };
   };
 
