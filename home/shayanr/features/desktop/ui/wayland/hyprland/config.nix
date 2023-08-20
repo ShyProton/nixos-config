@@ -200,6 +200,12 @@ in {
     "tile, class:^(Spotify)$"
     "float, class:^(pavucontrol)$"
     "float, class:^(.blueman-manager-wrapped)$"
+
+    # Firefox Picture-in-Picture rules
+    "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
+    "pin, class:^(firefox)$, title:^(Picture-in-Picture)$"
+    "opaque, class:^(firefox)$, title:^(Picture-in-Picture)$"
+    "noblur, class:^(firefox)$, title:^(Picture-in-Picture)$"
   ];
 
   layerrule = [
