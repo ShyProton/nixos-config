@@ -10,6 +10,9 @@ in {
 
     "col.active_border" = "0xff${colors.base05}";
     "col.inactive_border" = "0xff${colors.base03}";
+
+    "col.group_border" = "0x88${colors.base0A}";
+    "col.group_border_active" = "0xff${colors.base09}";
   };
 
   decoration = {
@@ -69,6 +72,7 @@ in {
   misc = {
     disable_hyprland_logo = true;
     background_color = "0x${colors.base00}";
+    render_titles_in_groupbar = false;
   };
 
   # Startup
