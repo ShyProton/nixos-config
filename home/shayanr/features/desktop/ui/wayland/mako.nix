@@ -1,5 +1,6 @@
 {config, ...}: let
   inherit (config.colorScheme) colors;
+  inherit (config.window-decorations) border-radius;
 in {
   services.mako = {
     enable = true;
@@ -11,7 +12,7 @@ in {
     width = 400;
     height = 150;
     borderSize = 2;
-    borderRadius = 5;
+    borderRadius = border-radius;
     anchor = "top-center";
 
     defaultTimeout = 12000;
