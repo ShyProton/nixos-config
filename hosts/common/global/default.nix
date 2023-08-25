@@ -7,5 +7,6 @@
     ./openssh.nix # OpenSSH configurations.
     ./age.nix # Secret management.
     ./persistence.nix # Opt-in persistence configurations.
+    ./xdg.nix # XDG configurations.
   ];
 }

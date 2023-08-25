@@ -46,6 +46,7 @@
     "dom.security.https_only_mode" = true;
     "identity.fxaccounts.enabled" = true;
     "privacy.trackingprotection.enabled" = true;
+    "privacy.webrtc.hideGlobalIndicator" = true;
     "signon.rememberSignons" = true;
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
   };

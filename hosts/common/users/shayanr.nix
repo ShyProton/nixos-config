@@ -41,6 +41,9 @@ in {
   # NOTE: Required for swaylock to function properly without the sway module.
   security.pam.services.swaylock = {};
 
+  # NOTE: Required to be able to screenshare on Hyprland.
+  xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
