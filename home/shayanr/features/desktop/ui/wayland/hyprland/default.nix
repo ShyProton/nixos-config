@@ -35,9 +35,6 @@
     ];
   };
 
-  # TODO: Hyprland desktop portal: must enable system wide.
-  # NOTE: Doesn't work here is because the home-manager module is being used.
-
   wayland.windowManager.hyprland = {
     enable = true;
     # Enable nvidia patches if the system has the nvidia driver.
