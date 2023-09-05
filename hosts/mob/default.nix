@@ -19,6 +19,7 @@
 
     ../common/optional/virtualization.nix # For virtual machines.
     ../common/optional/podman.nix # Rootless containers.
+    ../common/optional/postgres.nix # PostgreSQL
   ];
 
   networking.hostName = "mob";
