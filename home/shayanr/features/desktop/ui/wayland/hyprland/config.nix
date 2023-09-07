@@ -99,11 +99,10 @@ in {
     "SUPER, Return, exec, kitty"
 
     # Screenshots
-    ", Print, exec, grimblast --notify copy output"
-    "SHIFT, Print, exec, grimblast --notify copy active"
-    "CONTROL, Print, exec, grimblast --notify copy screen"
-    "SUPER, Print, exec, grimblast --notify copy window"
-    "ALT, Print, exec, grimblast --notify copy area"
+    ", Print, exec, grimblast --notify copysave output ${config.home.homeDirectory}/Pictures/screenshots/$(date +%s).png"
+    "SHIFT, Print, exec, grimblast --notify copysave active ${config.home.homeDirectory}/Pictures/screenshots/$(date +%s).png"
+    "CONTROL, Print, exec, grimblast --notify copysave screen ${config.home.homeDirectory}/Pictures/screenshots/$(date +%s).png"
+    "ALT, Print, exec, grimblast --notify copysave area ${config.home.homeDirectory}/Pictures/screenshots/$(date +%s).png"
 
     # Function keys
     ", XF86MonBrightnessUp, exec, light -A 10"
@@ -146,6 +145,10 @@ in {
 
     "SUPER, up, workspace, -1"
     "SUPER, down, workspace, +1"
+
+    # FIXME: Doesn't work due to pgrep -x not detecting Hyprland
+    "SUPER, s, exec, scratchpad"
+    "SUPERSHIFT, s, exec, scratchpad -l -g"
 
     # Workspace controls
     "SUPER, 1, workspace, 01"

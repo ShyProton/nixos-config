@@ -8,13 +8,17 @@
 }: {
   home = {
     # WM Packages.
-    packages = with pkgs; [
-      inputs.hyprwm-contrib.packages.${system}.grimblast # Screenshots.
-      swaybg # Wallpaper utility.
+    packages = with pkgs;
+      [
+        swaybg # Wallpaper utility.
 
-      wlr-randr
-      wl-clipboard
-    ];
+        wlr-randr
+        wl-clipboard
+      ]
+      ++ (with inputs.hyprwm-contrib.packages.${pkgs.system}; [
+        grimblast
+        scratchpad
+      ]);
 
     sessionVariables = lib.mkMerge [
       {
