@@ -1,24 +1,21 @@
 {
-  inputs,
   pkgs,
-  config,
   osConfig,
   lib,
   ...
 }: {
+  imports = [
+    ./config.nix
+  ];
+
   home = {
     # WM Packages.
-    packages = with pkgs;
-      [
-        swaybg # Wallpaper utility.
+    packages = with pkgs; [
+      swaybg # Wallpaper utility.
 
-        wlr-randr
-        wl-clipboard
-      ]
-      ++ (with inputs.hyprwm-contrib.packages.${pkgs.system}; [
-        grimblast
-        scratchpad
-      ]);
+      wlr-randr
+      wl-clipboard
+    ];
 
     sessionVariables = lib.mkMerge [
       {
@@ -46,7 +43,5 @@
       lib.mkIf
       (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
       true;
-
-    settings = import ./config.nix {inherit config;};
   };
 }
