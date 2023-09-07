@@ -15,7 +15,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprwm-contrib.url = "github:hyprwm/contrib";
+    hyprwm-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Utilities.
     impermanence.url = "github:nix-community/impermanence";
