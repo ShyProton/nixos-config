@@ -7,8 +7,6 @@
 }:
 # NOTE: Only configures zsh if it's defined as the default user shell.
 lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.zsh) {
-  home.packages = with pkgs; [exa];
-
   programs = {
     zsh = lib.mkMerge [
       {
@@ -21,12 +19,6 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.zsh) {
         history = {
           save = 10000;
           path = "/persist${config.home.homeDirectory}/.zsh_history";
-        };
-
-        shellAliases = {
-          ls = "exa --header --icons";
-          cat = "bat";
-          grep = "rg --colors=line:none --colors=line:style:bold --max-columns=150 --max-columns-preview --smart-case";
         };
 
         initExtra = ''

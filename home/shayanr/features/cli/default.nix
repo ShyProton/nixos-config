@@ -15,17 +15,15 @@
       ./tldr.nix # Short help-pages.
       ./ranger.nix # File browser.
       ./direnv.nix # Augments shell environment variables.
+      ./ripgrep.nix # Fast grepping.
+      ./eza.nix # ls replacement.
+      ./bat.nix # cat replacement.
     ]
     ++ lib.optionals (osConfig.virtualisation.podman.enable) [
       ./podman.nix # User podman settings.
     ];
 
   home.packages = with pkgs; [
-    # Utilities.
     age
-
-    # Replacements.
-    bat
-    ripgrep
   ];
 }
