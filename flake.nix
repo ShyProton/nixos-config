@@ -72,9 +72,5 @@
       alphonse = nixos-system ./hosts/alphonse;
       mob = nixos-system ./hosts/mob;
     };
-
-    devShell.${system} = pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [alejandra];
-    };
   };
 }

@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.nixvim = {
     plugins = {
       lsp = {
@@ -19,7 +19,7 @@
 
           nil_ls = {
             enable = true;
-            settings.formatting.command = ["alejandra"];
+            settings.formatting.command = ["${pkgs.alejandra}/bin/alejandra"];
           };
 
           lua-ls.enable = true;
