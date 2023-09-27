@@ -19,7 +19,7 @@ in {
     mutableUsers = false;
     users.shayanr = {
       isNormalUser = true;
-      passwordFile = config.age.secrets.shayanr-password.path;
+      hashedPasswordFile = config.age.secrets.shayanr-password.path;
       shell = pkgs.zsh; # Default user shell.
       extraGroups =
         [
