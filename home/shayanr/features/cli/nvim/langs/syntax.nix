@@ -18,6 +18,8 @@
           "svelte"
           "json"
           "jsonc"
+          "cpp"
+          "h"
         ];
         command = "setlocal tabstop=2 shiftwidth=2";
       }
