@@ -5,13 +5,12 @@
     ./git.nix # Git utilities.
     ./project.nix # For setting working dir.
     ./finder.nix # For finding files.
-    # ./presence.nix # Discord rich presence. # FIXME: Doesn't work with WebCord.
+    ./hardtime.nix # Enforces good habits.
   ];
 
   # Plugins without extra configs.
   programs.nixvim.plugins = {
     comment-nvim.enable = true; # Comment toggling.
     surround.enable = true; # Editing 'surroundings'.
-    hardtime.enable = true; # Prevents bad habits.
   };
 }
