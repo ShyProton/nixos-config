@@ -34,7 +34,6 @@
 
         view = {
           width = 30;
-          hideRootFolder = false;
           number = false;
           relativenumber = true;
           side = "left";
