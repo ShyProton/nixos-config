@@ -91,17 +91,52 @@
       end
     '';
 
-    maps.normal = {
-      "<leader>o".action = "<cmd>Lspsaga outline<cr>";
-      "<leader>x".action = "<cmd>Trouble workspace_diagnostics<cr>";
-      "<leader>t".action = "<cmd>TodoTrouble<cr>";
-
-      "<S-k>".action = "<cmd>Lspsaga hover_doc<cr>";
-      "<A-k>".action = "<cmd>Lspsaga show_line_diagnostics<cr>";
-      "<A-f>".action = "<cmd>Lspsaga finder<cr>";
-      "<A-d>".action = "<cmd>Lspsaga peek_definition<cr>";
-      "<A-a>".action = "<cmd>Lspsaga code_action<cr>";
-      "<S-r>".action = "<cmd>Lspsaga rename<cr>";
-    };
+    keymaps = [
+      {
+        key = "<leader>o";
+        action = "<cmd>Lspsaga outline<cr>";
+        mode = "n";
+      }
+      {
+        key = "<leader>x";
+        action = "<cmd>Trouble workspace_diagnostics<cr>";
+        mode = "n";
+      }
+      {
+        key = "<leader>t";
+        action = "<cmd>TodoTrouble<cr>";
+        mode = "n";
+      }
+      {
+        key = "<S-k>";
+        action = "<cmd>Lspsaga hover_doc<cr>";
+        mode = "n";
+      }
+      {
+        key = "<S-r>";
+        action = "<cmd>Lspsaga rename<cr>";
+        mode = "n";
+      }
+      {
+        key = "<A-k>";
+        action = "<cmd>Lspsaga show_line_diagnostics<cr>";
+        mode = "n";
+      }
+      {
+        key = "<A-f>";
+        action = "<cmd>Lspsaga finder<cr>";
+        mode = "n";
+      }
+      {
+        key = "<A-d>";
+        action = "<cmd>Lspsaga peek_definition<cr>";
+        mode = "n";
+      }
+      {
+        key = "<A-a>";
+        action = "<cmd>Lspsaga code_action<cr>";
+        mode = "n";
+      }
+    ];
   };
 }

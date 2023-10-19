@@ -21,11 +21,28 @@
       };
     };
 
-    maps.normal = {
-      "<leader>ff".action = "<cmd>Telescope find_files theme=dropdown<cr>";
-      "<leader>fg".action = "<cmd>Telescope live_grep theme=dropdown<cr>";
-      "<leader>fb".action = "<cmd>Telescope buffers theme=dropdown<cr>";
-      "<leader>fh".action = "<cmd>Telescope help_tags theme=dropdown<cr>";
-    };
+    keymaps = [
+      {
+        key = "<leader>ff";
+        action = "<cmd>Telescope find_files theme=dropdown<cr>";
+        mode = "n";
+      }
+      {
+        key = "<leader>fg";
+        action = "<cmd>Telescope live_grep theme=dropdown<cr>";
+        mode = "n";
+      }
+
+      {
+        key = "<leader>fb";
+        action = "<cmd>Telescope buffers theme=dropdown<cr>";
+        mode = "n";
+      }
+      {
+        key = "<leader>fh";
+        action = "<cmd>Telescope help_tags theme=dropdown";
+        mode = "n";
+      }
+    ];
   };
 }

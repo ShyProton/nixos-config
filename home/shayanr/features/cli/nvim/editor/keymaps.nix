@@ -17,23 +17,52 @@
       }
     '';
 
-    maps = {
-      normal = {
-        # Window navigation.
-        "<C-k>".action = "<C-w>k";
-        "<C-j>".action = "<C-w>j";
-        "<C-l>".action = "<C-w>l";
-        "<C-h>".action = "<C-w>h";
-
-        # Arrow window resizing.
-        "<C-Up>".action = "<cmd>resize +2<cr>";
-        "<C-Down>".action = "<cmd>resize -2<cr>";
-        "<C-Right>".action = "<cmd>vertical resize +2<cr>";
-        "<C-Left>".action = "<cmd>vertical resize -2<cr>";
-
-        # Close buffer.
-        "<C-q>".action = "<cmd>bd<cr>";
-      };
-    };
+    keymaps = [
+      {
+        key = "<C-k>";
+        action = "<C-w>k";
+        mode = "n";
+      }
+      {
+        key = "<C-j>";
+        action = "<C-w>j";
+        mode = "n";
+      }
+      {
+        key = "<C-l>";
+        action = "<C-w>l";
+        mode = "n";
+      }
+      {
+        key = "<C-h>";
+        action = "<C-w>h";
+        mode = "n";
+      }
+      {
+        key = "<C-Up>";
+        action = "<cmd>resize +2<cr>";
+        mode = "n";
+      }
+      {
+        key = "<C-Down>";
+        action = "<cmd>resize -2<cr>";
+        mode = "n";
+      }
+      {
+        key = "<C-Right>";
+        action = "<cmd>vertical resize +2<cr>";
+        mode = "n";
+      }
+      {
+        key = "<C-Left>";
+        action = "<cmd>vertical resize -2<cr>";
+        mode = "n";
+      }
+      {
+        key = "<C-q>";
+        action = "<cmd>bd<cr>";
+        mode = "n";
+      }
+    ];
   };
 }

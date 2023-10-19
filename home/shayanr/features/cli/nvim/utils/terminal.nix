@@ -29,24 +29,62 @@
       })
     '';
 
-    maps = {
-      normal = {
-        "<M-Enter>".action = "<cmd>ToggleTermToggleAll<cr>";
-        "<M-\\>".action = "<cmd>exe v:count1 . \"ToggleTerm direction=float\"<cr>";
-        "<M-]>".action = "<cmd>exe v:count1 . \"ToggleTerm direction=vertical size=70\"<cr>";
-        "<M-[>".action = "<cmd>exe v:count1 . \"ToggleTerm direction=horizontal size=15\"<cr>";
-      };
-
-      terminal = {
-        "<C-k>".action = "<C-\\><C-n><C-w>k";
-        "<C-j>".action = "<C-\\><C-n><C-w>j";
-        "<C-h>".action = "<C-\\><C-n><C-w>h";
-
-        "<M-Enter>".action = "<cmd>ToggleTermToggleAll<cr>";
-        "<M-\\>".action = "<cmd>exe v:count1 . \"ToggleTerm direction=float\"<cr>";
-        "<M-]>".action = "<cmd>exe v:count1 . \"ToggleTerm direction=vertical size=70\"<cr>";
-        "<M-[>".action = "<cmd>exe v:count1 . \"ToggleTerm direction=horizontal size=15\"<cr>";
-      };
-    };
+    keymaps = [
+      {
+        key = "<M-Enter>";
+        action = "<cmd>ToggleTermToggleAll<cr>";
+        mode = "n";
+      }
+      {
+        key = "<M-\\>";
+        action = "<cmd>exe v:count1 . \"ToggleTerm direction=float\"<cr>";
+        mode = "n";
+      }
+      {
+        key = "<M-]>";
+        action = "<cmd>exe v:count1 . \"ToggleTerm direction=vertical size=70\"<cr>";
+        mode = "n";
+      }
+      {
+        key = "<M-[>";
+        action = "<cmd>exe v:count1 . \"ToggleTerm direction=horizontal size=15\"<cr>";
+        mode = "n";
+      }
+      {
+        key = "<M-Enter>";
+        action = "<cmd>ToggleTermToggleAll<cr>";
+        mode = "t";
+      }
+      {
+        key = "<M-\\>";
+        action = "<cmd>exe v:count1 . \"ToggleTerm direction=float\"<cr>";
+        mode = "t";
+      }
+      {
+        key = "<M-]>";
+        action = "<cmd>exe v:count1 . \"ToggleTerm direction=vertical size=70\"<cr>";
+        mode = "t";
+      }
+      {
+        key = "<M-[>";
+        action = "<cmd>exe v:count1 . \"ToggleTerm direction=horizontal size=15\"<cr>";
+        mode = "t";
+      }
+      {
+        key = "<C-k>";
+        action = "<C-\\><C-n><C-w>k";
+        mode = "t";
+      }
+      {
+        key = "<C-j>";
+        action = "<C-\\><C-n><C-w>j";
+        mode = "t";
+      }
+      {
+        key = "<C-h>";
+        action = "<C-\\><C-n><C-w>h";
+        mode = "t";
+      }
+    ];
   };
 }

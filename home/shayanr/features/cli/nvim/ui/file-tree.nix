@@ -119,8 +119,12 @@
       };
     };
 
-    maps.normal = {
-      "<leader>e".action = "<cmd>NvimTreeToggle<cr>";
-    };
+    keymaps = [
+      {
+        key = "<leader>e";
+        action = "<cmd>NvimTreeToggle<cr>";
+        mode = "n";
+      }
+    ];
   };
 }

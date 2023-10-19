@@ -65,11 +65,27 @@
       };
     };
 
-    maps.normal = {
-      "<S-l>".action = "<cmd>BufferLineCycleNext<cr>";
-      "<S-h>".action = "<cmd>BufferLineCyclePrev<cr>";
-      "<A-l>".action = "<cmd>BufferLineMoveNext<cr>";
-      "<A-h>".action = "<cmd>BufferLineMovePrev<cr>";
-    };
+    keymaps = [
+      {
+        key = "<S-l>";
+        action = "<cmd>BufferLineCycleNext<cr>";
+        mode = "n";
+      }
+      {
+        key = "<S-h>";
+        action = "<cmd>BufferLineCyclePrev<cr>";
+        mode = "n";
+      }
+      {
+        key = "<A-l>";
+        action = "<cmd>BufferLineMoveNext<cr>";
+        mode = "n";
+      }
+      {
+        key = "<A-h>";
+        action = "<cmd>BufferLineMovePrev<cr>";
+        mode = "n";
+      }
+    ];
   };
 }
