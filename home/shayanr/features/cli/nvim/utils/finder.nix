@@ -40,7 +40,7 @@
       }
       {
         key = "<leader>fh";
-        action = "<cmd>Telescope help_tags theme=dropdown";
+        action = "<cmd>Telescope help_tags theme=dropdown<cr>";
         mode = "n";
       }
     ];
