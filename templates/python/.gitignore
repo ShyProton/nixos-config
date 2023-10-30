@@ -1,4 +1,5 @@
 # Builds
+__pycache__
 result
 dist
 
