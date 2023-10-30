@@ -6,23 +6,26 @@
 
     indent-blankline = {
       enable = true;
-      useTreesitter = true;
-      showCurrentContext = true;
-      showTrailingBlanklineIndent = false;
-      buftypeExclude = [
-        "terminal"
-        "nofile"
-      ];
-      filetypeExclude = [
-        "help"
-        "startify"
-        "dashboard"
-        "packer"
-        "neogitstatus"
-        "NvimTree"
-        "Trouble"
-      ];
-      contextHighlightList = ["ContextHighlight"];
+      exclude = {
+        filetypes = [
+          "help"
+          "startify"
+          "dashboard"
+          "packer"
+          "neogitstatus"
+          "NvimTree"
+          "Trouble"
+          "lspinfo"
+          "checkhealth"
+          "gitcommit"
+          ""
+        ];
+
+        buftypes = [
+          "terminal"
+          "nofile"
+        ];
+      };
     };
 
     todo-comments = {
