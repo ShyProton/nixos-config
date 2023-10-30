@@ -23,4 +23,17 @@
       - NixOS Wiki entry: https://nixos.wiki/wiki/Node.js
     '';
   };
+
+  python = {
+    path = ./python;
+    description = "Python environment";
+    welcomeText = ''
+      # Python Template
+      Template for a Python project using Poetry.
+
+      ## More info
+      - NixOS Wiki for Python: https://nixos.wiki/wiki/Python
+      - Poetry: https://github.com/nix-community/poetry2nix
+    '';
+  };
 }

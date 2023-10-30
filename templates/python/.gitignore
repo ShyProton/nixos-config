@@ -1,0 +1,6 @@
+# Builds
+result
+dist
+
+# Misc
+.direnv
