@@ -18,9 +18,6 @@
 
       "col.active_border" = "0xff${colors.base05}";
       "col.inactive_border" = "0xff${colors.base03}";
-
-      "col.group_border" = "0x88${colors.base0A}";
-      "col.group_border_active" = "0xff${colors.base09}";
     };
 
     decoration = {
@@ -78,9 +75,19 @@
     };
 
     misc = {
-      disable_hyprland_logo = true;
+      force_default_wallpaper = 0;
       background_color = "0x${colors.base00}";
-      render_titles_in_groupbar = false;
+    };
+
+    group = {
+      "col.border_inactive" = "0x88${colors.base09}";
+      "col.border_active" = "0xff${colors.base0A}";
+
+      groupbar = {
+        font_size = 10;
+        "col.inactive" = "0x88${colors.base09}";
+        "col.active" = "0xff${colors.base0A}";
+      };
     };
 
     # Startup
