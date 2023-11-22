@@ -20,7 +20,6 @@
     sessionVariables = lib.mkMerge [
       {
         HYPRLAND_LOG_WLR = 1;
-        NIXOS_OZONE_WL = 1;
       }
 
       # Conditionally add extra session variables if the system has nvidia.
