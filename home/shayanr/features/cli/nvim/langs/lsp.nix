@@ -10,10 +10,23 @@
           tsserver.enable = true;
           jsonls.enable = true;
           svelte.enable = true;
-
+          clojure-lsp.enable = true;
           texlab.enable = true;
+          java-language-server.enable = true;
 
-          pyright.enable = true;
+          pylsp = {
+            enable = true;
+            settings.plugins = {
+              autopep8.enabled = false;
+              pycodestyle.enabled = false;
+              pyflakes.enabled = false;
+
+              flake8.enabled = true;
+              pylint.enabled = true;
+              yapf.enabled = true;
+            };
+          };
+
           rust-analyzer.enable = true;
           clangd.enable = true;
 
