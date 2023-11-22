@@ -9,8 +9,14 @@
         ".dotfiles"
         ".ssh"
         ".cache"
-        ".cargo" # TODO: Probably a better place to put this.
+
+        ".gitlibs"
+
+        # NOTE: Language-specific directories.
+        ".cargo"
         ".npm"
+        ".clojure"
+        ".m2"
       ];
     };
   };
