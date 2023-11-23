@@ -11,6 +11,7 @@
     settings = {
       primary = {
         layer = "top";
+        output = "${(builtins.head config.monitors).name}";
         position = "left";
 
         height =
