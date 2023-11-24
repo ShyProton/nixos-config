@@ -16,7 +16,9 @@ in {
       indicator-radius = 200;
       indicator-thickness = 20;
 
-      image = config.wallpapers.lockscreen;
+      image = (monitor:
+        with monitor; "${config.home.homeDirectory}/Pictures/wallpapers/${toString width}x${toString height}/${wallpapers.lockscreen}")
+      (builtins.head config.monitors);
 
       color = "#${colors.base00}";
       ring-color = "#${colors.base02}";

@@ -1,5 +1,4 @@
 {
-  monitors = import ./monitors.nix;
-  wallpaper = import ./wallpaper.nix;
+  monitors = import ./monitors;
   window-decorations = import ./window-decorations.nix;
 }

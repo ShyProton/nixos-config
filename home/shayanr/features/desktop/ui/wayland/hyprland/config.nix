@@ -93,13 +93,10 @@
     # Startup
     exec-once = [
       "waybar"
+      "${pkgs.hyprpaper}/bin/hyprpaper"
       "mako"
       "hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}"
       "swayidle -w"
-    ];
-
-    exec = [
-      "swaybg -i ${config.wallpapers.desktop} --mode fill"
     ];
 
     # Monitor configurations

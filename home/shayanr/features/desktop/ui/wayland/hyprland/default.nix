@@ -11,8 +11,6 @@
   home = {
     # WM Packages.
     packages = with pkgs; [
-      swaybg # Wallpaper utility.
-
       wlr-randr
       wl-clipboard
     ];

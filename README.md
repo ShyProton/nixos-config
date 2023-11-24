@@ -57,7 +57,7 @@ configurations using [home-manager](https://github.com/nix-community/home-manage
 - [x] [**Wayland**](home/shayanr/features/desktop/ui/wayland)
   - [x] [**Hyprland**](home/shayanr/features/desktop/ui/wayland/hyprland)
     - [x] **NVIDIA** support
-    - [x] **Swaybg** for wallpapers
+    - [x] [**Hyprpaper**](home/shayanr/features/desktop/ui/wayland/hyprpaper.nix) for wallpapers
   - [ ] **Sway**
   - [x] [**Waybar**](home/shayanr/features/desktop/ui/wayland/waybar) taskbar
   - [x] [**Wofi**](home/shayanr/features/desktop/ui/wayland/wofi.nix) app launcher

@@ -38,6 +38,10 @@ in {
           type = types.bool;
           default = true;
         };
+
+        wallpapers = mkOption {
+          type = import ./wallpapers.nix {inherit lib;};
+        };
       };
     });
   };

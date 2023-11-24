@@ -6,5 +6,6 @@
     ./waybar # Desktop bar.
     ./wofi.nix # App launcher.
     ./mako.nix # Notification daemon
+    ./hyprpaper.nix # Wallpapers.
   ];
 }

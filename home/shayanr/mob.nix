@@ -1,7 +1,6 @@
 {
   inputs,
   outputs,
-  config,
   ...
 }: {
   imports =
@@ -21,11 +20,6 @@
 
   home.stateVersion = "23.05";
 
-  wallpapers = {
-    desktop = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/gruvbox/solar_system_poster.jpeg";
-    lockscreen = "${config.home.homeDirectory}/Pictures/wallpapers/1920x1200/gruvbox/sun_circle.jpg";
-  };
-
   monitors = [
     {
       name = "eDP-1";
@@ -34,6 +28,10 @@
       x = 0;
       y = 500;
       refreshRate = 60;
+      wallpapers = {
+        desktop = "gruvbox/solar_system_poster.jpeg";
+        lockscreen = "gruvbox/sun_circle.jpg";
+      };
     }
     {
       name = "HDMI-A-1";
@@ -42,6 +40,10 @@
       x = 1920;
       y = 0;
       refreshRate = 144;
+      wallpapers = {
+        desktop = "gruvbox/solar_system2.jpg";
+        lockscreen = "gruvbox/sun_circle.jpg";
+      };
     }
   ];
 
