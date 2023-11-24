@@ -41,7 +41,7 @@
       y = 0;
       refreshRate = 144;
       wallpapers = {
-        desktop = "gruvbox/solar_system2.jpg";
+        desktop = "gruvbox/waves.png";
         lockscreen = "gruvbox/sun_circle.jpg";
       };
     }
