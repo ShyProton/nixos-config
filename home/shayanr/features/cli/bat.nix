@@ -1,13 +1,19 @@
-{
-  programs = {
+{pkgs, ...}: {
+  programs = let
+    aliases = {
+      cat = "bat";
+      man = "batman";
+    };
+  in {
     bat = {
       enable = true;
+      extraPackages = with pkgs.bat-extras; [batman];
       config.theme = "gruvbox-dark";
     };
 
-    bash.shellAliases.cat = "bat";
-    zsh.shellAliases.cat = "bat";
-    fish.shellAliases.cat = "bat";
-    ion.shellAliases.cat = "bat";
+    bash.shellAliases = aliases;
+    zsh.shellAliases = aliases;
+    fish.shellAliases = aliases;
+    ion.shellAliases.cat = aliases;
   };
 }
