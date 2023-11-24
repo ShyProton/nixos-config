@@ -1,9 +1,11 @@
 # NOTE: Not in 'hyprland' directory since hyprpaper is not hyprland-specific.
 {
+  pkgs,
   config,
   lib,
   ...
 }: {
+  home.packages = with pkgs; [hyprpaper];
   xdg.configFile."hypr/hyprpaper.conf".text = let
     paths = map (monitor:
       with monitor; "${config.home.homeDirectory}/Pictures/wallpapers/${toString width}x${toString height}/${wallpapers.desktop}")

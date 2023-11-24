@@ -93,10 +93,10 @@
     # Startup
     exec-once = [
       "waybar"
-      "${pkgs.hyprpaper}/bin/hyprpaper"
+      "hyprpaper"
       "mako"
-      "hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}"
       "swayidle -w"
+      "hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}"
     ];
 
     # Monitor configurations
