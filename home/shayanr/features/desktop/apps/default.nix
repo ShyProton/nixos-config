@@ -7,10 +7,10 @@
     ./kitty.nix # Terminal emulator.
     ./spotify.nix # Music player.
     ./obsidian.nix # Note taking.
-    ./pgmodeler.nix # PostreSQL modeler.
   ];
 
   home.packages = with pkgs; [
     pavucontrol
+    inkscape
   ];
 }
