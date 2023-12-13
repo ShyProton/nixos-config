@@ -1,6 +1,11 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  # HACK: Obsidian relies on insecure electron version.
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   nix = {
     settings = {
       warn-dirty = false;
