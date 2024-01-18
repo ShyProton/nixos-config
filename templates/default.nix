@@ -36,4 +36,13 @@
       - Poetry: https://github.com/nix-community/poetry2nix
     '';
   };
+
+  kernel-mod = {
+    path = ./kernel-mod;
+    description = "Kernel Module development environment using C";
+    welcomeText = ''
+      # Kernel Module Template
+      Template for a Kernel Module project using C.
+    '';
+  };
 }
