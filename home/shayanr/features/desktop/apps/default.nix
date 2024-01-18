@@ -7,6 +7,8 @@
     ./kitty.nix # Terminal emulator.
     ./spotify.nix # Music player.
     ./obsidian.nix # Note taking.
+
+    ./rstudio.nix # R development.
   ];
 
   home.packages = with pkgs; [

@@ -15,8 +15,6 @@
         # NOTE: Language-specific directories.
         ".cargo"
         ".npm"
-        ".clojure"
-        ".m2"
       ];
     };
   };
