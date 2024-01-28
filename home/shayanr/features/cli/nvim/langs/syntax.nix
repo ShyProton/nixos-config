@@ -13,12 +13,15 @@
           "nix"
           "html"
           "css"
+          "scss"
+          "sass"
           "javascript"
           "typescript"
           "svelte"
           "json"
           "jsonc"
           "cpp"
+          "c"
           "h"
         ];
         command = "setlocal tabstop=2 shiftwidth=2";
