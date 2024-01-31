@@ -8,11 +8,15 @@
     ./spotify.nix # Music player.
     ./obsidian.nix # Note taking.
 
+    ./idea.nix
     ./rstudio.nix # R development.
   ];
 
   home.packages = with pkgs; [
     pavucontrol
     inkscape
+    shotcut
+    audacity
+    reaper
   ];
 }

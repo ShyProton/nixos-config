@@ -6,7 +6,7 @@
   home = {
     packages = with pkgs; [
       (rstudioWrapper.override {
-        packages = with rPackages; [ggplot2];
+        packages = with rPackages; [ggplot2 tidyverse];
       })
     ];
 

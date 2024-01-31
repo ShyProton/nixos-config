@@ -5,8 +5,10 @@
 }: {
   home = {
     packages = with pkgs; [
-      jetbrains.idea-ultimate
+      jetbrains.idea-community
+      eclipses.eclipse-java
       jdk11
+      h2
     ];
 
     persistence."/persist${config.home.homeDirectory}".directories = [
