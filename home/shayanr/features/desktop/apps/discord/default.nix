@@ -25,7 +25,7 @@
         "quickstart": true,
         "css": "${
       builtins.replaceStrings ["\n"] [""] (import ./style.nix {
-        colors = config.colorScheme.colors;
+        inherit (config.colorScheme) palette;
       })
     }"
       },

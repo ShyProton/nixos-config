@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (config.window-decorations) gap-size border-radius;
-  inherit (config.colorScheme) colors;
+  inherit (config.colorScheme) palette;
 
   toPx = num: "${toString num}px";
 
@@ -58,7 +58,7 @@ in {
       window {
         opacity: 0.95;
         border: 1px;
-        border-color: #${colors.base05};
+        border-color: #${palette.base05};
         border-radius: ${toPx border-radius};
         font-family: "Roboto Mono";
         font-size: 18px;
@@ -70,48 +70,48 @@ in {
         padding: 10px;
         margin: 0px;
         font-size: 28px;
-        color: #${colors.base0C};
-        background-color: #${colors.base03};
+        color: #${palette.base0C};
+        background-color: #${palette.base03};
       }
 
       #input:first-child > :nth-child(1) {
         min-height: 1.25em;
         min-width: 1.25em;
-        color: #${colors.base06}
+        color: #${palette.base06}
       }
 
       #input:first-child > :nth-child(4){
         min-height: 1.25em;
         min-width: 1.25em;
-        color: #${colors.base06}
+        color: #${palette.base06}
       }
 
       #inner-box {
         margin: 0px;
-        color: #${colors.base06};
-        background-color: #${colors.base01};
+        color: #${palette.base06};
+        background-color: #${palette.base01};
       }
 
       #outer-box {
         margin: 0px;
-        background-color: #${colors.base01};
+        background-color: #${palette.base01};
         border-radius: ${toPx border-radius};
       }
 
       #entry {
         padding: 0px;
         margin: 0px;
-        background-color: #${colors.base01};
+        background-color: #${palette.base01};
       }
 
       #entry:selected {
-        background-color: #${colors.base0D};
+        background-color: #${palette.base0D};
         border-radius: ${toPx border-radius};
       }
 
       #scroll {
         margin: 5px;
-        background-color: #${colors.base01};
+        background-color: #${palette.base01};
       }
 
       #text {
@@ -120,8 +120,8 @@ in {
       }
 
       #text:selected {
-        color: #${colors.base00};
-        background-color: #${colors.base0D};
+        color: #${palette.base00};
+        background-color: #${palette.base0D};
         font-weight: bold;
       }
 
@@ -130,7 +130,7 @@ in {
       }
 
       #img:selected {
-        background-color: #${colors.base0D};
+        background-color: #${palette.base0D};
       }
     '';
   };

@@ -1,5 +1,5 @@
 {config, ...}: let
-  inherit (config.colorScheme) colors;
+  inherit (config.colorScheme) palette;
   inherit (config.window-decorations) border-radius;
 in {
   services.mako = {
@@ -17,8 +17,8 @@ in {
 
     defaultTimeout = 12000;
 
-    backgroundColor = "#${colors.base01}dd";
-    borderColor = "#${colors.base04}dd";
-    textColor = "#${colors.base05}dd";
+    backgroundColor = "#${palette.base01}dd";
+    borderColor = "#${palette.base04}dd";
+    textColor = "#${palette.base05}dd";
   };
 }

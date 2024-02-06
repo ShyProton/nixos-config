@@ -7,7 +7,7 @@
 }: {
   wayland.windowManager.hyprland.settings = let
     inherit (config.window-decorations) gap-size border-radius;
-    inherit (config.colorScheme) colors;
+    inherit (config.colorScheme) palette;
 
     inherit (inputs.hyprwm-contrib.packages.${pkgs.system}) grimblast scratchpad;
   in {
@@ -16,8 +16,8 @@
       gaps_out = gap-size;
       border_size = 2;
 
-      "col.active_border" = "0xff${colors.base05}";
-      "col.inactive_border" = "0xff${colors.base03}";
+      "col.active_border" = "0xff${palette.base05}";
+      "col.inactive_border" = "0xff${palette.base03}";
     };
 
     decoration = {
@@ -76,17 +76,17 @@
 
     misc = {
       force_default_wallpaper = 0;
-      background_color = "0x${colors.base00}";
+      background_color = "0x${palette.base00}";
     };
 
     group = {
-      "col.border_inactive" = "0x88${colors.base09}";
-      "col.border_active" = "0xff${colors.base0A}";
+      "col.border_inactive" = "0x88${palette.base09}";
+      "col.border_active" = "0xff${palette.base0A}";
 
       groupbar = {
         font_size = 10;
-        "col.inactive" = "0x88${colors.base09}";
-        "col.active" = "0xff${colors.base0A}";
+        "col.inactive" = "0x88${palette.base09}";
+        "col.active" = "0xff${palette.base0A}";
       };
     };
 

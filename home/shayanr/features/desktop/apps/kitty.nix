@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  colors = config.colorScheme.colors;
+  inherit (config.colorScheme) palette;
 in {
   home = {
     packages = with pkgs; [
@@ -22,42 +22,42 @@ in {
     };
 
     settings = {
-      foreground = "#${colors.base06}";
-      background = "#${colors.base00}";
+      foreground = "#${palette.base06}";
+      background = "#${palette.base00}";
 
-      selection_foreground = "#${colors.base00}";
-      selection_background = "#${colors.base07}";
+      selection_foreground = "#${palette.base00}";
+      selection_background = "#${palette.base07}";
 
-      active_border_color = "#${colors.base05}";
-      inactive_border_color = "#${colors.base03}";
+      active_border_color = "#${palette.base05}";
+      inactive_border_color = "#${palette.base03}";
 
-      active_tab_foreground = "#${colors.base07}";
-      active_tab_background = "#${colors.base03}";
+      active_tab_foreground = "#${palette.base07}";
+      active_tab_background = "#${palette.base03}";
 
-      inactive_tab_foreground = "#${colors.base04}";
-      inactive_tab_background = "#${colors.base01}";
+      inactive_tab_foreground = "#${palette.base04}";
+      inactive_tab_background = "#${palette.base01}";
 
-      cursor = "#${colors.base04}";
+      cursor = "#${palette.base04}";
       cursor_text_color = "background";
 
-      url_color = "#${colors.base0D}";
+      url_color = "#${palette.base0D}";
 
-      color0 = "#${colors.base03}";
-      color1 = "#${colors.base08}";
-      color2 = "#${colors.base0B}";
-      color3 = "#${colors.base0A}";
-      color4 = "#${colors.base0D}";
-      color5 = "#${colors.base0E}";
-      color6 = "#${colors.base0C}";
-      color7 = "#${colors.base04}";
-      color8 = "#${colors.base03}";
-      color9 = "#${colors.base08}";
-      color10 = "#${colors.base0B}";
-      color11 = "#${colors.base0A}";
-      color12 = "#${colors.base0D}";
-      color13 = "#${colors.base0E}";
-      color14 = "#${colors.base0C}";
-      color15 = "#${colors.base04}";
+      color0 = "#${palette.base03}";
+      color1 = "#${palette.base08}";
+      color2 = "#${palette.base0B}";
+      color3 = "#${palette.base0A}";
+      color4 = "#${palette.base0D}";
+      color5 = "#${palette.base0E}";
+      color6 = "#${palette.base0C}";
+      color7 = "#${palette.base04}";
+      color8 = "#${palette.base03}";
+      color9 = "#${palette.base08}";
+      color10 = "#${palette.base0B}";
+      color11 = "#${palette.base0A}";
+      color12 = "#${palette.base0D}";
+      color13 = "#${palette.base0E}";
+      color14 = "#${palette.base0C}";
+      color15 = "#${palette.base04}";
 
       cursor_shape = "beam";
 

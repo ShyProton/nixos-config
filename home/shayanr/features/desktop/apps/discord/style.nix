@@ -1,27 +1,27 @@
 # TODO: Make more theme-agnostic.
-{colors, ...}: ''
+{palette, ...}: ''
   /*
     Set basic color variables. Some parts of Discord don't use these,
     so we need to do more after...
   */
 
   :root {
-    --interactive-normal: #${colors.base06};
-    --text-normal: #${colors.base06};
+    --interactive-normal: #${palette.base06};
+    --text-normal: #${palette.base06};
     --background-primary: #32302F;
-    --background-secondary: #${colors.base01};
+    --background-secondary: #${palette.base01};
     --background-tertiary: #211E1D;
     --background-secondary-alt: #211E1D;
     --background-floating: #32302F;
-    --channels-default: #${colors.base06};
+    --channels-default: #${palette.base06};
     --deprecated-panel-background: #161818;
-    --channeltextarea-background: #${colors.base00};
-    --header-primary: #${colors.base06};
+    --channeltextarea-background: #${palette.base00};
+    --header-primary: #${palette.base06};
     --header-secondary: #c3ac96;
     --activity-card-background: #FFF;
-    --scrollbar-auto-thumb: #${colors.base06};
-    --scrollbar-auto-track: #${colors.base01};
-    --scrollbar-thin-thumb: #${colors.base06};
+    --scrollbar-auto-thumb: #${palette.base06};
+    --scrollbar-auto-track: #${palette.base01};
+    --scrollbar-thin-thumb: #${palette.base06};
     --scrollbar-thin-track: transparent;
     --background-modifier-hover: #4e4845;
     --background-modifier-active: #4e4845;
@@ -43,7 +43,7 @@
   .contentWrapper-3vHNP2,
   .header-1ULbqO,
   .unicodeShortcut-3N8oDe {
-    background-color: #${colors.base01};
+    background-color: #${palette.base01};
     border-color: transparent !important;
   }
 
@@ -106,7 +106,7 @@
   .hljs-keyword,
   .hljs-link,
   .hljs-selector-tag {
-    color: #${colors.base08};
+    color: #${palette.base08};
   }
 
   /* Gruvbox Blue */
@@ -117,7 +117,7 @@
   .hljs-strong,
   .hljs-title,
   .hljs-variable {
-    color: #${colors.base0D};
+    color: #${palette.base0D};
   }
 
   /* Gruvbox Yellow */
@@ -125,7 +125,7 @@
   .hljs-params,
   .hljs-template-tag,
   .hljs-type {
-    color: #${colors.base0A};
+    color: #${palette.base0A};
   }
 
   /* Gruvbox Purple */
@@ -133,7 +133,7 @@
   .hljs-doctag,
   .hljs-literal,
   .hljs-number {
-    color: #${colors.base0E};
+    color: #${palette.base0E};
   }
 
   /* Gruvbox Orange */
@@ -142,7 +142,7 @@
   .hljs-regexp,
   .hljs-selector-id,
   .hljs-template-variable {
-    color: #${colors.base09};
+    color: #${palette.base09};
   }
 
   /* Gruvbox Green */
@@ -153,7 +153,7 @@
   .hljs-selector-class,
   .hljs-string,
   .hljs-symbol {
-    color: #${colors.base0B};
+    color: #${palette.base0B};
   }
 
   /* Gruvbox Aqua */
@@ -165,7 +165,7 @@
   .hljs-meta-keyword,
   .hljs-selector-pseudo,
   .hljs-tag {
-    color: #${colors.base0C};
+    color: #${palette.base0C};
   }
 
   /* Gruvbox Gray */
