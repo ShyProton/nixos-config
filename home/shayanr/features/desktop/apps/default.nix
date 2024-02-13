@@ -16,7 +16,5 @@
   home.packages = with pkgs; [
     pavucontrol
     inkscape
-    shotcut
-    audacity
   ];
 }

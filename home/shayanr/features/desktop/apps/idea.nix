@@ -6,7 +6,7 @@
   home = {
     packages = with pkgs; [
       jetbrains.idea-community
-      eclipses.eclipse-java
+      # eclipses.eclipse-java
       jdk11
       h2
     ];
