@@ -12,8 +12,7 @@
       ./btop # Task manager.
 
       ./git.nix # Git version control.
-      # ./tldr.nix # Short help-pages.
-      ./ranger.nix # File browser.
+      ./yazi.nix # File browser.
       ./direnv.nix # Augments shell environment variables.
       ./ripgrep.nix # Fast grepping.
       ./eza.nix # ls replacement.

@@ -48,5 +48,11 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.zsh) {
       lib.mkIf
       config.programs.starship.enable
       true;
+
+    # Enable yazi prompt integration if it's enabled.
+    yazi.enableZshIntegration =
+      lib.mkIf
+      config.programs.starship.enable
+      true;
   };
 }
