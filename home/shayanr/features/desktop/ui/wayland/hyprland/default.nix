@@ -41,4 +41,18 @@
       (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers)
       true;
   };
+
+  programs.zsh = {
+    loginExtra = ''
+      if [ "$(tty)" = "/dev/tty1" ]; then
+        exec Hyprland &> /dev/null
+      fi
+    '';
+
+    profileExtra = ''
+      if [ "$(tty)" = "/dev/tty1" ]; then
+        exec Hyprland &> /dev/null
+      fi
+    '';
+  };
 }
