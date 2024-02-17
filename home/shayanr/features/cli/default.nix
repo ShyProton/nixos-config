@@ -15,6 +15,7 @@
       ./yazi.nix # File browser.
       ./direnv.nix # Augments shell environment variables.
       ./ripgrep.nix # Fast grepping.
+      ./zoxide.nix # cd replacement.
       ./eza.nix # ls replacement.
       ./bat.nix # cat replacement.
     ]
