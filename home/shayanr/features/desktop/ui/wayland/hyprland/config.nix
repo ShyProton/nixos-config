@@ -20,6 +20,11 @@
       "col.inactive_border" = "0xff${palette.base03}";
     };
 
+    input = {
+      kb_layout = "us";
+      kb_variant = "colemak_dh";
+    };
+
     decoration = {
       active_opacity = 1.0;
       inactive_opacity = 0.85;
