@@ -10,6 +10,7 @@
 
   # Plugins without extra configs.
   programs.nixvim.plugins = {
+    leap.enable = true; # Faster navigation.
     comment-nvim.enable = true; # Comment toggling.
     surround.enable = true; # Editing 'surroundings'.
   };
