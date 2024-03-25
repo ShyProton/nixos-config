@@ -78,6 +78,18 @@ in {
       symbol_map U+f500-U+fd46 Symbols Nerd Font
       symbol_map U+e300-U+e3eb Symbols Nerd Font
       symbol_map U+21B5,U+25B8,U+2605,U+2630,U+2632,U+2714,U+E0A3,U+E615,U+E62B Symbols Nerd Font
+
+      map alt+\ toggle_layout stack
+      map alt+] next_window
+      map alt+[ previous_window
+
+      map ctrl+left resize_window narrower
+      map ctrl+right resize_window wider
+      map ctrl+up resize_window taller
+      map ctrl+down resize_window shorter
+
+      map kitty_mod+enter launch --cwd=current
+      map kitty_mod+t     new_tab_with_cwd
     '';
   };
 }

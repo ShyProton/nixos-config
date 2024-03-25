@@ -31,16 +31,16 @@ in {
   programs.nixvim = {
     plugins = {
       nvim-cmp = {
-        enable = true; # Autocompletion.
+        enable = false; # Autocompletion.
 
-        sources = [
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {name = "path";}
-          {name = "buffer";}
-        ];
+        # sources = [
+        #   {name = "nvim_lsp";}
+        #   {name = "luasnip";}
+        #   {name = "path";}
+        #   {name = "buffer";}
+        # ];
 
-        snippet.expand = "luasnip";
+        # snippet.expand = "luasnip";
 
         formatting = {
           fields = ["kind" "abbr" "menu"];

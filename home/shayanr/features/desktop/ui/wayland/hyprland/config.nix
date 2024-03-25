@@ -10,6 +10,8 @@
     inherit (config.colorScheme) palette;
 
     inherit (inputs.hyprwm-contrib.packages.${pkgs.system}) grimblast scratchpad;
+
+    wtype = pkgs.wtype;
   in {
     general = {
       gaps_in = gap-size / 2;
@@ -226,6 +228,16 @@
     bindm = [
       "SUPER, mouse:272, movewindow"
       "SUPER, mouse:273, resizewindow"
+    ];
+
+    # FIXME: Repeating while holding does not work for neio binds.
+    binde = let
+      wtype-path = "${wtype}/bin/wtype";
+    in [
+      "ALT, n, exec, ${wtype-path} -P down -p down"
+      "ALT, e, exec, ${wtype-path} -P up -p up"
+      "ALT, i, exec, ${wtype-path} -P right -p right"
+      "ALT, m, exec, ${wtype-path} -P left -p left"
     ];
 
     windowrulev2 = [

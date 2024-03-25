@@ -22,5 +22,5 @@ Using the NixVim flake: https://github.com/pta2002/nixvim
     ./theme.nix # Color theme.
   ];
 
-  programs.nixvim.enable = true;
+  programs.nixvim.enable = false;
 }
