@@ -6,7 +6,16 @@
   home = {
     packages = with pkgs; [
       (rstudioWrapper.override {
-        packages = with rPackages; [ggplot2 tidyverse dplyr RColorBrewer];
+        packages = with rPackages; [
+          ggplot2
+          tidyverse
+          dplyr
+          RColorBrewer
+          ggthemes
+          ggpubr
+          png
+          gridExtra
+        ];
       })
     ];
 
