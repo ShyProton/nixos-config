@@ -11,6 +11,8 @@
 
     ./idea.nix
     ./rstudio.nix # R development.
+
+    ./prismlauncher.nix # Minecraft Launcher.
   ];
 
   home.packages = with pkgs; [
