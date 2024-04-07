@@ -15,6 +15,8 @@
           ggpubr
           png
           gridExtra
+          ozmaps
+          sf
         ];
       })
     ];
