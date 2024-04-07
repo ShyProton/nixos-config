@@ -51,6 +51,8 @@
       language-server = {
         nil.command = "${pkgs.nil}/bin/nil";
         clangd.command = "${pkgs.clang-tools}/bin/clangd";
+        vscode-html-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
+        vscode-css-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
         rust-analyzer = {
           command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
           config.check = {
