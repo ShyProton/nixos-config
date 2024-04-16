@@ -26,5 +26,9 @@
 
   home.packages = with pkgs; [
     age
+
+    # Extra developer man-pages.
+    man-pages
+    man-pages-posix
   ];
 }
