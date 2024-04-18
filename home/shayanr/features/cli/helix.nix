@@ -53,6 +53,8 @@
         clangd.command = "${pkgs.clang-tools}/bin/clangd";
         vscode-html-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
         vscode-css-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
+        vscode-json-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
+        typescript-language-server.command = "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server";
         rust-analyzer = {
           command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
           config.check = {
@@ -84,6 +86,14 @@
           name = "cpp";
           auto-format = true;
           formatter.command = "${pkgs.clang-tools}/bin/clang-format";
+        }
+        {
+          name = "javascript";
+          auto-format = true;
+          formatter = {
+            command = "${pkgs.nodePackages.prettier}/bin/prettier";
+            args = ["--parser" "typescript"];
+          };
         }
         {name = "svelte";}
         {name = "bash";}
