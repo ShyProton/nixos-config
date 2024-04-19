@@ -9,7 +9,6 @@
     ./obsidian.nix # Note taking.
     ./reaper.nix # Audio editing.
 
-    ./idea.nix
     ./rstudio.nix # R development.
 
     ./prismlauncher.nix # Minecraft Launcher.
