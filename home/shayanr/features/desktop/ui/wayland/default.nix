@@ -1,7 +1,8 @@
 {
   imports = [
     ./hyprland # WM+Compositor
-    ./swayidle.nix # Idling behaviour.
+    # ./swayidle.nix # Idling behaviour.
+    ./hypridle.nix # Idling behaviour.
     ./swaylock.nix # Locking behaviour.
     ./waybar # Desktop bar.
     ./wofi.nix # App launcher.
