@@ -55,6 +55,7 @@
         vscode-css-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
         vscode-json-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
         typescript-language-server.command = "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server";
+        pylsp.command = "${pkgs.python312Packages.python-lsp-server}/bin/pylsp";
         rust-analyzer = {
           command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
           config.check = {
