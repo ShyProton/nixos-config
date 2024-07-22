@@ -20,8 +20,8 @@ in ''
       -45deg,
       #${palette.base0C} 0%, #${palette.base0D} 100%
     );
-    font-size: 1.5em;
-    padding: 10px 0;
+    font-size: 2.5em;
+    padding: 0;
     ${mkBorderRadius 0 border-radius border-radius 0}
   }
 
@@ -113,7 +113,7 @@ in ''
   }
 
   #network.icon {
-    font-size: 1.8em;
+    font-size: 2.5em;
     background-color: #${palette.base0D};
     margin-top: ${toPx margins};
     ${mkBorderRadius 0 border-radius 0 0}
@@ -161,9 +161,9 @@ in ''
 
   #custom-power {
     background-color: #${palette.base08};
-    font-size: 1.5em;
+    font-size: 2.5em;
     margin-top: ${toPx margins};
-    padding: 10px 0;
+    padding: 0;
     ${mkBorderRadius 0 border-radius border-radius 0}
   }
 ''

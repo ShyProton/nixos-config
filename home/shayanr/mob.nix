@@ -22,26 +22,26 @@
 
   monitors = [
     {
-      name = "eDP-1";
-      width = 1920;
-      height = 1200;
-      x = 0;
-      y = 500;
-      refreshRate = 60;
-      wallpapers = {
-        desktop = "gruvbox/solar_system_poster.jpeg";
-        lockscreen = "gruvbox/sun_circle.jpg";
-      };
-    }
-    {
       name = "HDMI-A-1";
       width = 1920;
       height = 1080;
-      x = 1920;
+      x = 0;
       y = 0;
       refreshRate = 144;
       wallpapers = {
         desktop = "gruvbox/waves.png";
+        lockscreen = "gruvbox/sun_circle.jpg";
+      };
+    }
+    {
+      name = "eDP-1";
+      width = 1920;
+      height = 1200;
+      x = 1920;
+      y = 0;
+      refreshRate = 60;
+      wallpapers = {
+        desktop = "gruvbox/solar_system_poster.jpeg";
         lockscreen = "gruvbox/sun_circle.jpg";
       };
     }
