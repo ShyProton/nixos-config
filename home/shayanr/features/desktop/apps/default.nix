@@ -8,8 +8,6 @@
     ./spotify.nix # Music player.
     ./obsidian.nix # Note taking.
     ./reaper.nix # Audio editing.
-
-    ./prismlauncher.nix # Minecraft Launcher.
   ];
 
   home.packages = with pkgs; [
