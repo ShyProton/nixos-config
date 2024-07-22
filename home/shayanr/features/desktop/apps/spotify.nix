@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: let
-  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in {
   imports = [
-    inputs.spicetify-nix.homeManagerModule
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   home = {
@@ -28,7 +28,7 @@ in {
 
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.Onepunch;
+    theme = spicePkgs.themes.onepunch;
     colorScheme = "dark";
     windowManagerPatch = true;
   };
