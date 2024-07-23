@@ -57,6 +57,7 @@
         typescript-language-server.command = "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server";
         pylsp.command = "${pkgs.python312Packages.python-lsp-server}/bin/pylsp";
         svelteserver.command = "${pkgs.svelte-language-server}/bin/svelteserver";
+        tailwindcss-language-server.command = "${pkgs.tailwindcss-language-server}/bin/tailwindcss-language-server";
         rust-analyzer = {
           command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
           config.check = {
@@ -108,6 +109,7 @@
         {
           name = "svelte";
           auto-format = true;
+          language-servers = ["svelteserver" "tailwindcss-language-server"];
         }
         {name = "bash";}
       ];
