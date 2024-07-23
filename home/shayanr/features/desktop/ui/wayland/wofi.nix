@@ -23,7 +23,7 @@
 
       case $op in
         lock)
-          swaylock;;
+          loginctl lock-session;;
         suspend)
           systemctl suspend;;
         logout)
