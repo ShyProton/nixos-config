@@ -28,6 +28,11 @@ in {
 
   programs.spicetify = {
     enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      featureShuffle
+      history
+      beautifulLyrics
+    ];
     theme = spicePkgs.themes.onepunch;
     colorScheme = "dark";
     windowManagerPatch = true;
