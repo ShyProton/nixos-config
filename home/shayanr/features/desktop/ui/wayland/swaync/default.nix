@@ -51,11 +51,6 @@ in {
       };
     };
 
-    style = ''
-      .control-center {
-        opacity: 1;
-        background: #${palette.base01};
-      }
-    '';
+    style = import ./style.nix {inherit config;};
   };
 }
