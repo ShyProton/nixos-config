@@ -56,6 +56,7 @@
         vscode-json-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
         typescript-language-server.command = "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server";
         pylsp.command = "${pkgs.python312Packages.python-lsp-server}/bin/pylsp";
+        svelteserver.command = "${pkgs.svelte-language-server}/bin/svelteserver";
         rust-analyzer = {
           command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
           config.check = {
@@ -89,14 +90,25 @@
           formatter.command = "${pkgs.clang-tools}/bin/clang-format";
         }
         {
+          name = "html";
+          auto-format = true;
+        }
+        {
+          name = "css";
+          auto-format = true;
+        }
+        {
           name = "javascript";
           auto-format = true;
-          formatter = {
-            command = "${pkgs.nodePackages.prettier}/bin/prettier";
-            args = ["--parser" "typescript"];
-          };
         }
-        {name = "svelte";}
+        {
+          name = "typescript";
+          auto-format = true;
+        }
+        {
+          name = "svelte";
+          auto-format = true;
+        }
         {name = "bash";}
       ];
     };
