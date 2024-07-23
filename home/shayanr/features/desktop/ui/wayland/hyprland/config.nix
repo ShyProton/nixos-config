@@ -101,7 +101,7 @@
     exec-once = [
       "waybar"
       "hyprpaper"
-      "mako"
+      "swaync"
       "swayidle -w"
       "hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}"
     ];
@@ -146,6 +146,9 @@
 
         # Launcher
         "SUPER, a, exec, wofi -S drun"
+
+        # Notification menu
+        "SUPER, x, exec, swaync-client -t -sw"
 
         # Power menu
         "SUPER, q, exec, powermenu"

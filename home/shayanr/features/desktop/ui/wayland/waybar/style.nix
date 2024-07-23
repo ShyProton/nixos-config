@@ -25,6 +25,14 @@ in ''
     ${mkBorderRadius 0 border-radius border-radius 0}
   }
 
+  #custom-notification {
+    background-color: #${palette.base0A};
+    font-size: 1.5em;
+    padding: 0;
+    margin-top: ${toPx margins};
+    ${mkBorderRadius 0 border-radius border-radius 0}
+  }
+
   #workspaces {
     background-color: #${palette.base0E};
     font-size: 1em;

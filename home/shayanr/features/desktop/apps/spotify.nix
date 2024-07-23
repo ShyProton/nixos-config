@@ -37,6 +37,4 @@ in {
     colorScheme = "dark";
     windowManagerPatch = true;
   };
-
-  services.playerctld.enable = true;
 }

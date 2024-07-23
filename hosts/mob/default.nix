@@ -27,6 +27,7 @@
   services = {
     blueman.enable = true;
     fstrim.enable = true;
+    gvfs.enable = true;
   };
 
   system.stateVersion = "23.05";
