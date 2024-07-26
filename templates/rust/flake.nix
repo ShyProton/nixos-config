@@ -41,7 +41,7 @@
 
       inherit (pkgs) lib;
 
-      craneLib = crane.lib.${system};
+      craneLib = crane.mkLib nixpkgs.legacyPackages.${system};
       src = nix-filter.lib.filter {
         root = craneLib.path ./.;
         include = [
