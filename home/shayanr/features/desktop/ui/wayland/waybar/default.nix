@@ -11,12 +11,9 @@
     settings = {
       primary = {
         layer = "top";
-        output = "${(builtins.head config.monitors).name}";
         position = "left";
-
-        height =
-          (builtins.head config.monitors).height
-          - config.window-decorations.gap-size * 2;
+        margin-top = 10;
+        margin-bottom = 10;
 
         width = 40;
 
