@@ -203,6 +203,7 @@
         "SUPER, f10, workspace, 20"
         "SUPER, f11, workspace, 21"
         "SUPER, f12, workspace, 22"
+        "SUPER, backslash, togglespecialworkspace"
 
         "SUPERSHIFT, 1, movetoworkspacesilent, 01"
         "SUPERSHIFT, 2, movetoworkspacesilent, 02"
@@ -226,6 +227,7 @@
         "SUPERSHIFT, f10, movetoworkspacesilent, 20"
         "SUPERSHIFT, f11, movetoworkspacesilent, 21"
         "SUPERSHIFT, f12, movetoworkspacesilent, 22"
+        "SUPERSHIFT, backslash, movetoworkspace, special"
       ];
 
     bindm = [
