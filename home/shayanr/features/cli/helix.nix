@@ -55,7 +55,10 @@
         vscode-css-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
         vscode-json-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
         typescript-language-server.command = "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server";
-        pylsp.command = "${pkgs.python312Packages.python-lsp-server}/bin/pylsp";
+        pyright = {
+          command = "${pkgs.pyright}/bin/pyright-langserver";
+          args = ["--stdio"];
+        };
         svelteserver.command = "${pkgs.svelte-language-server}/bin/svelteserver";
         tailwindcss-language-server.command = "${pkgs.tailwindcss-language-server}/bin/tailwindcss-language-server";
         rust-analyzer = {
@@ -110,6 +113,16 @@
           name = "svelte";
           auto-format = true;
           language-servers = ["svelteserver" "tailwindcss-language-server"];
+        }
+        {
+          name = "python";
+          auto-format = true;
+          roots = ["pyproject.toml"];
+          formatter = {
+            command = "${pkgs.black}/bin/black";
+            args = ["--quiet" "-"];
+          };
+          language-servers = ["pyright"];
         }
         {name = "bash";}
       ];
