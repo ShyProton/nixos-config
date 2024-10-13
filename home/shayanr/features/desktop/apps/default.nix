@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   # TODO: Make shorthand function to quickly add apps that only need the package
   # added and a config directory persisted.
   imports = [
@@ -14,5 +18,6 @@
     pavucontrol
     inkscape
     chromium
+    inputs.zen-browser.packages."${pkgs.system}".default
   ];
 }
