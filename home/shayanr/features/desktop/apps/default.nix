@@ -7,6 +7,7 @@
   # added and a config directory persisted.
   imports = [
     ./firefox # Web browser.
+    ./zen.nix # Web browser.
 
     ./kitty.nix # Terminal emulator.
     ./spotify.nix # Music player.
