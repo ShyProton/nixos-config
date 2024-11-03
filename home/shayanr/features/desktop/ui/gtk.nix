@@ -2,7 +2,7 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Gruvbox-Dark-BL";
+      name = "Gruvbox-Dark";
       package = pkgs.gruvbox-gtk-theme;
     };
   };
