@@ -60,6 +60,7 @@ in {
       color15 = "#${palette.base04}";
 
       cursor_shape = "beam";
+      cursor_trail = 1;
 
       enable_audio_bell = "no";
     };

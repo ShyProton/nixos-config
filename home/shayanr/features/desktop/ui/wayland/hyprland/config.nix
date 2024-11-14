@@ -41,14 +41,15 @@
         ignore_opacity = false;
       };
 
-      drop_shadow = true;
+      shadow = {
+        range = 12;
+        offset = "4 4";
+        color = "0x99000000";
+        color_inactive = "0x44000000";
+      };
+
       dim_inactive = true;
       dim_strength = 0.2;
-      shadow_range = 12;
-      shadow_offset = "4 4";
-
-      "col.shadow" = "0x99000000";
-      "col.shadow_inactive" = "0x44000000";
     };
 
     animations = {
