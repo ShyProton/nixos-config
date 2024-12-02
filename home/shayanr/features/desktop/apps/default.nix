@@ -19,6 +19,7 @@
     pavucontrol
     inkscape
     chromium
+    nautilus
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
 }
