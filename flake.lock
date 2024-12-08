@@ -250,8 +250,29 @@
         "impermanence": "impermanence",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs",
+        "snippets-ls": "snippets-ls",
         "spicetify-nix": "spicetify-nix",
         "zen-browser": "zen-browser"
+      }
+    },
+    "snippets-ls": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1718632593,
+        "narHash": "sha256-RxMA8ut1fsxhKRELodR4lHc+fl3e1y803GCW/kfDzSI=",
+        "owner": "quantonganh",
+        "repo": "snippets-ls",
+        "rev": "063ba0f72f6d80829e17c6e5de6c9ae0aa05a841",
+        "type": "github"
+      },
+      "original": {
+        "owner": "quantonganh",
+        "repo": "snippets-ls",
+        "type": "github"
       }
     },
     "spicetify-nix": {

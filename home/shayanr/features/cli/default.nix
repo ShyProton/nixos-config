@@ -9,7 +9,7 @@
     [
       ./shell # Shell configurations.
       # ./nvim # Text editor.
-      ./helix.nix # Text editor.
+      ./helix # Text editor.
       ./btop # Task manager.
 
       ./git.nix # Git version control.

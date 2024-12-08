@@ -1,4 +1,13 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}: {
+  imports = [
+    ./snippets # Custom code snippets.
+  ];
+
   programs.helix = {
     enable = true;
 
@@ -59,6 +68,26 @@
           command = "${pkgs.pyright}/bin/pyright-langserver";
           args = ["--stdio"];
         };
+        lua-language-server.command = "${pkgs.lua-language-server}/bin/lua-language-server";
+        pico8-ls = {
+          command = "${pkgs.nodejs}/bin/node";
+          args = [
+            "${pkgs.vscode-extensions.pollywoggames.pico8-ls}/share/vscode/extensions/PollywogGames.pico8-ls/server/out-min/main.js"
+            "--stdio"
+          ];
+        };
+
+        # TODO: Include all generated snippet files located in ~/.config/helix/snippets
+        snippets-ls = {
+          command = let
+            base = inputs.snippets-ls.defaultPackage."${pkgs.system}";
+          in "${base}/bin/snippets-ls";
+          args = [
+            "-config"
+            "${config.home.homeDirectory}/.config/helix/snippets/pico8-snippets.json"
+          ];
+        };
+
         svelteserver.command = "${pkgs.svelte-language-server}/bin/svelteserver";
         tailwindcss-language-server.command = "${pkgs.tailwindcss-language-server}/bin/tailwindcss-language-server";
         rust-analyzer = {
@@ -125,6 +154,25 @@
           language-servers = ["pyright"];
         }
         {name = "bash";}
+        {
+          name = "lua";
+          auto-format = true;
+
+          # TODO: How the hell do I do this
+          # formatter = {
+          #   command = "${pkgs.stylua}/bin/stylua";
+          #   args = ["-"];
+          # };
+          # formatter = {
+          #   command = "${pkgs.nodejs}/bin/node";
+          #   args = [
+          #     "${pkgs.vscode-extensions.pollywoggames.pico8-ls}/share/vscode/extensions/PollywogGames.pico8-ls/server/out-min/main.js"
+          #     "--stdio"
+          #   ];
+          # };
+
+          language-servers = ["pico8-ls" "snippets-ls"];
+        }
       ];
     };
   };

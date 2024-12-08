@@ -26,6 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    snippets-ls = {
+      url = "github:quantonganh/snippets-ls";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Utilities.
     impermanence.url = "github:nix-community/impermanence";
 
