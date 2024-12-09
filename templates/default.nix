@@ -1,3 +1,4 @@
+# NOTE: Remember to "nix store gc" after adding a new template to refresh the flake registry!
 {
   rust = {
     path = ./rust;
