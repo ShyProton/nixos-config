@@ -45,4 +45,13 @@
       Template for a Kernel Module project using C.
     '';
   };
+
+  pico-8 = {
+    path = ./pico-8;
+    description = "Pico-8 development environment";
+    welcomeText = ''
+      # PICO-8 Template
+      Template for a PICO-8 project using Lua.
+    '';
+  };
 }
