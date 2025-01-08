@@ -6,4 +6,5 @@ let
   systems = [alphonse];
 in {
   "shayanr-password.age".publicKeys = users ++ systems;
+  "copilot-api-key.age".publicKeys = users ++ systems;
 }

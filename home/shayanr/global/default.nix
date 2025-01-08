@@ -1,4 +1,8 @@
 {config, ...}: {
+  imports = [
+    ./age.nix
+  ];
+
   home = {
     username = "shayanr";
     homeDirectory = "/home/${config.home.username}";

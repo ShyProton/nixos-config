@@ -8,6 +8,8 @@
     ./snippets # Custom code snippets.
   ];
 
+  home.sessionVariables.COPILOT_API_KEY = "$(cat ~/Desktop/copilot-api-key.txt)";
+
   programs.helix = {
     enable = true;
 
@@ -59,6 +61,7 @@
     languages = {
       language-server = {
         nil.command = "${pkgs.nil}/bin/nil";
+        zls.command = "${pkgs.zls}/bin/zls";
         clangd.command = "${pkgs.clang-tools}/bin/clangd";
         vscode-html-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
         vscode-css-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
@@ -69,6 +72,15 @@
           args = ["--stdio"];
         };
         lua-language-server.command = "${pkgs.lua-language-server}/bin/lua-language-server";
+        gpt = {
+          command = "${pkgs.helix-gpt}/bin/helix-gpt";
+          args = [
+            "--handler"
+            "copilot"
+            "--copilotModel"
+            "claude-3.5-sonnet"
+          ];
+        };
         pico8-ls = {
           command = "${pkgs.nodejs}/bin/node";
           args = [
@@ -106,42 +118,57 @@
       };
 
       language = [
-        {name = "rust";}
+        {
+          name = "rust";
+          language-servers = ["rust-analyzer" "gpt"];
+        }
         {
           name = "nix";
           auto-format = true;
           formatter.command = "${pkgs.alejandra}/bin/alejandra";
+          language-servers = ["nil" "gpt"];
         }
         {
           name = "c";
           auto-format = true;
           formatter.command = "${pkgs.clang-tools}/bin/clang-format";
+          language-servers = ["clangd" "gpt"];
         }
         {
           name = "cpp";
           auto-format = true;
           formatter.command = "${pkgs.clang-tools}/bin/clang-format";
+          language-servers = ["clangd" "gpt"];
         }
         {
           name = "html";
           auto-format = true;
+          language-servers = ["vscode-html-language-server" "gpt"];
         }
         {
           name = "css";
           auto-format = true;
+          language-servers = ["vscode-css-language-server" "gpt"];
         }
         {
           name = "javascript";
           auto-format = true;
+          language-servers = ["typescript-language-server" "gpt"];
         }
         {
           name = "typescript";
           auto-format = true;
+          language-servers = ["typescript-language-server" "gpt"];
         }
         {
           name = "svelte";
           auto-format = true;
-          language-servers = ["svelteserver" "tailwindcss-language-server"];
+          language-servers = ["svelteserver" "tailwindcss-language-server" "gpt"];
+        }
+        {
+          name = "zig";
+          auto-format = true;
+          language-servers = ["zls" "gpt"];
         }
         {
           name = "python";
@@ -151,7 +178,7 @@
             command = "${pkgs.black}/bin/black";
             args = ["--quiet" "-"];
           };
-          language-servers = ["pyright"];
+          language-servers = ["pyright" "gpt"];
         }
         {name = "bash";}
         {
