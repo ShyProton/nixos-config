@@ -61,7 +61,13 @@
     languages = {
       language-server = {
         nil.command = "${pkgs.nil}/bin/nil";
-        zls.command = "${pkgs.zls}/bin/zls";
+        zls = {
+          command = "${pkgs.zls}/bin/zls";
+          config = {
+            enable_build_on_save = true;
+            build_on_save_step = "check";
+          };
+        };
         clangd.command = "${pkgs.clang-tools}/bin/clangd";
         vscode-html-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
         vscode-css-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
@@ -120,7 +126,7 @@
       language = [
         {
           name = "rust";
-          language-servers = ["rust-analyzer" "gpt"];
+          language-servers = ["rust-analyzer"];
         }
         {
           name = "nix";
@@ -132,43 +138,43 @@
           name = "c";
           auto-format = true;
           formatter.command = "${pkgs.clang-tools}/bin/clang-format";
-          language-servers = ["clangd" "gpt"];
+          language-servers = ["clangd"];
         }
         {
           name = "cpp";
           auto-format = true;
           formatter.command = "${pkgs.clang-tools}/bin/clang-format";
-          language-servers = ["clangd" "gpt"];
+          language-servers = ["clangd"];
         }
         {
           name = "html";
           auto-format = true;
-          language-servers = ["vscode-html-language-server" "gpt"];
+          language-servers = ["vscode-html-language-server"];
         }
         {
           name = "css";
           auto-format = true;
-          language-servers = ["vscode-css-language-server" "gpt"];
+          language-servers = ["vscode-css-language-server"];
         }
         {
           name = "javascript";
           auto-format = true;
-          language-servers = ["typescript-language-server" "gpt"];
+          language-servers = ["typescript-language-server"];
         }
         {
           name = "typescript";
           auto-format = true;
-          language-servers = ["typescript-language-server" "gpt"];
+          language-servers = ["typescript-language-server"];
         }
         {
           name = "svelte";
           auto-format = true;
-          language-servers = ["svelteserver" "tailwindcss-language-server" "gpt"];
+          language-servers = ["svelteserver" "tailwindcss-language-server"];
         }
         {
           name = "zig";
           auto-format = true;
-          language-servers = ["zls" "gpt"];
+          language-servers = ["zls"];
         }
         {
           name = "python";
@@ -178,7 +184,7 @@
             command = "${pkgs.black}/bin/black";
             args = ["--quiet" "-"];
           };
-          language-servers = ["pyright" "gpt"];
+          language-servers = ["pyright"];
         }
         {name = "bash";}
         {
