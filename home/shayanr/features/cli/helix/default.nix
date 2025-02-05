@@ -9,6 +9,12 @@
   ];
 
   home.sessionVariables.COPILOT_API_KEY = "$(cat ~/Desktop/copilot-api-key.txt)";
+  xdg.configFile."zls.json".text = ''
+    {
+      "enable_build_on_save": true,
+      "build_on_save_args": ["install", "-Dtarget=wasm32-wasi", "-fwasmtime"]
+    }
+  '';
 
   programs.helix = {
     enable = true;
@@ -26,6 +32,11 @@
 
         lsp = {
           display-inlay-hints = true;
+        };
+
+        inline-diagnostics = {
+          cursor-line = "hint";
+          other-lines = "error";
         };
 
         cursor-shape = {
@@ -61,13 +72,7 @@
     languages = {
       language-server = {
         nil.command = "${pkgs.nil}/bin/nil";
-        zls = {
-          command = "${pkgs.zls}/bin/zls";
-          config = {
-            enable_build_on_save = true;
-            build_on_save_step = "check";
-          };
-        };
+        zls.command = "${pkgs.zls}/bin/zls";
         clangd.command = "${pkgs.clang-tools}/bin/clangd";
         vscode-html-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
         vscode-css-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
