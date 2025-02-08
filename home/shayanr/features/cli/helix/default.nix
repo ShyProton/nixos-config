@@ -8,12 +8,21 @@
     ./snippets # Custom code snippets.
   ];
 
+  home.packages = with pkgs; [
+    lldb
+  ];
+
   home.sessionVariables.COPILOT_API_KEY = "$(cat ~/Desktop/copilot-api-key.txt)";
   xdg.configFile."zls.json".text = ''
     {
       "enable_build_on_save": true,
       "build_on_save_args": ["install", "-Dtarget=wasm32-wasi", "-fwasmtime"]
     }
+  '';
+
+  xdg.configFile."clangd/config.yaml".text = ''
+    CompileFlags:
+      Add: [-pedantic, -Wall, -Wextra]
   '';
 
   programs.helix = {
