@@ -2,8 +2,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
+      name = "Kanagawa-B";
+      package = pkgs.kanagawa-gtk-theme;
     };
 
     gtk3.extraConfig = {

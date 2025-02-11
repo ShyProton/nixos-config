@@ -148,14 +148,14 @@ in ''
   }
 
   #clock.icon {
-    background-color: #${palette.base05};
+    background-color: #${palette.base07};
     font-size: 1.8em;
     margin-top: ${toPx margins};
     ${mkBorderRadius 0 border-radius 0 0}
   }
 
   #clock.time {
-    background-color: #${palette.base05};
+    background-color: #${palette.base07};
     font-weight: bold;
     ${mkBorderRadius 0 0 border-radius 0}
   }

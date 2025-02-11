@@ -8,7 +8,7 @@
     bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [batman];
-      config.theme = "gruvbox-dark";
+      config.theme = "ansi";
     };
 
     bash.shellAliases = aliases;

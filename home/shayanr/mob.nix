@@ -41,7 +41,7 @@
       y = 0;
       refreshRate = 60;
       wallpapers = {
-        desktop = "gruvbox/solar_system_poster.jpeg";
+        desktop = "flexoki/atlaspbody.jpg";
         lockscreen = "gruvbox/sun_circle.jpg";
       };
     }
@@ -52,5 +52,25 @@
     border-radius = 5;
   };
 
-  colorscheme = inputs.nix-colors.colorschemes.gruvbox-dark-medium;
+  colorscheme = {
+    name = "flexoki_dark";
+    palette = {
+      base00 = "100F0F";
+      base01 = "1C1B1A";
+      base02 = "282726";
+      base03 = "343331";
+      base04 = "403E3C";
+      base05 = "575653";
+      base06 = "878580";
+      base07 = "CECDC3";
+      base08 = "D14D41";
+      base09 = "DA702C";
+      base0A = "D0A215";
+      base0B = "879A39";
+      base0C = "3AA99F";
+      base0D = "4385BE";
+      base0E = "8B7EC8";
+      base0F = "CE5D97";
+    };
+  };
 }

@@ -22,23 +22,23 @@ in {
     };
 
     settings = {
-      foreground = "#${palette.base06}";
+      foreground = "#${palette.base07}";
       background = "#${palette.base00}";
 
-      selection_foreground = "#${palette.base00}";
-      selection_background = "#${palette.base07}";
+      selection_foreground = "#${palette.base07}";
+      selection_background = "#${palette.base04}";
 
-      active_border_color = "#${palette.base05}";
-      inactive_border_color = "#${palette.base03}";
+      active_border_color = "#${palette.base08}";
+      inactive_border_color = "#${palette.base04}";
 
       active_tab_foreground = "#${palette.base07}";
-      active_tab_background = "#${palette.base03}";
+      active_tab_background = "#${palette.base04}";
 
-      inactive_tab_foreground = "#${palette.base04}";
-      inactive_tab_background = "#${palette.base01}";
+      inactive_tab_foreground = "#${palette.base06}";
+      inactive_tab_background = "#${palette.base02}";
 
-      cursor = "#${palette.base04}";
-      cursor_text_color = "background";
+      cursor = "#${palette.base07}";
+      cursor_text_color = "#${palette.base00}";
 
       url_color = "#${palette.base0D}";
 

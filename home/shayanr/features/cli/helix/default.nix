@@ -29,7 +29,7 @@
     enable = true;
 
     settings = {
-      theme = "gruvbox";
+      theme = "flexoki_dark";
 
       editor = {
         line-number = "relative";
