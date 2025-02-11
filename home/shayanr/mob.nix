@@ -29,7 +29,7 @@
       y = 0;
       refreshRate = 144;
       wallpapers = {
-        desktop = "gruvbox/waves.png";
+        desktop = "flexoki/caveman.png";
         lockscreen = "gruvbox/sun_circle.jpg";
       };
     }
@@ -41,7 +41,7 @@
       y = 0;
       refreshRate = 60;
       wallpapers = {
-        desktop = "flexoki/atlaspbody.jpg";
+        desktop = "flexoki/the-gap.png";
         lockscreen = "gruvbox/sun_circle.jpg";
       };
     }
