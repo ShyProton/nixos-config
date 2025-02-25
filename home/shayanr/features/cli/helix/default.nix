@@ -1,11 +1,6 @@
 # TODO: Clean up this mess of a file!!
 # Perhaps isolate language-specific options to their own directories?
-{
-  inputs,
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./snippets # Custom code snippets.
   ];
@@ -137,17 +132,6 @@
           ];
         };
 
-        # TODO: Include all generated snippet files located in ~/.config/helix/snippets
-        snippets-ls = {
-          command = let
-            base = inputs.snippets-ls.defaultPackage."${pkgs.system}";
-          in "${base}/bin/snippets-ls";
-          args = [
-            "-config"
-            "${config.home.homeDirectory}/.config/helix/snippets/pico8-snippets.json"
-          ];
-        };
-
         svelteserver.command = "${pkgs.svelte-language-server}/bin/svelteserver";
         tailwindcss-language-server.command = "${pkgs.tailwindcss-language-server}/bin/tailwindcss-language-server";
         rust-analyzer = {
@@ -251,7 +235,7 @@
           #   ];
           # };
 
-          language-servers = ["pico8-ls" "snippets-ls"];
+          language-servers = ["pico8-ls"];
         }
       ];
     };

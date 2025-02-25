@@ -26,21 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    snippets-ls = {
-      url = "github:quantonganh/snippets-ls";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Utilities.
     impermanence.url = "github:nix-community/impermanence";
 
     agenix = {
       url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
