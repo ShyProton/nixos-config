@@ -1,3 +1,5 @@
+# TODO: Clean up this mess of a file!!
+# Perhaps isolate language-specific options to their own directories?
 {
   inputs,
   pkgs,
@@ -23,6 +25,18 @@
   xdg.configFile."clangd/config.yaml".text = ''
     CompileFlags:
       Add: [-pedantic, -Wall, -Wextra]
+  '';
+
+  xdg.configFile."golangci/golangci.yaml".text = ''
+    linters:
+      disable:
+        - forbidigo
+        - varnamelen
+        - depguard
+        - gofmt
+        - goimports
+        - gofumpt
+        - gci
   '';
 
   programs.helix = {
@@ -82,6 +96,20 @@
       language-server = {
         nil.command = "${pkgs.nil}/bin/nil";
         zls.command = "${pkgs.zls}/bin/zls";
+        gopls.command = "${pkgs.gopls}/bin/gopls";
+        golangci-lint-langserver = {
+          command = "${pkgs.golangci-lint-langserver}/bin/golangci-lint-langserver";
+          config.command = [
+            "${pkgs.golangci-lint}/bin/golangci-lint"
+            "run"
+            "--enable-all"
+            "--out-format"
+            "json"
+            "--config"
+            "~/.config/golangci/golangci.yaml"
+            "--issues-exit-code=1"
+          ];
+        };
         clangd.command = "${pkgs.clang-tools}/bin/clangd";
         vscode-html-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
         vscode-css-language-server.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
@@ -141,6 +169,11 @@
         {
           name = "rust";
           language-servers = ["rust-analyzer"];
+        }
+        {
+          name = "go";
+          auto-format = true;
+          language-servers = ["gopls" "golangci-lint-langserver"];
         }
         {
           name = "nix";
