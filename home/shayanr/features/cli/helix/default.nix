@@ -32,6 +32,7 @@
         - goimports
         - gofumpt
         - gci
+        - tenv
   '';
 
   programs.helix = {

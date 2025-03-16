@@ -33,8 +33,8 @@ in {
       history
       beautifulLyrics
     ];
-    theme = spicePkgs.themes.onepunch;
-    colorScheme = "dark";
+    theme = spicePkgs.themes.sleek;
+    colorScheme = "ultrablack";
     windowManagerPatch = true;
   };
 }
