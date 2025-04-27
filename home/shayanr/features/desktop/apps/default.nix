@@ -16,7 +16,8 @@
   home.packages = with pkgs; [
     pavucontrol
     chromium
-    nautilus
+    krita
+    godot
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
 }

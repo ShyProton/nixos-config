@@ -52,6 +52,7 @@
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
     bluetooth.powerOnBoot = false;
+    opentabletdriver.enable = true;
 
     graphics = {
       enable = true;

@@ -132,6 +132,13 @@
             "--stdio"
           ];
         };
+        gdscript = {
+          command = "nc";
+          formatCommand = "${pkgs.gdtoolkit_4}/bin/gdformat \${INPUT}";
+          formatStdin = true;
+          args = ["127.0.0.1" "6005"];
+          language-id = "gdscript";
+        };
 
         svelteserver.command = "${pkgs.svelte-language-server}/bin/svelteserver";
         tailwindcss-language-server.command = "${pkgs.tailwindcss-language-server}/bin/tailwindcss-language-server";
@@ -175,7 +182,10 @@
         {
           name = "cpp";
           auto-format = true;
-          formatter.command = "${pkgs.clang-tools}/bin/clang-format";
+          formatter = {
+            command = "${pkgs.clang-tools}/bin/clang-format";
+            args = ["-style=file"];
+          };
           language-servers = ["clangd"];
         }
         {
@@ -207,6 +217,11 @@
           name = "zig";
           auto-format = true;
           language-servers = ["zls"];
+        }
+        {
+          name = "gdscript";
+          auto-format = true;
+          language-servers = ["gdscript"];
         }
         {
           name = "python";
