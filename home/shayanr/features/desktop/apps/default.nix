@@ -7,17 +7,16 @@
   # added and a config directory persisted.
   imports = [
     ./zen.nix # Web browser.
-
     ./kitty.nix # Terminal emulator.
-    ./spotify.nix # Music player.
     ./obsidian.nix # Note taking.
+    ./godot.nix # Game engine.
+    ./yt-music.nix # Music player.
   ];
 
   home.packages = with pkgs; [
     pavucontrol
     chromium
     krita
-    godot
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
 }
