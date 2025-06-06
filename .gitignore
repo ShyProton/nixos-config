@@ -1,2 +1,6 @@
 # Builds
 result
+
+# ags
+@girs/
+node_modules/

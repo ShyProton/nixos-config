@@ -15,12 +15,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # TODO: Enable once (or if) it supports being vertical.
-    # hyprpanel = {
-    #   url = "github:Jas-SinghFSU/HyprPanel";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
+    # TODO: Replace with package from nixpkgs.
     zen-browser = {
       url = "github:MarceColl/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,11 +31,6 @@
 
     agenix = {
       url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

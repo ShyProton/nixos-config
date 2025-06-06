@@ -6,6 +6,7 @@
     ./wofi.nix # App launcher.
     ./hyprpaper.nix # Wallpapers.
     ./waybar # Desktop bar.
+    ./ags
     ./swaync # Notification center.
   ];
 }
