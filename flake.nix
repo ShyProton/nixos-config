@@ -15,11 +15,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # TODO: Enable once (or if) it supports being vertical.
-    # hyprpanel = {
-    #   url = "github:Jas-SinghFSU/HyprPanel";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     zen-browser = {
       url = "github:MarceColl/zen-browser-flake";

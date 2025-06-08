@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   # -- GENERAL: --
   nix = {
     server.command = "${pkgs.nil}/bin/nil";
@@ -123,6 +127,23 @@
     '';
   };
 
+  qml = {
+    server = {
+      command = "${pkgs.kdePackages.qtdeclarative}/bin/qmlls";
+      args = ["-I" "${pkgs.kdePackages.qtdeclarative}/lib/qt-6/qml/" "-I" "${inputs.quickshell.packages.${pkgs.system}.default}/lib/qt-6/qml/"];
+    };
+    linter = {
+      command = "${pkgs.kdePackages.qtdeclarative}/bin/qmllint";
+      args = ["-I" "${pkgs.kdePackages.qtdeclarative}/lib/qt-6/qml/" "-I" "${inputs.quickshell.packages.${pkgs.system}.default}/lib/qt-6/qml/"];
+    };
+    settings = {
+      name = "qml";
+      auto-format = true;
+      formatter.command = "${pkgs.kdePackages.qtdeclarative}/bin/qmlformat \${INPUT}";
+      language-servers = ["qmlls" "qmllint"];
+    };
+  };
+
   # -- GAME: --
   godot = {
     server = {
@@ -241,6 +262,8 @@ in {
       clangd = c.server;
       rust-analyzer = rust.server;
       zls = zig.server;
+      qmlls = qml.server;
+      qmllint = qml.linter;
 
       # -- GAME: --
       gdscript = godot.server;
@@ -265,6 +288,7 @@ in {
       cpp.settings
       rust.settings
       zig.settings
+      qml.settings
 
       # -- GAME: --
       godot.settings
