@@ -9,13 +9,13 @@
     ./zen.nix # Web browser.
     ./kitty.nix # Terminal emulator.
     ./obsidian.nix # Note taking.
-    ./godot.nix # Game engine.
+    ./godot.nix # Game development.
+    ./discord.nix # Chatting.
     ./yt-music.nix # Music player.
   ];
 
   home.packages = with pkgs; [
     pavucontrol
-    chromium
     krita
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
