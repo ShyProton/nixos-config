@@ -27,7 +27,7 @@
       height = 1080;
       x = 0;
       y = 0;
-      refreshRate = 144;
+      refreshRate = 144.998001;
       wallpapers = {
         desktop = "flexoki/caveman.png";
         lockscreen = "gruvbox/sun_circle.jpg";
@@ -38,8 +38,8 @@
       width = 1920;
       height = 1200;
       x = 1920;
-      y = 0;
-      refreshRate = 60;
+      y = 600;
+      refreshRate = 60.000999;
       wallpapers = {
         desktop = "flexoki/the-gap.png";
         lockscreen = "gruvbox/sun_circle.jpg";
