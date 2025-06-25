@@ -5,11 +5,6 @@
 
   programs.fuse.userAllowOther = true;
 
-  # TODO: Remove these when this issue is resolved!!
-  # https://github.com/nix-community/impermanence/issues/229
-  boot.initrd.systemd.suppressedUnits = ["systemd-machine-id-commit.service"];
-  systemd.suppressedSystemUnits = ["systemd-machine-id-commit.service"];
-
   # Defining which system directories/files persist every boot.
   environment.persistence."/persist" = {
     hideMounts = true;
@@ -18,6 +13,7 @@
 
       "/var/log"
       "/var/lib/systemd"
+      "/var/lib/nixos"
 
       "/srv"
       "/mnt"

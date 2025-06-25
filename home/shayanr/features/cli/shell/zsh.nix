@@ -19,7 +19,7 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.zsh) {
       path = "/persist${config.home.homeDirectory}/.zsh_history";
     };
 
-    initExtra = ''
+    initContent = ''
       KEYTIMEOUT=1
     '';
   };

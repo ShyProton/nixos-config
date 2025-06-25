@@ -5,9 +5,8 @@
     ./hyprlock.nix # Locking behaviour.
     ./wofi.nix # App launcher.
     ./widgets
+    ./swww.nix # Wallpapers.
     ./waybar # Desktop bar.
     ./swaync # Notification center.
   ];
-
-  services.swww.enable = true; # Wallpapers.
 }

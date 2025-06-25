@@ -8,10 +8,6 @@
     inputs.niri.homeModules.niri
   ];
 
-  home.packages = with pkgs; [
-    xwayland-satellite
-  ];
-
   programs.niri = let
     inherit (config.colorScheme) palette;
     inherit (config.window-decorations) gap-size border-radius;
@@ -47,13 +43,13 @@
       };
 
       spawn-at-startup = [
-        {command = ["xwayland-satellite"];}
+        {command = ["${pkgs.xwayland-satellite}/bin/xwayland-satellite"];}
+        {command = ["swww-daemon"];}
+        {command = ["swww-restore"];}
         {command = ["waybar"];}
       ];
 
-      environment = {
-        DISPLAY = ":0";
-      };
+      environment.DISPLAY = ":0";
 
       window-rules = [
         {
