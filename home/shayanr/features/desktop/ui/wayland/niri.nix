@@ -8,6 +8,10 @@
     inputs.niri.homeModules.niri
   ];
 
+  home.packages = with pkgs; [
+    xwayland-satellite
+  ];
+
   programs.niri = let
     inherit (config.colorScheme) palette;
   in {
@@ -36,6 +40,15 @@
           spread = 8;
           draw-behind-window = true;
         };
+      };
+
+      spawn-at-startup = [
+        {command = ["xwayland-satellite"];}
+        {command = ["waybar"];}
+      ];
+
+      environment = {
+        DISPLAY = ":0";
       };
 
       binds = with config.lib.niri.actions; {
