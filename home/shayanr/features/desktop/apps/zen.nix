@@ -4,13 +4,20 @@
   inputs,
   ...
 }: {
-  home = {
-    packages = [
-      inputs.zen-browser.packages."${pkgs.system}".default
-    ];
+  imports = [
+    inputs.zen-browser.homeModules.beta
+  ];
 
-    persistence."/persist${config.home.homeDirectory}".directories = [
-      ".zen"
-    ];
+  programs.zen-browser = {
+    enable = true;
+    nativeMessagingHosts = [pkgs.firefoxpwa];
+    policies = {
+      DisableAppUpdate = true;
+      DisableTelemetry = true;
+    };
   };
+
+  home.persistence."/persist${config.home.homeDirectory}".directories = [
+    ".zen"
+  ];
 }

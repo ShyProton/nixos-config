@@ -14,6 +14,7 @@
 
   programs.niri = let
     inherit (config.colorScheme) palette;
+    inherit (config.window-decorations) gap-size border-radius;
   in {
     enable = true;
 
@@ -22,11 +23,14 @@
 
       layout = {
         always-center-single-column = true;
+        center-focused-column = "never";
         default-column-width.proportion = 0.5;
 
         tab-indicator.hide-when-single-tab = true;
 
         focus-ring.enable = false;
+
+        gaps = gap-size;
 
         border = {
           enable = true;
@@ -50,6 +54,13 @@
       environment = {
         DISPLAY = ":0";
       };
+
+      window-rules = [
+        {
+          matches = [{app-id = "zen-beta";}];
+          clip-to-geometry = true;
+        }
+      ];
 
       binds = with config.lib.niri.actions; {
         "Mod+Return".action = spawn "kitty";

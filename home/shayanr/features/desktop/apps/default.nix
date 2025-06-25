@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   # TODO: Make shorthand function to quickly add apps that only need the package
   # added and a config directory persisted.
   imports = [
@@ -17,6 +13,5 @@
   home.packages = with pkgs; [
     pavucontrol
     krita
-    inputs.zen-browser.packages."${pkgs.system}".default
   ];
 }
