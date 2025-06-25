@@ -8,12 +8,42 @@
     inputs.niri.homeModules.niri
   ];
 
-  programs.niri = {
+  programs.niri = let
+    inherit (config.colorScheme) palette;
+  in {
     enable = true;
 
     settings = {
+      prefer-no-csd = true;
+
+      layout = {
+        always-center-single-column = true;
+        default-column-width.proportion = 0.5;
+
+        tab-indicator.hide-when-single-tab = true;
+
+        focus-ring.enable = false;
+
+        border = {
+          enable = true;
+          active.color = "#${palette.base05}";
+          inactive.color = "#${palette.base03}";
+        };
+
+        shadow = {
+          enable = true;
+          softness = 8;
+          spread = 8;
+          draw-behind-window = true;
+        };
+      };
+
       binds = with config.lib.niri.actions; {
         "Mod+Return".action = spawn "kitty";
+
+        "Mod+C".action = close-window;
+
+        "Mod+G".action = toggle-column-tabbed-display;
 
         # Function keys
         "XF86MonBrightnessUp".action = spawn "light" "-A" "10";
@@ -30,18 +60,50 @@
         # Power menu
         "Mod+Q".action = spawn "powermenu";
 
+        # Window navigation
+        "Mod+N".action = focus-window-down;
+        "Mod+E".action = focus-window-up;
+        "Mod+I".action = focus-column-right;
+        "Mod+M".action = focus-column-left;
+
+        "Mod+Down".action = focus-workspace-down;
+        "Mod+Up".action = focus-workspace-up;
+        "Mod+Right".action = focus-monitor-right;
+        "Mod+Left".action = focus-monitor-left;
+
+        "Mod+Shift+N".action = move-window-down;
+        "Mod+Shift+E".action = move-window-up;
+        "Mod+Shift+I".action = move-column-right;
+        "Mod+Shift+M".action = move-column-left;
+
+        "Mod+Shift+Down".action = move-column-to-workspace-down;
+        "Mod+Shift+Up".action = move-column-to-workspace-up;
+        "Mod+Shift+Right".action = move-column-to-monitor-right;
+        "Mod+Shift+Left".action = move-column-to-monitor-left;
+
+        "Mod+Ctrl+N".action = set-window-height "-10%";
+        "Mod+Ctrl+E".action = set-window-height "+10%";
+        "Mod+Ctrl+I".action = set-column-width "+10%";
+        "Mod+Ctrl+M".action = set-column-width "-10%";
+
+        "Mod+F".action = maximize-column;
+        "Mod+Shift+F".action = fullscreen-window;
+        "Mod+Space".action = toggle-window-floating;
+
         "Alt+N".action = spawn "${pkgs.wtype}/bin/wtype" "-P" "down" "-p" "down";
         "Alt+E".action = spawn "${pkgs.wtype}/bin/wtype" "-P" "up" "-p" "up";
         "Alt+I".action = spawn "${pkgs.wtype}/bin/wtype" "-P" "right" "-p" "right";
         "Alt+M".action = spawn "${pkgs.wtype}/bin/wtype" "-P" "left" "-p" "left";
       };
 
-      input.keyboard.xkb = {
-        layout = "us";
-        variant = "colemak_dh";
+      input = {
+        focus-follows-mouse.enable = true;
+        keyboard.xkb = {
+          layout = "us";
+          variant = "colemak_dh";
+        };
       };
 
-      # TODO: uuuhhh uuummmmm uuuuuuuuuuhhhhhhhhhhhhh
       outputs = builtins.listToAttrs (
         map (monitor:
           with monitor; {
