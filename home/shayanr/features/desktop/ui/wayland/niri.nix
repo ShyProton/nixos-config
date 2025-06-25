@@ -10,7 +10,7 @@
 
   programs.niri = let
     inherit (config.colorScheme) palette;
-    inherit (config.window-decorations) gap-size border-radius;
+    inherit (config.window-decorations) gap-size;
   in {
     enable = true;
 
@@ -20,14 +20,19 @@
       layout = {
         always-center-single-column = true;
         center-focused-column = "never";
-        default-column-width.proportion = 0.5;
 
         tab-indicator.hide-when-single-tab = true;
 
-        focus-ring.enable = false;
-
         gaps = gap-size;
 
+        default-column-width.proportion = 0.5;
+        preset-column-widths = [
+          {proportion = 1.0 / 3.0;} # 33%
+          {proportion = 1.0 / 2.0;} # 50%
+          {proportion = 2.0 / 3.0;} # 66%
+        ];
+
+        focus-ring.enable = false;
         border = {
           enable = true;
           active.color = "#${palette.base05}";
@@ -106,9 +111,14 @@
         "Mod+Ctrl+I".action = set-column-width "+10%";
         "Mod+Ctrl+M".action = set-column-width "-10%";
 
+        "Mod+BracketLeft".action = consume-or-expel-window-left;
+        "Mod+BracketRight".action = consume-or-expel-window-right;
+
         "Mod+F".action = maximize-column;
         "Mod+Shift+F".action = fullscreen-window;
         "Mod+Space".action = toggle-window-floating;
+
+        "Mod+R".action = switch-preset-column-width;
 
         "Alt+N".action = spawn "${pkgs.wtype}/bin/wtype" "-P" "down" "-p" "down";
         "Alt+E".action = spawn "${pkgs.wtype}/bin/wtype" "-P" "up" "-p" "up";
