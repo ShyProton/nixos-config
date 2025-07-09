@@ -8,10 +8,10 @@
   imports =
     [
       ./shell # Shell configurations.
-      # ./nvim # Text editor.
       ./helix # Text editor.
       ./btop # Task manager.
 
+      ./nh.nix # Nix CLI helper.
       ./git.nix # Git version control.
       ./yazi.nix # File browser.
       ./direnv.nix # Augments shell environment variables.
