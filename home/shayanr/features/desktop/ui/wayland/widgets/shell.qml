@@ -1,18 +1,44 @@
 import Quickshell
+import QtQuick.Controls
 import QtQuick
+import QtQuick.Layouts
 
 ShellRoot {
     PanelWindow {
+        id: barRoot
+
         anchors {
             top: true
             left: true
-            right: true
+            bottom: true
         }
 
-        implicitHeight: 30
+        implicitWidth: 50
 
-        Text {
-            text: "sup dawg"
+        Rectangle {
+            id: barBackground
+
+            anchors {
+                fill: parent
+            }
+
+            color: "#222"
+        }
+
+        Item {
+            id: barContent
+
+            anchors {
+                fill: parent
+                topMargin: 10
+                bottomMargin: 10
+            }
+
+            RowLayout {
+                id: topButtons
+                // MAIN MENU
+                // NOTIFICATIONS
+            }
         }
     }
 }

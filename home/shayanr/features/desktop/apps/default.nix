@@ -6,6 +6,7 @@
     ./kitty.nix # Terminal emulator.
     ./obsidian.nix # Note taking.
     ./godot.nix # Game development.
+    ./krita.nix # Art.
   ];
 
   home.packages = with pkgs; [
