@@ -6,6 +6,7 @@
   home = {
     packages = with pkgs; [
       krita
+      beeref
     ];
 
     persistence."/persist${config.home.homeDirectory}" = {
