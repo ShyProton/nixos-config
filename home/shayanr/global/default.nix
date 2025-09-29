@@ -23,5 +23,14 @@
     };
   };
 
+  # TODO: Probably have some sort of 'global settings' area
+  # for stuff like this.
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
+    };
+  };
+
   programs.home-manager.enable = true;
 }
