@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  virtualisation.libvirtd.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
   environment.systemPackages = with pkgs; [virt-manager];
 
   # Ensure libvirtd group exists.
