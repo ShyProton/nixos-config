@@ -4,6 +4,7 @@
   imports = [
     ./zen.nix # Web browser.
     ./kitty.nix # Terminal emulator.
+    ./signal.nix # Messenging app.
     ./obsidian.nix # Note taking.
     ./godot.nix # Game development.
     ./krita.nix # Art.
