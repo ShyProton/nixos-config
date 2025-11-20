@@ -60,7 +60,7 @@
 
       extraPackages = with pkgs; [
         libvdpau-va-gl
-        vaapiVdpau
+        libva-vdpau-driver
       ];
     };
   };

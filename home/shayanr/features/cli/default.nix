@@ -30,5 +30,8 @@
     # Extra developer man-pages.
     man-pages
     man-pages-posix
+
+    ffmpeg
+    shotcut
   ];
 }

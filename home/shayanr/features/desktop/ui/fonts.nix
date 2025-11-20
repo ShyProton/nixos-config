@@ -4,7 +4,7 @@
     freefont_ttf
 
     dejavu_fonts
-    ubuntu_font_family
+    ubuntu-classic
 
     roboto
     roboto-mono
@@ -13,6 +13,6 @@
 
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
   ];
 }
