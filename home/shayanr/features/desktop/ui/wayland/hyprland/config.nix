@@ -77,10 +77,10 @@
       ];
     };
 
-    gestures = {
-      workspace_swipe = "yes";
-      workspace_swipe_fingers = 3;
-    };
+    # gestures = {
+    #   workspace_swipe = "yes";
+    #   workspace_swipe_fingers = 3;
+    # };
 
     misc = {
       force_default_wallpaper = 0;

@@ -8,9 +8,11 @@
     ./obsidian.nix # Note taking.
     ./godot.nix # Game development.
     ./krita.nix # Art.
+    ./lutris.nix # Windows apps.
   ];
 
   home.packages = with pkgs; [
     pavucontrol
+    libreoffice
   ];
 }

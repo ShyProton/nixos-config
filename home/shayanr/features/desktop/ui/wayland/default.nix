@@ -1,6 +1,7 @@
 {
   imports = [
     ./niri.nix # Window manager.
+    ./hyprland
     ./hypridle.nix # Idling behaviour.
     ./hyprlock.nix # Locking behaviour.
     ./wofi.nix # App launcher.

@@ -33,5 +33,7 @@
 
     ffmpeg
     shotcut
+
+    virtiofsd
   ];
 }
