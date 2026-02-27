@@ -18,7 +18,7 @@
       firefox
     ];
 
-    persistence."/persist${config.home.homeDirectory}" = {
+    persistence."/persist" = {
       # TODO: Move persistent item declarations to their respective
       # configuration directories.
       directories = [

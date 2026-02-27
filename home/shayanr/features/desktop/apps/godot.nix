@@ -1,14 +1,10 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     packages = with pkgs; [
       godot
     ];
 
-    persistence."/persist${config.home.homeDirectory}".directories = [
+    persistence."/persist".directories = [
       ".config/godot"
       ".local/share/godot"
     ];

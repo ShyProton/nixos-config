@@ -43,7 +43,7 @@ lib.mkIf (osConfig.users.users.shayanr.shell == pkgs.nushell) {
     '';
 
   # Persists shell history between reboots.
-  home.persistence."/persist${config.home.homeDirectory}".files = [
+  home.persistence."/persist".files = [
     ".config/nushell/history.txt"
   ];
 }

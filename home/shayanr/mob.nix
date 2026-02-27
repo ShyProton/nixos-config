@@ -5,8 +5,6 @@
 }: {
   imports =
     [
-      # Impermanence for home-manager.
-      inputs.impermanence.nixosModules.home-manager.impermanence
       # Declarative system colorscheme.
       inputs.nix-colors.homeManagerModule
 

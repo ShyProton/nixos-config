@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     packages = with pkgs; [
       jetbrains.idea-community
@@ -11,7 +7,7 @@
       h2
     ];
 
-    persistence."/persist${config.home.homeDirectory}".directories = [
+    persistence."/persist".directories = [
       ".config/JetBrains"
       ".local/share/JetBrains"
       ".java"

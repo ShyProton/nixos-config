@@ -1,14 +1,10 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     packages = with pkgs; [
       youtube-music
     ];
 
-    persistence."/persist${config.home.homeDirectory}".directories = [
+    persistence."/persist".directories = [
       ".config/YouTube Music"
     ];
   };

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     packages = with pkgs; [
       (rstudioWrapper.override {
@@ -21,7 +17,7 @@
       })
     ];
 
-    persistence."/persist${config.home.homeDirectory}".directories = [
+    persistence."/persist".directories = [
       ".config/RStudio"
       ".config/rstudio"
       ".local/share/rstudio"

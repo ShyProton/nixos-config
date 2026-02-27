@@ -55,11 +55,34 @@
     inherit (self) outputs;
 
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    # pkgs = nixpkgs.legacyPackages.${system};
+
+    # WARN: Crap temporary fix for Krita issue.
+    pkgs = import nixpkgs {
+      inherit system;
+
+      # NOTE: Move these back to nix.nix
+      config.allowUnfree = true;
+
+      # HACK: Obsidian relies on insecure electron version.
+      config.permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
+
+      overlays = [
+        (final: prev: {
+          lager = prev.lager.override {
+            boost = final.boost188;
+          };
+        })
+      ];
+    };
 
     nixos-system = system-module:
       nixpkgs.lib.nixosSystem {
         inherit system;
+        inherit pkgs;
+
         specialArgs = {inherit inputs outputs;};
         modules = [
           system-module

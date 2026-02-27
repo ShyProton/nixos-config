@@ -7,8 +7,7 @@
     username = "shayanr";
     homeDirectory = "/home/${config.home.username}";
 
-    persistence."/persist${config.home.homeDirectory}" = {
-      allowOther = true;
+    persistence."/persist" = {
       directories = [
         ".dotfiles"
         ".ssh"

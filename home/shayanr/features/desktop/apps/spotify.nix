@@ -1,6 +1,5 @@
 {
   inputs,
-  config,
   pkgs,
   ...
 }: let
@@ -12,7 +11,7 @@ in {
 
   home = {
     packages = with pkgs; [playerctl];
-    persistence."/persist${config.home.homeDirectory}".directories = [
+    persistence."/persist".directories = [
       ".config/spotify"
     ];
   };

@@ -1,8 +1,4 @@
-{
-  inputs,
-  config,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     inputs.nixcord.homeModules.nixcord
   ];
@@ -21,7 +17,7 @@
     };
   };
 
-  home.persistence."/persist${config.home.homeDirectory}".directories = [
+  home.persistence."/persist".directories = [
     ".config/discord"
     ".config/vesktop/sessionData"
   ];

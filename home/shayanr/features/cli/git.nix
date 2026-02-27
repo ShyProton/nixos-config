@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   programs = {
     git = {
       enable = true;
@@ -41,7 +37,7 @@
     };
   };
 
-  home.persistence."/persist${config.home.homeDirectory}".directories = [
+  home.persistence."/persist".directories = [
     ".config/gh"
   ];
 }

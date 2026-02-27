@@ -246,20 +246,20 @@
       "ALT, m, exec, ${wtype-path} -P left -p left"
     ];
 
-    windowrulev2 = [
-      "tile, class:^(Spotify)$"
-      "float, class:^(pavucontrol)$"
-      "float, class:^(.blueman-manager-wrapped)$"
+    # TODO: Breaking change done did it again goddamnit.
+    # windowrule = [
+    #   "tile, class:^(Spotify)$"
+    #   "float, class:^(pavucontrol)$"
+    #   "float, class:^(.blueman-manager-wrapped)$"
+    #   # Firefox Picture-in-Picture rules
+    #   "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
+    #   "pin, class:^(firefox)$, title:^(Picture-in-Picture)$"
+    #   "opaque, class:^(firefox)$, title:^(Picture-in-Picture)$"
+    #   "noblur, class:^(firefox)$, title:^(Picture-in-Picture)$"
+    # ];
 
-      # Firefox Picture-in-Picture rules
-      "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
-      "pin, class:^(firefox)$, title:^(Picture-in-Picture)$"
-      "opaque, class:^(firefox)$, title:^(Picture-in-Picture)$"
-      "noblur, class:^(firefox)$, title:^(Picture-in-Picture)$"
-    ];
-
-    layerrule = [
-      "blur, waybar"
-    ];
+    # layerrule = [
+    #   "blur, match:class waybar"
+    # ];
   };
 }

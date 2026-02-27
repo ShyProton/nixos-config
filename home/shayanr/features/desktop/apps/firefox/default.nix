@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   osConfig,
   lib,
   ...
@@ -38,7 +37,7 @@
       )
     ];
 
-    persistence."/persist${config.home.homeDirectory}".directories = [
+    persistence."/persist".directories = [
       ".mozilla/firefox"
     ];
   };
