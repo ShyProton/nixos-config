@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   programs = {
-    yazi.enable = true;
+    yazi = {
+      enable = true;
+      shellWrapperName = "y";
+    };
     jq.enable = true;
     fzf.enable = true;
   };

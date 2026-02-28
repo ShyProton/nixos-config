@@ -3,12 +3,12 @@
   # added and a config directory persisted.
   imports = [
     ./zen.nix # Web browser.
+    ./thunderbird.nix # Email client.
     ./kitty.nix # Terminal emulator.
     ./signal.nix # Messenging app.
     ./obsidian.nix # Note taking.
     ./godot.nix # Game development.
     ./krita.nix # Art.
-    ./lutris.nix # Windows apps.
   ];
 
   home.packages = with pkgs; [

@@ -18,5 +18,6 @@
 
   home.persistence."/persist".directories = [
     ".zen"
+    ".config/zen"
   ];
 }

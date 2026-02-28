@@ -2,6 +2,6 @@
   home.packages = with pkgs; [
     lutris
     bottles
-    wineWowPackages.waylandFull
+    wineWow64Packages.waylandFull
   ];
 }

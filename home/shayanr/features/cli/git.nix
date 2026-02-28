@@ -4,13 +4,16 @@
       enable = true;
       lfs.enable = true;
 
-      userName = "ShyProton";
-      userEmail = "shayanr1001@gmail.com";
-
-      diff-so-fancy = {
-        enable = true;
-        stripLeadingSymbols = false;
+      settings.user = {
+        name = "ShyProton";
+        email = "shayanr1001@gmail.com";
       };
+    };
+
+    diff-so-fancy = {
+      enable = true;
+      enableGitIntegration = true;
+      settings.stripLeadingSymbols = false;
     };
 
     gh = {
