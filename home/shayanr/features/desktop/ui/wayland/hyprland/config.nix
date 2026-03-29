@@ -17,6 +17,7 @@
       gaps_in = gap-size / 2;
       gaps_out = gap-size;
       border_size = 2;
+      layout = "scrolling";
 
       "col.active_border" = "0xff${palette.base05}";
       "col.inactive_border" = "0xff${palette.base03}";
@@ -55,16 +56,16 @@
       enabled = true;
 
       bezier = [
-        "overshot, 0.13, 0.99, 0.29, 1.1"
         "easein, 0.11, 0, 0.5, 0"
         "easeout, 0.5, 1, 0.89, 1"
+        "easeInOutExpo, 0.87, 0, 0.13, 1"
       ];
 
       animation = [
-        "windows, 1, 4, overshot, slide"
-        "windowsMove, 1, 4, overshot"
+        "windows, 1, 4, easeInOutExpo, popin 80%"
+        "windowsMove, 1, 4, easeInOutExpo"
 
-        "workspaces, 1, 2, easeout, slidevert"
+        "workspaces, 1, 2, easeInOutExpo, slidevert"
 
         "border, 1, 3, easeout"
 
@@ -116,10 +117,7 @@
         output = "${config.home.homeDirectory}/Pictures/screenshots/$(date +%s).png";
       in [
         # Screenshots
-        ", Print, exec, ${grimblast-path} --notify copysave output ${output}"
-        "SHIFT, Print, exec, ${grimblast-path} --notify copysave active ${output}"
-        "CONTROL, Print, exec, ${grimblast-path} --notify copysave screen ${output}"
-        "ALT, Print, exec, ${grimblast-path} --notify copysave area ${output}"
+        "SUPER, p, exec, ${grimblast-path} --notify copysave area ${output}"
       ])
       ++ (let
         scratchpad-path = "${scratchpad}/bin/scratchpad";
@@ -157,8 +155,8 @@
         "SUPER, e, movefocus, u"
         "SUPER, n, movefocus, d"
 
-        "SUPERSHIFT, m, movewindow, l"
-        "SUPERSHIFT, i, movewindow, r"
+        "SUPERSHIFT, m, layoutmsg, swapcol l"
+        "SUPERSHIFT, i, layoutmsg, swapcol r"
         "SUPERSHIFT, e, movewindow, u"
         "SUPERSHIFT, n, movewindow, d"
 
