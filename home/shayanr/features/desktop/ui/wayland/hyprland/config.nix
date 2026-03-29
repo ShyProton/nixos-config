@@ -136,9 +136,7 @@
         # Program bindings
         "SUPER, Return, exec, kitty"
 
-        # Function keys
-        ", XF86MonBrightnessUp, exec, light -A 10"
-        ", XF86MonBrightnessDown, exec, light -U 10"
+        # Function keys (TODO: Brightness controls)
 
         ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
         ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"

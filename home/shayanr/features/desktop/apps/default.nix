@@ -6,13 +6,11 @@
     ./thunderbird.nix # Email client.
     ./kitty.nix # Terminal emulator.
     ./signal.nix # Messenging app.
-    ./obsidian.nix # Note taking.
-    ./godot.nix # Game development.
     ./krita.nix # Art.
   ];
 
   home.packages = with pkgs; [
     pavucontrol
-    libreoffice
+    chromium
   ];
 }

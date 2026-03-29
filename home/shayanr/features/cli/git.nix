@@ -7,6 +7,7 @@
       settings.user = {
         name = "ShyProton";
         email = "shayanr1001@gmail.com";
+        core.editor = "hx";
       };
     };
 

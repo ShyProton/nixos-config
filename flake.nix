@@ -20,18 +20,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell = {
-      url = "github:quickshell-mirror/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixcord = {
-      url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -55,33 +45,11 @@
     inherit (self) outputs;
 
     system = "x86_64-linux";
-    # pkgs = nixpkgs.legacyPackages.${system};
-
-    # WARN: Crap temporary fix for Krita issue.
-    pkgs = import nixpkgs {
-      inherit system;
-
-      # NOTE: Move these back to nix.nix
-      config.allowUnfree = true;
-
-      # HACK: Obsidian relies on insecure electron version.
-      config.permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
-
-      overlays = [
-        (final: prev: {
-          lager = prev.lager.override {
-            boost = final.boost188;
-          };
-        })
-      ];
-    };
+    pkgs = nixpkgs.legacyPackages.${system};
 
     nixos-system = system-module:
       nixpkgs.lib.nixosSystem {
-        inherit system;
-        inherit pkgs;
+        inherit system pkgs;
 
         specialArgs = {inherit inputs outputs;};
         modules = [

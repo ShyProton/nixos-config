@@ -15,6 +15,7 @@
         ".config/kritadisplayrc"
         ".config/kritarc"
         ".config/kritashortcutsrc"
+        ".config/QtProject.conf"
         ".local/share/krita.log"
         ".local/share/krita-sysinfo.log"
       ];

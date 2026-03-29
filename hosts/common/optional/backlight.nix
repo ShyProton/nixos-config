@@ -1,6 +1,7 @@
-{
-  programs.light.enable = true; # Backlight control.
-
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
   # Ensure video group exists.
   users.groups.video = {};
 }
