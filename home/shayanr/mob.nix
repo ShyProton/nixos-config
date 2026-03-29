@@ -47,7 +47,7 @@
 
   window-decorations = {
     gap-size = 10;
-    border-radius = 5;
+    border-radius = 10;
   };
 
   colorscheme = {

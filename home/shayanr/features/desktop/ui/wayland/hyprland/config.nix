@@ -25,6 +25,7 @@
     input = {
       kb_layout = "us";
       kb_variant = "colemak_dh";
+      kb_options = "caps:super";
     };
 
     decoration = {
@@ -32,24 +33,22 @@
       inactive_opacity = 0.85;
       fullscreen_opacity = 1.0;
       rounding = border-radius;
+      rounding_power = 2;
 
       blur = {
         enabled = true;
-        size = 5;
-        passes = 3;
+        size = 3;
+        passes = 2;
+        vibrancy = 0.1696;
         new_optimizations = true;
-        ignore_opacity = false;
       };
 
       shadow = {
-        range = 12;
-        offset = "4 4";
-        color = "0x99000000";
-        color_inactive = "0x44000000";
+        enabled = true;
+        range = 4;
+        render_power = 3;
+        color = "rgba(1a1a1aee)";
       };
-
-      dim_inactive = true;
-      dim_strength = 0.2;
     };
 
     animations = {
@@ -100,10 +99,7 @@
 
     # Startup
     exec-once = [
-      "waybar"
-      "hyprpaper"
-      "swaync"
-      "swayidle -w"
+      "noctalia-shell"
       "hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}"
     ];
 
@@ -136,28 +132,23 @@
         # Program bindings
         "SUPER, Return, exec, kitty"
 
-        # Function keys (TODO: Brightness controls)
+        # Core binds
+        "SUPER, a, exec, noctalia-shell ipc call launcher toggle"
+        "SUPER, q, exec, noctalia-shell ipc call sessionMenu toggle"
+        "SUPER, x, exec, noctalia-shell ipc call settings toggle"
 
-        ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
-        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
-        ", XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
-        ", XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-
-        # Launcher
-        "SUPER, a, exec, wofi -S drun"
-
-        # Notification menu
-        "SUPER, x, exec, swaync-client -t -sw"
-
-        # Power menu
-        "SUPER, q, exec, powermenu"
+        # Extra binds
+        "SUPER, space, exec, noctalia-shell ipc call media playPause"
+        "SUPER, left, exec, noctalia-shell ipc call media seekRelative -10"
+        "SUPER, right, exec, noctalia-shell ipc call media seekRelative 10"
+        "SUPERSHIFT, left, exec, noctalia-shell ipc call media previous"
+        "SUPERSHIFT, right, exec, noctalia-shell ipc call media next"
 
         # WM controls
         "SUPERSHIFT, q, exit"
 
         "SUPER, c, killactive"
         "SUPER, f, fullscreen, 1"
-        "SUPER, space, togglefloating"
         "SUPER, g, togglegroup"
         "SUPER, Tab, changegroupactive"
 
@@ -234,6 +225,17 @@
       "SUPER, mouse:273, resizewindow"
     ];
 
+    bindl = [
+      ", XF86AudioMute, exec, noctalia-shell ipc call volume muteOutput"
+    ];
+
+    bindel = [
+      ", XF86AudioRaiseVolume, exec, noctalia-shell ipc call volume increase"
+      ", XF86AudioLowerVolume, exec, noctalia-shell ipc call volume decrease"
+      ", XF86MonBrightnessUp, exec, noctalia-shell ipc call brightness increase"
+      ", XF86MonBrightnessDown, exec, noctalia-shell ipc call brightness decrease"
+    ];
+
     # FIXME: Repeating while holding does not work for neio binds.
     binde = let
       wtype-path = "${wtype}/bin/wtype";
@@ -256,8 +258,15 @@
     #   "noblur, class:^(firefox)$, title:^(Picture-in-Picture)$"
     # ];
 
-    # layerrule = [
-    #   "blur, match:class waybar"
-    # ];
+    layerrule = [
+      "blur off, match:namespace *"
+      {
+        name = "noctalia";
+        "match:namespace" = "noctalia-background-.*$";
+        ignore_alpha = 0.5;
+        blur = true;
+        blur_popups = true;
+      }
+    ];
   };
 }
